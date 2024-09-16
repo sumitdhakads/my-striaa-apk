@@ -50,6 +50,7 @@ class _LanguageSelectionPageState extends State<LanguageSelectionPage> {
             }));
         },
         color: Theme.of(context).primaryColor,
+        
         text: 'Continue',
         ),
       ),

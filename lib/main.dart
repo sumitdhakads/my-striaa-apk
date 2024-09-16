@@ -19,10 +19,10 @@ class MyApp extends StatelessWidget {
       navigatorKey: navkey,
       theme: AppUtils.lightThemeData(),
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
+      home: SplashScreen(),
       darkTheme: AppUtils.darkThemeData(),
       themeMode: ThemeMode.light,
-      
+
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:striaa/pages/language_selection.dart';
-import 'package:striaa/utils/image_utils.dart';
+import 'package:striaa/utils/image_util.dart';
 
 class SplashScreen extends StatefulWidget {
 
