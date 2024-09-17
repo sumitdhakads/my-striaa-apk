@@ -11,9 +11,12 @@ class Details extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newdetail,onPressed: (){
+      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.detail,onPressed: (){
         Navigator.push(context, MaterialPageRoute(builder: (context) => StriaaPage()));
-      },)),
+      },
+      borderradius: 40,
+      )
+      ),
     );
   }
 }

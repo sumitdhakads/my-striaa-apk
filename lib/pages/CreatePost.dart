@@ -11,7 +11,10 @@ class CreatePost extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newcreatepost,onPressed: (){
         Navigator.push(context, MaterialPageRoute(builder: (context) => Details() ));
-      },)),
+      },
+      borderradius: 40,
+      )
+      ),
     );
   }
 }

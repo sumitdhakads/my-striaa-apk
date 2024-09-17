@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:striaa/pages/Chat_Page.dart';
 import 'package:striaa/pages/Congratulations.dart';
 import 'package:striaa/pages/SoS_Setup_Page.dart';
 import 'package:striaa/pages/current_cycle.dart';
+import 'package:striaa/pages/search1.dart';
+import 'package:striaa/pages/search2.dart';
+import 'package:striaa/pages/search3.dart';
 import 'package:striaa/pages/self_checkup.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
@@ -233,30 +237,50 @@ class _HomepageState extends State<Homepage> {
                     ),
                   ),
                   const SizedBox(height: 30),
-                  Postcontainer(
-                    image: ImageUtil.one,
-                    text: "Sed ut perspicitis iste natus unde error..",
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const Search1()));
+                    },
+                    child: Postcontainer(
+                      image: ImageUtil.one,
+                      text: "Sed ut perspicitis iste natus unde error..",
+                    ),
                   ),
                   const SizedBox(height: 15),
-                  Postcontainer(
-                    image: ImageUtil.two,
-                    text: "Sed ut perspicitis iste natus unde error..",
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const Search1()));
+                    },
+                    child: Postcontainer(
+                      image: ImageUtil.two,
+                      text: "Sed ut perspicitis iste natus unde error..",
+                    ),
                   ),
                   const SizedBox(height: 15),
-                  Blogcontainer(
-                    image: ImageUtil.three,
-                    date: "18 Dec, 2023",
-                    title: "Sed ut perspiciatis unde",
-                    subtitle: "Carter Street Fairview Heights...",
-                    btntext: "Interested",
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const Search3()));
+                    },
+                    child: Blogcontainer(
+                      image: ImageUtil.three,
+                      date: "18 Dec, 2023",
+                      title: "Sed ut perspiciatis unde",
+                      subtitle: "Carter Street Fairview Heights...",
+                      btntext: "Interested",
+                    ),
                   ),
                   const SizedBox(height: 15),
-                  Blogcontainer(
-                    image: ImageUtil.four,
-                    date: "18 Dec, 2023",
-                    title: "Sed ut perspiciatis unde",
-                    subtitle: "Carter Street Fairview Heights...",
-                    btntext: "Interested",
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const Search3()));
+                    },
+                    child: Blogcontainer(
+                      image: ImageUtil.four,
+                      date: "18 Dec, 2023",
+                      title: "Sed ut perspiciatis unde",
+                      subtitle: "Carter Street Fairview Heights...",
+                      btntext: "Interested",
+                    ),
                   ),
                   InkWell(
                     onTap: (){
@@ -371,19 +395,18 @@ class _HomepageState extends State<Homepage> {
                             ],
                           ),
                         ),
-                        Positioned(
-                          right: 0,
-                          bottom: 0,
-                          child: InkWell(
-                            onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage()));
-                            },
-                            child: Image.asset(
-                              ImageUtil.circleavatar,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
+                        // Positioned(
+                        //   right: 0,
+                        //   bottom: 0,
+                        //   child: InkWell(
+                        //     onTap: (){
+                        //       Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage()));
+                        //     },
+                        //     child: SvgIcon(
+                        //       icon: ImageUtil.newdidi,
+                        //     )
+                        //   ),
+                        // ),
                       ],
                     ),
                   ),
@@ -396,6 +419,21 @@ class _HomepageState extends State<Homepage> {
             ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.transparent,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(100),
+          child: ImageWidget(
+            image: ImageUtil.bot,
+          ),
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(100)
+        ),
+        onPressed: (){
+     Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage()));
+        },
       ),
     );
   }

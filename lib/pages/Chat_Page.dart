@@ -14,9 +14,11 @@ class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-        body: Magicalbox(image: ImageUtil.didichat,onPressed: (){
+        body: Magicalbox(image: ImageUtil.newchatdidi,onPressed: (){
           Navigator.pop(context);
-        },)
+        },
+        borderradius: 40,
+        )
     );
   }
 }

@@ -18,7 +18,7 @@ class _Sos3State extends State<Sos3> {
           image: ImageUtil.sos3,
           onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => Sos4()));
-          },
+          },borderradius:40,
         ),
     );
   }

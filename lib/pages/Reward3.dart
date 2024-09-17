@@ -11,7 +11,9 @@ class Reward3 extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.rewards3,onPressed: (){
         Navigator.push(context, MaterialPageRoute(builder: (context) => StriaaPage()));
-      },)),
+      },
+      borderradius: 40,
+      )),
     );
   }
 }

@@ -37,7 +37,7 @@ class ImageUtil {
   static String selfcheckup = "assets/images/selfcheckup.png";
   static String CurrentCycle2 = "assets/images/CurrentCycle2.jpg";
   static String CurrentCycle = "assets/images/current_cycle.png";
-  static String didichat = "assets/images/didichat.jpg";
+  static String newdidi = "assets/images/newdidi.svg";
   static String sos1 = "assets/images/sos1.jpg";
   static String sos2 = "assets/images/sos2.jpg";
   static String sos3 = "assets/images/sos3.jpg";
@@ -108,4 +108,14 @@ class ImageUtil {
   static String newreward = "assets/images/newreward1.jpg";
   static String newsos4 = "assets/images/newsos4.jpg";
 
+  static String newchatdidi = "assets/images/newchatdidi.jpg";
+  static String newpassword = "assets/images/newpassword.jpg";
+  static String newsearchstree2 = "assets/images/newsearchstree2.jpg";
+  static String searchstree = "assets/images/searchstree.jpg";
+
+  static String newevent = "assets/images/newevent.jpg";
+  static String newevent2 = "assets/images/newevent2.jpg";
+
+  static String newcongrats = "assets/images/newcongrats.jpg";
+  static String bot ="assets/images/bot.jpg";
 }

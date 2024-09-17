@@ -18,7 +18,7 @@ class _Sos1State extends State<Sos1> {
           image: ImageUtil.sos1,
           onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => Sos2()));
-          },
+          },borderradius: 40,
         ),
     );
   }

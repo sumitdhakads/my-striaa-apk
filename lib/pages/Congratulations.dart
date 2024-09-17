@@ -11,7 +11,7 @@ class Congratulations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.congrats,onPressed: (){
+     body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newcongrats,onPressed: (){
        Navigator.push(context, MaterialPageRoute(builder: (context) => Reward1()));
      },)),
     );

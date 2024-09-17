@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:striaa/pages/StriaaPage.dart';
 import 'package:striaa/pages/question2.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
@@ -48,7 +49,7 @@ class _Question1State extends State<Question1> {
           TextButton(
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Question2()));
+                  MaterialPageRoute(builder: (context) => StriaaPage()));
             },
             child: Text(
               'Skip',

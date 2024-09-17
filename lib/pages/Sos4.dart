@@ -18,7 +18,7 @@ class _Sos4State extends State<Sos4> {
           image: ImageUtil.newsos4,
           onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => StriaaPage()));
-          },
+          },borderradius: 40,
         ),
 
     );

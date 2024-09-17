@@ -11,9 +11,9 @@ class Search3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.resource3,onPressed: (){
+      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newevent,onPressed: (){
         Navigator.push(context, MaterialPageRoute(builder: (context) => Search4()));
-      },)),
+      },borderradius: 40,)),
     );
   }
 }

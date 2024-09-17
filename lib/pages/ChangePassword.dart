@@ -10,7 +10,7 @@ class ChangePassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.changepassword,onPressed: (){
+      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newpassword,onPressed: (){
         Navigator.pop(context);
       },)),
     );

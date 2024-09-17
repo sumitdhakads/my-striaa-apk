@@ -11,7 +11,9 @@ class StriBlog extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.blogsquad,onPressed: (){
         Navigator.push(context, MaterialPageRoute(builder: (context) => CreatePost()));
-      },)),
+      },
+    borderradius: 40,
+    )),
     );
   }
 }

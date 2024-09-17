@@ -18,7 +18,7 @@ class _Exam1State extends State<Exam1> {
     return  Scaffold(
         body: Magicalbox(image: ImageUtil.exam1,onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => Exam2() ));
-        },),
+        },borderradius: 40,),
     );
   }
 }
