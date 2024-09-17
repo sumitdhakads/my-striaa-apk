@@ -17,7 +17,7 @@ class Magicalbox extends StatelessWidget {
             child: SizedBox(
                 width: appwidth(context),
             child: ClipRRect(
-                borderRadius: BorderRadius.circular(borderradius ??  100),
+                borderRadius: BorderRadius.circular(borderradius ??  20),
                 child: Image.asset(image, fit: BoxFit.fill)))));
   }
 }

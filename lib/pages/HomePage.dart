@@ -425,7 +425,7 @@ class _HomepageState extends State<Homepage> {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(100),
           child: ImageWidget(
-            image: ImageUtil.bot,
+            image: ImageUtil.newbot,
           ),
         ),
         shape: RoundedRectangleBorder(
