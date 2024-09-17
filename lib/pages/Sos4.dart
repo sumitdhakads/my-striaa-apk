@@ -15,7 +15,7 @@ class _Sos4State extends State<Sos4> {
   Widget build(BuildContext context) {
     return  Scaffold(
         body: Magicalbox(
-          image: ImageUtil.sos4,
+          image: ImageUtil.newsos4,
           onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => StriaaPage()));
           },

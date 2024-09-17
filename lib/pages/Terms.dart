@@ -11,7 +11,7 @@ class Terms extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.terms,onPressed: (){
+      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newterms,onPressed: (){
       Navigator.pop(context);
       },)),
     );

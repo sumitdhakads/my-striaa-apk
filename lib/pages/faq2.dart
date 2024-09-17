@@ -10,7 +10,7 @@ class Faq2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.faq2,onPressed: (){
+      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newfaq2,onPressed: (){
 
       },)),
     );

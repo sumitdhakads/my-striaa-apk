@@ -10,7 +10,7 @@ class Doctor1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.doctor1,onPressed: (){
+      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newdr1,onPressed: (){
         Navigator.push(context, MaterialPageRoute(builder: (context) => Doctor2()));
       },)),
     );

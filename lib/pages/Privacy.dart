@@ -11,7 +11,7 @@ class Privacy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.privacy,onPressed: (){
+      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newprivacy,onPressed: (){
      Navigator.pop(context);
       },)),
     );

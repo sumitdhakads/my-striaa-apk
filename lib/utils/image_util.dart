@@ -1,4 +1,5 @@
 class ImageUtil {
+
   static String notificationbell = "assets/svg/notification.svg";
   static String logo = "assets/images/logo.png";
   static String doctor = "assets/images/doctor.png";
@@ -57,6 +58,7 @@ class ImageUtil {
   static String terms = "assets/images/terms.jpg";
   static String privacy = "assets/images/privacy.jpg";
 
+
   static String detail = "assets/images/detail.jpg";
   static String createpost = "assets/images/createpost.jpg";
   static String blogsquad = "assets/images/blogsquad.jpg";
@@ -81,4 +83,29 @@ class ImageUtil {
   static String rewards1 = "assets/images/rewards1.jpg";
   static String rewards2 = "assets/images/rewards2.jpg";
   static String rewards3 = "assets/images/rewards3.jpg";
+
+  // new doctor images
+  static String newdr1 = "assets/images/newdr1.jpg";
+  static String newdr2 = "assets/images/newdr2.jpg";
+  static String newdr3 = "assets/images/newdr3.jpg";
+  static String newdrdetail = "assets/images/newdrdetail.jpg";
+  static String newnearby = "assets/images/newnearby.jpg";
+
+
+  //new faq
+  static String newfaq1 = "assets/images/newfaq1.jpg";
+  static String newfaq2 = "assets/images/newfaq2.jpg";
+
+  //new terms condition and privacy policy
+  static String newterms = "assets/images/newterms.jpg";
+  static String newprivacy = "assets/images/newprivacy.jpg";
+
+  //new detail and create post
+  static String newdetail = "assets/images/newdetails.jpg";
+  static String newcreatepost = "assets/images/newcreatepost.jpg";
+  static String newcommunity = "assets/images/newcommunity.jpg";
+
+  static String newreward = "assets/images/newreward1.jpg";
+  static String newsos4 = "assets/images/newsos4.jpg";
+
 }

@@ -11,7 +11,7 @@ class Faq1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.faq1,onPressed: (){
+      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newfaq1,onPressed: (){
          Navigator.push(context, MaterialPageRoute(builder: (context) => Faq2()));
       },)),
     );

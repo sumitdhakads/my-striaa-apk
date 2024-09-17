@@ -10,7 +10,7 @@ class NearByDoctor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.nearbydr,onPressed: (){
+      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newnearby,onPressed: (){
         Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorDetail()));
       },)),
     );
