@@ -12,7 +12,7 @@ class DoctorDetail extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newdrdetail,onPressed: (){
         Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => StriaaPage()),(route) => false);
-      },borderradius: 20,)),
+      },borderradius: 35,)),
     );
   }
 }

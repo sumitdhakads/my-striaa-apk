@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:striaa/pages/StriaaPage.dart';
+import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/magicalbox.dart';
 
@@ -14,9 +15,11 @@ class _CurrentCycle2State extends State<CurrentCycle2> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-        body: Magicalbox(image: ImageUtil.CurrentCycle2,onPressed: (){
-          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => StriaaPage()),(route) => false);
-        },)
+        body: Container(padding: EdgeInsets.symmetric(horizontal: leftRightAppPadding),
+          child: Magicalbox(image: ImageUtil.CurrentCycle2,onPressed: (){
+            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => StriaaPage()),(route) => false);
+          },borderradius: 40,),
+        )
     );
   }
 }

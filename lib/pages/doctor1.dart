@@ -12,7 +12,7 @@ class Doctor1 extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newdr1,onPressed: (){
         Navigator.push(context, MaterialPageRoute(builder: (context) => Doctor2()));
-      },borderradius: 20,)),
+      },borderradius: 35,)),
     );
   }
 }

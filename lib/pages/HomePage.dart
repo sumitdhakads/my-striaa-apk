@@ -119,11 +119,7 @@ class _HomepageState extends State<Homepage> {
                             padding: const EdgeInsets.all(12),
                             child: Row(
                               children: [
-                                InkResponse(
-                                  onTap: (){
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=> const CurrentCyclePage()));
-                                  },
-                                  child: CircleAvatar(
+                               CircleAvatar(
                                     radius: 30,
                                     backgroundColor: Colors.white,
                                     child: Column(
@@ -139,7 +135,6 @@ class _HomepageState extends State<Homepage> {
                                       ],
                                     ),
                                   ),
-                                ),
                                 const SizedBox(width: 10),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,

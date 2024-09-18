@@ -125,4 +125,10 @@ class ImageUtil {
   static String redeem2 ="assets/images/redeem2.jpg";
   static String redeem3 ="assets/images/redeem3.jpg";
 
+  static String useraccount ="assets/images/useraccount.jpg";
+
+  //
+  static String firstsos ="assets/images/firstsos.jpg";
+  static String secondsos ="assets/images/secondsos.jpg";
+  static String thirdsos ="assets/images/thirdsos.jpg";
 }

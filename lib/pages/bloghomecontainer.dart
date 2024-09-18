@@ -12,7 +12,7 @@ class BlogHomeContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newevent2,onPressed: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => StriaaPage()));
+        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => StriaaPage()),(route) => false);
       },
         borderradius: 40,
       )),

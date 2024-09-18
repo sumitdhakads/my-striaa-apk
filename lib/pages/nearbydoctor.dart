@@ -12,7 +12,7 @@ class NearByDoctor extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newnearby,onPressed: (){
         Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorDetail()));
-      },borderradius: 20,)),
+      },borderradius: 35,)),
     );
   }
 }

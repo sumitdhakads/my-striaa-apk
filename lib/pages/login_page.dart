@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:striaa/pages/Homesos1.dart';
 import 'package:striaa/pages/SoS_Setup_Page.dart';
 import 'package:striaa/pages/Sos1.dart';
 import 'package:striaa/pages/StriaaPage.dart';
@@ -86,7 +87,7 @@ class _LoginState extends State<Login> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SosSetupPage()));
+                                builder: (context) => Homesos1()));
                       },
                       color: Theme.of(context).primaryColor,
                       text: 'Log In',

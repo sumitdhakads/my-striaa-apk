@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:striaa/pages/CreatePost.dart';
 import 'package:striaa/pages/StriBlog.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
@@ -21,7 +22,11 @@ class StriSquad extends StatelessWidget {
             text: "Post",
             textColor: Colors.white,
             color: ColorUtil.primaryColor,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CreatePost()));
+            },
           ),
           leading: Row(
             children: [
@@ -76,10 +81,10 @@ class StriSquad extends StatelessWidget {
   Widget postCard(BuildContext context, String imagePath) {
     return InkWell(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => StriBlog()),
-        );
+        // Navigator.push(
+        //   context,
+        //   MaterialPageRoute(builder: (context) => StriBlog()),
+        // );
       },
       child: Container(
         padding: EdgeInsets.all(10),

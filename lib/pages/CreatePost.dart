@@ -10,11 +10,10 @@ class CreatePost extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newcreatepost,onPressed: (){
+      body: Magicalbox(image: ImageUtil.newcreatepost,onPressed: (){
         Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => StriaaPage()),(route) => false);
               },
       borderradius: 40,
-      )
       ),
     );
   }
