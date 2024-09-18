@@ -74,8 +74,7 @@ class EditProfile extends StatelessWidget {
           child: ButtonWidget(
             onPressed: () {
               // Handle continue button press
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Question1()));
+              Navigator.pop(context);
             },
             color: Theme.of(context).primaryColor,
             text: 'Continue',

@@ -17,7 +17,7 @@ class _Sos4State extends State<Sos4> {
         body: Magicalbox(
           image: ImageUtil.newsos4,
           onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => StriaaPage()));
+            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => StriaaPage()),(route) => false);
           },borderradius: 40,
         ),
 

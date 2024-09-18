@@ -12,7 +12,7 @@ class Congratulations extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newcongrats,onPressed: (){
-       Navigator.push(context, MaterialPageRoute(builder: (context) => Reward1()));
+       Navigator.push(context, MaterialPageRoute(builder: (context) => Doctor1()));
      },)),
     );
   }

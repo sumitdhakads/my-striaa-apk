@@ -15,7 +15,7 @@ class _CurrentCycle2State extends State<CurrentCycle2> {
   Widget build(BuildContext context) {
     return  Scaffold(
         body: Magicalbox(image: ImageUtil.CurrentCycle2,onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => StriaaPage() ));
+          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => StriaaPage()),(route) => false);
         },)
     );
   }

@@ -13,7 +13,9 @@ class Privacy extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newprivacy,onPressed: (){
      Navigator.pop(context);
-      },)),
+      },
+      borderradius: 38,
+      )),
     );
   }
 }

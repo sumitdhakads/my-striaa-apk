@@ -3,7 +3,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:striaa/pages/Chat_Page.dart';
 import 'package:striaa/pages/Congratulations.dart';
+import 'package:striaa/pages/Reward1.dart';
 import 'package:striaa/pages/SoS_Setup_Page.dart';
+import 'package:striaa/pages/bloghomecontainer.dart';
+import 'package:striaa/pages/containerhomepost.dart';
 import 'package:striaa/pages/current_cycle.dart';
 import 'package:striaa/pages/search1.dart';
 import 'package:striaa/pages/search2.dart';
@@ -239,7 +242,7 @@ class _HomepageState extends State<Homepage> {
                   const SizedBox(height: 30),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const Search1()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const ContainerPosts()));
                     },
                     child: Postcontainer(
                       image: ImageUtil.one,
@@ -249,7 +252,7 @@ class _HomepageState extends State<Homepage> {
                   const SizedBox(height: 15),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const Search1()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const ContainerPosts()));
                     },
                     child: Postcontainer(
                       image: ImageUtil.two,
@@ -259,7 +262,7 @@ class _HomepageState extends State<Homepage> {
                   const SizedBox(height: 15),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const Search3()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogHomeContainer()));
                     },
                     child: Blogcontainer(
                       image: ImageUtil.three,
@@ -272,7 +275,7 @@ class _HomepageState extends State<Homepage> {
                   const SizedBox(height: 15),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const Search3()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogHomeContainer()));
                     },
                     child: Blogcontainer(
                       image: ImageUtil.four,
@@ -287,7 +290,7 @@ class _HomepageState extends State<Homepage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Congratulations()));
+                              builder: (context) => Reward1()));
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -395,18 +398,7 @@ class _HomepageState extends State<Homepage> {
                             ],
                           ),
                         ),
-                        // Positioned(
-                        //   right: 0,
-                        //   bottom: 0,
-                        //   child: InkWell(
-                        //     onTap: (){
-                        //       Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage()));
-                        //     },
-                        //     child: SvgIcon(
-                        //       icon: ImageUtil.newdidi,
-                        //     )
-                        //   ),
-                        // ),
+
                       ],
                     ),
                   ),

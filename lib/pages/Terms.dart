@@ -15,7 +15,9 @@ class Terms extends StatelessWidget {
       backgroundColor: ColorUtil.secondaryColor,
       body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newterms,onPressed: (){
       Navigator.pop(context);
-      },)),
+      },
+      borderradius: 38,
+      )),
     );
   }
 }

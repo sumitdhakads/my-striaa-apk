@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:striaa/pages/Congratulations.dart';
 import 'package:striaa/pages/StriaaPage.dart';
+import 'package:striaa/pages/doctor1.dart';
 import 'package:striaa/pages/question4.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
@@ -45,7 +46,7 @@ class _Exam4State extends State<Exam4> {
           TextButton(
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Congratulations()));
+                  MaterialPageRoute(builder: (context) => Doctor1()));
             },
             child: Text(
               'Skip',
@@ -106,7 +107,7 @@ class _Exam4State extends State<Exam4> {
                     Spacer(),
                     ButtonWidget(
                       onPressed: () {
-                     Navigator.push(context, MaterialPageRoute(builder: (context) => StriaaPage()));
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => Congratulations()));
                       },
                       color: Theme.of(context).primaryColor,
                       text: 'Next',

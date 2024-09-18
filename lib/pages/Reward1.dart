@@ -9,11 +9,11 @@ class Reward1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newreward,onPressed: (){
+        body: Magicalbox(image: ImageUtil.redeem1,onPressed: (){
         Navigator.push(context, MaterialPageRoute(builder: (context) => Reward2()));
       },
       borderradius: 40,
-      )),
+      ),
     );
   }
 }

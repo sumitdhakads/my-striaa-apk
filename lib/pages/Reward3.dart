@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:striaa/pages/StriaaPage.dart';
+import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/magicalbox.dart';
 
@@ -9,11 +10,15 @@ class Reward3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.rewards3,onPressed: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => StriaaPage()));
-      },
-      borderradius: 40,
-      )),
+      backgroundColor: Colors.grey,
+      body: Container(
+        height: appHeight(context),
+        child: Magicalbox(image: ImageUtil.redeem3,onPressed: (){
+          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => StriaaPage()),(route) => false);
+        },
+        borderradius: 40,
+        ),
+      ),
     );
   }
 }

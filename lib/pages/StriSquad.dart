@@ -47,23 +47,23 @@ class StriSquad extends StatelessWidget {
               SizedBox(height: 30),
 
               // Post card 1
-              postCard(context),
+              postCard(context,ImageUtil.one),
               SizedBox(height: 15),
 
               // Post card 2
-              postCard(context),
+              postCard(context,ImageUtil.two),
               SizedBox(height: 15),
 
               // Post card 3
-              postCard(context),
+              postCard(context,ImageUtil.three),
               SizedBox(height: 15),
 
               // Post card 4
-              postCard(context),
+              postCard(context,ImageUtil.four),
               SizedBox(height: 15),
 
               // Post card 5
-              postCard(context),
+              postCard(context,ImageUtil.one),
               SizedBox(height: 30),
             ],
           ),
@@ -72,8 +72,8 @@ class StriSquad extends StatelessWidget {
     );
   }
 
-  // Widget for creating post cards
-  Widget postCard(BuildContext context) {
+
+  Widget postCard(BuildContext context, String imagePath) {
     return InkWell(
       onTap: () {
         Navigator.push(
@@ -94,61 +94,83 @@ class StriSquad extends StatelessWidget {
             ),
           ],
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Row(
           children: [
-            // Placeholder text for post content
-            Text(
-              "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium",
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-                color: Colors.black,
-              ),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-            ),
-            SizedBox(height: 10),
-
-            // Date
-            Text(
-              "30 Dec, 2023",
-              style: TextStyle(
-                fontSize: 12,
-                color: Colors.grey,
+            // Image on the left
+            Container(
+              width: 70,
+              height: 70,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                image: DecorationImage(
+                  image: AssetImage(imagePath),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(width: 15),
 
-            // Comments and Likes buttons
-            Row(
-              children: [
-                Icon(Icons.comment_outlined, size: 18, color: Colors.grey),
-                SizedBox(width: 5),
-                Text(
-                  "Comments",
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey,
+            // Text content on the right
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Placeholder text for post content
+                  Text(
+                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium",
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black,
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                ),
-                SizedBox(width: 20),
-                Icon(Icons.thumb_up_alt_outlined, size: 18, color: Colors.grey),
-                SizedBox(width: 5),
-                Text(
-                  "Likes",
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey,
+                  SizedBox(height: 10),
+
+                  // Date
+                  Text(
+                    "30 Dec, 2023",
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.grey,
+                    ),
                   ),
-                ),
-              ],
+                  SizedBox(height: 10),
+
+                  // Comments and Likes buttons
+                  Row(
+                    children: [
+                      Icon(Icons.comment_outlined, size: 18, color: Colors.grey),
+                      SizedBox(width: 5),
+                      Text(
+                        "Comments",
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      SizedBox(width: 20),
+                      Icon(Icons.thumb_up_alt_outlined, size: 18, color: Colors.grey),
+                      SizedBox(width: 5),
+                      Text(
+                        "Likes",
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),
       ),
     );
   }
+
 }
 
 

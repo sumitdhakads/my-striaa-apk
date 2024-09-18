@@ -10,6 +10,7 @@ import 'package:striaa/widgets/button.dart';
 import 'package:striaa/widgets/dash.dart';
 import 'package:striaa/widgets/image.dart';
 import 'package:striaa/widgets/progressbar.dart';
+import 'package:intl/intl.dart'; // For formatting date
 
 class Question4 extends StatefulWidget {
   @override
@@ -18,6 +19,28 @@ class Question4 extends StatefulWidget {
 
 class _Question4State extends State<Question4> {
   String _selectedOption = 'Within three months'; // Default value
+  DateTime? _fromDate; // Store selected "From" date
+  DateTime? _toDate; // Store selected "To" date
+
+  // Function to show DatePicker and return selected date
+  Future<void> _selectDate(BuildContext context, bool isFrom) async {
+    final DateTime? pickedDate = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+    );
+
+    if (pickedDate != null && pickedDate != (isFrom ? _fromDate : _toDate)) {
+      setState(() {
+        if (isFrom) {
+          _fromDate = pickedDate;
+        } else {
+          _toDate = pickedDate;
+        }
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,37 +103,59 @@ class _Question4State extends State<Question4> {
                     ),
                     SizedBox(height: 15),
 
-                    // Date fields
+                    // Date fields with click listeners
                     Row(
                       children: [
+                        // "From" container
                         Expanded(
-                          child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(40),
-                            ),
-                            child: Row(
-                              children: [
-                                Text("From: ",style: FontUtil.font12N(color: ColorUtil.textLightGrey),),
-                                Text("DD/MM/YY ",style: FontUtil.font12SB(),),
-                              ],
+                          child: InkWell(
+                            onTap: () {
+                              _selectDate(context, true); // Open date picker for "From" date
+                            },
+                            child: Container(
+                              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(40),
+                              ),
+                              child: Row(
+                                children: [
+                                  Text("From: ", style: FontUtil.font12N(color: ColorUtil.textLightGrey)),
+                                  Text(
+                                    _fromDate != null
+                                        ? DateFormat('dd/MM/yyyy').format(_fromDate!)
+                                        : "DD/MM/YY",
+                                    style: FontUtil.font12SB(),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
                         SizedBox(width: 10),
+                        // "To" container
                         Expanded(
-                          child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(40),
-                            ),
-                            child: Row(
-                              children: [
-                                Text("To: ",style: FontUtil.font12N(color: ColorUtil.textLightGrey),),
-                                Text("DD/MM/YY ",style: FontUtil.font12SB(),),
-                              ],
+                          child: InkWell(
+                            onTap: () {
+                              _selectDate(context, false); // Open date picker for "To" date
+                            },
+                            child: Container(
+                              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(40),
+                              ),
+                              child: Row(
+                                children: [
+                                  Text("To: ", style: FontUtil.font12N(color: ColorUtil.textLightGrey)),
+                                  Text(
+                                    _toDate != null
+                                        ? DateFormat('dd/MM/yyyy').format(_toDate!)
+                                        : "DD/MM/YY",
+                                    style: FontUtil.font12SB(),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -169,13 +214,13 @@ class _Question4State extends State<Question4> {
 
                     Spacer(),
                     ButtonWidget(
-                        onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => Question5()));
-                        },
-                        color: Theme.of(context).primaryColor,
-                        text: 'Next',
-                        textColor: Colors.white,
-                      ),
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Question5()));
+                      },
+                      color: Theme.of(context).primaryColor,
+                      text: 'Next',
+                      textColor: Colors.white,
+                    ),
                     SizedBox(height: 25),
                   ],
                 ),

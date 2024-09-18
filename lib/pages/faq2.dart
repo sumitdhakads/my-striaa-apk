@@ -12,7 +12,9 @@ class Faq2 extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newfaq2,onPressed: (){
 
-      },)),
+      },
+      borderradius: 38,
+      )),
     );
   }
 }

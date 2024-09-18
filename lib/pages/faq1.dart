@@ -13,7 +13,9 @@ class Faq1 extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newfaq1,onPressed: (){
          Navigator.push(context, MaterialPageRoute(builder: (context) => Faq2()));
-      },)),
+      },
+      borderradius: 38,
+      )),
     );
   }
 }

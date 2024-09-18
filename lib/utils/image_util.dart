@@ -119,4 +119,10 @@ class ImageUtil {
   static String newcongrats = "assets/images/newcongrats.jpg";
   static String bot ="assets/images/bot.jpg";
   static String newbot ="assets/images/newbot.jpg";
+
+  //redeem
+  static String redeem1 ="assets/images/redeem1.jpg";
+  static String redeem2 ="assets/images/redeem2.jpg";
+  static String redeem3 ="assets/images/redeem3.jpg";
+
 }

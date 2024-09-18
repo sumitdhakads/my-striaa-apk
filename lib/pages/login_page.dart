@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:striaa/pages/SoS_Setup_Page.dart';
+import 'package:striaa/pages/Sos1.dart';
+import 'package:striaa/pages/StriaaPage.dart';
 import 'package:striaa/pages/otpVerification.dart';
 import 'package:striaa/pages/personal_details.dart';
 import 'package:striaa/pages/signup_page.dart';
@@ -83,7 +86,7 @@ class _LoginState extends State<Login> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Otpverification()));
+                                builder: (context) => SosSetupPage()));
                       },
                       color: Theme.of(context).primaryColor,
                       text: 'Log In',
@@ -119,40 +122,56 @@ class _LoginState extends State<Login> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          padding:
-                              EdgeInsets.symmetric(vertical: 14, horizontal: 35),
-                          decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Row(
-                            children: [
-                              SvgIcon(icon: ImageUtil.googleLogo),
-                              SizedBox(width: 10),
-                              Text(
-                                "Google",
-                                style: FontUtil.font16M(color: Colors.white),
-                              ),
-                            ],
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignupPage()));
+                          },
+                          child: Container(
+                            padding:
+                                EdgeInsets.symmetric(vertical: 14, horizontal: 35),
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Row(
+                              children: [
+                                SvgIcon(icon: ImageUtil.googleLogo),
+                                SizedBox(width: 10),
+                                Text(
+                                  "Google",
+                                  style: FontUtil.font16M(color: Colors.white),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                        Container(
-                          padding:
-                              EdgeInsets.symmetric(vertical: 14, horizontal: 35),
-                          decoration: BoxDecoration(
-                            color: Colors.black,
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Row(
-                            children: [
-                              SvgIcon(icon: ImageUtil.appleLogo),
-                              SizedBox(width: 10),
-                              Text(
-                                "Apple",
-                                style: FontUtil.font16M(color: Colors.white),
-                              ),
-                            ],
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignupPage()));
+                          },
+                          child: Container(
+                            padding:
+                                EdgeInsets.symmetric(vertical: 14, horizontal: 35),
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Row(
+                              children: [
+                                SvgIcon(icon: ImageUtil.appleLogo),
+                                SizedBox(width: 10),
+                                Text(
+                                  "Apple",
+                                  style: FontUtil.font16M(color: Colors.white),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],

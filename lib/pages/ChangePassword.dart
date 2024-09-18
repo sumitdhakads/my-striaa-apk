@@ -12,7 +12,9 @@ class ChangePassword extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.newpassword,onPressed: (){
         Navigator.pop(context);
-      },)),
+      },
+      borderradius: 37,
+      )),
     );
   }
 }

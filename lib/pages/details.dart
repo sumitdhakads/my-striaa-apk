@@ -12,7 +12,7 @@ class Details extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(child: Magicalbox(image: ImageUtil.detail,onPressed: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => StriaaPage()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => CreatePost()));
       },
       borderradius: 40,
       )

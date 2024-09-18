@@ -7,6 +7,7 @@ import 'package:striaa/pages/Terms.dart';
 import 'package:striaa/pages/faq1.dart';
 import 'package:striaa/pages/language_selection.dart';
 import 'package:striaa/pages/login_Page.dart';
+import 'package:striaa/pages/newLanguage.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/CustomAppbar.dart';
@@ -96,7 +97,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => LanguageSelectionPage()));
+                            builder: (context) => NewLanguage()));
                   },
                 ),
                 profileOption(
