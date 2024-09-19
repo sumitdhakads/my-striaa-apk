@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: navkey,
       theme: AppUtils.lightThemeData(),
       debugShowCheckedModeBanner: false,
-      home: Faqone(),
+      home: SplashScreen(),
       darkTheme: AppUtils.darkThemeData(),
       themeMode: ThemeMode.light,
 

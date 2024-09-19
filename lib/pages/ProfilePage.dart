@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:striaa/pages/EditProfile.dart';
+import 'package:striaa/pages/FaqOne.dart';
+import 'package:striaa/pages/Privacy&Policy.dart';
 import 'package:striaa/pages/Terms&Condition.dart';
 import 'package:striaa/pages/language_selection.dart';
 import 'package:striaa/pages/login_Page.dart';
@@ -130,8 +132,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   icon: Icons.help_outline,
                   label: "FAQ",
                   onTap: () {
-                    // Navigator.push(
-                    //     context, MaterialPageRoute(builder: (context) => ));
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => Faqone()));
                   },
                 ),
                 profileOption(
@@ -146,8 +148,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   icon: Icons.privacy_tip_outlined,
                   label: "Privacy Policy",
                   onTap: () {
-                    // Navigator.push(
-                    //     context, MaterialPageRoute(builder: (context) => ));
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => PrivacyPolicy()));
                   },
                 ),
                 profileOption(
