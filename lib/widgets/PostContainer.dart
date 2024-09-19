@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:striaa/utils/font_util.dart';
-import 'package:striaa/utils/image_util.dart';
 
 class Postcontainer extends StatelessWidget {
   const Postcontainer({super.key,required this.image,required this.text});

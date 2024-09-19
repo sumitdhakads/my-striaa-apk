@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:striaa/pages/EditProfile.dart';
+import 'package:striaa/pages/Terms&Condition.dart';
 import 'package:striaa/pages/language_selection.dart';
 import 'package:striaa/pages/login_Page.dart';
 import 'package:striaa/pages/newLanguage.dart';
@@ -137,8 +138,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   icon: Icons.description_outlined,
                   label: "Terms and Conditions",
                   onTap: () {
-                    // Navigator.push(
-                    //     context, MaterialPageRoute(builder: (context) => ));
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => TermsCondition()));
                   },
                 ),
                 profileOption(
