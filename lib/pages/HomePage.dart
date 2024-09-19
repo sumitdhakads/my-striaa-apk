@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:striaa/pages/Chat_Page.dart';
-import 'package:striaa/pages/Congratulations.dart';
-import 'package:striaa/pages/Reward1.dart';
 import 'package:striaa/pages/SoS_Setup_Page.dart';
-import 'package:striaa/pages/bloghomecontainer.dart';
-import 'package:striaa/pages/containerhomepost.dart';
-import 'package:striaa/pages/current_cycle.dart';
-import 'package:striaa/pages/search1.dart';
-import 'package:striaa/pages/search2.dart';
-import 'package:striaa/pages/search3.dart';
 import 'package:striaa/pages/self_checkup.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
@@ -185,7 +176,6 @@ class _HomepageState extends State<Homepage> {
                               text: "Test Now",
                               color: Colors.black,
                               onPressed: () {
-                                 Navigator.push(context, MaterialPageRoute(builder: (context)=> const SelfCheckupPage()));
                               },
                             ),
                             const SizedBox(height: 25),
@@ -237,7 +227,7 @@ class _HomepageState extends State<Homepage> {
                   const SizedBox(height: 30),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const ContainerPosts()));
+                      // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
                     },
                     child: Postcontainer(
                       image: ImageUtil.one,
@@ -247,7 +237,7 @@ class _HomepageState extends State<Homepage> {
                   const SizedBox(height: 15),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const ContainerPosts()));
+                      // Navigator.push(context, MaterialPageRoute(builder: (context) => const ));
                     },
                     child: Postcontainer(
                       image: ImageUtil.two,
@@ -257,7 +247,7 @@ class _HomepageState extends State<Homepage> {
                   const SizedBox(height: 15),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogHomeContainer()));
+                      // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
                     },
                     child: Blogcontainer(
                       image: ImageUtil.three,
@@ -270,7 +260,7 @@ class _HomepageState extends State<Homepage> {
                   const SizedBox(height: 15),
                   InkWell(
                     onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const BlogHomeContainer()));
+                      // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
                     },
                     child: Blogcontainer(
                       image: ImageUtil.four,
@@ -282,10 +272,10 @@ class _HomepageState extends State<Homepage> {
                   ),
                   InkWell(
                     onTap: (){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Reward1()));
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => ));
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -419,7 +409,7 @@ class _HomepageState extends State<Homepage> {
           borderRadius: BorderRadius.circular(100)
         ),
         onPressed: (){
-     Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage()));
+     // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
         },
       ),
     );

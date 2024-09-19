@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:striaa/pages/Homesos1.dart';
-import 'package:striaa/pages/SoS_Setup_Page.dart';
-import 'package:striaa/pages/Sos1.dart';
 import 'package:striaa/pages/StriaaPage.dart';
-import 'package:striaa/pages/otpVerification.dart';
-import 'package:striaa/pages/personal_details.dart';
 import 'package:striaa/pages/signup_page.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
 import 'package:striaa/utils/image_util.dart';
-import 'package:striaa/widgets/PrefixTextFieldContainer.dart';
 import 'package:striaa/widgets/SuffixTextFieldContainer.dart';
 import 'package:striaa/widgets/TextFieldContainer.dart';
 import 'package:striaa/widgets/button.dart';
@@ -87,7 +81,7 @@ class _LoginState extends State<Login> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Homesos1()));
+                                builder: (context) => StriaaPage()));
                       },
                       color: Theme.of(context).primaryColor,
                       text: 'Log In',

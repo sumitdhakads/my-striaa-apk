@@ -40,9 +40,9 @@ class ImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Image.asset(image ?? ImageUtil.doctor,
-    color: color,
-    width: width,
-    height: height,
-    fit: fit ?? BoxFit.cover);
+        color: color,
+        width: width,
+        height: height,
+        fit: fit ?? BoxFit.cover);
   }
 }

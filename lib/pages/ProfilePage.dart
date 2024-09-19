@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:striaa/pages/ChangePassword.dart';
 import 'package:striaa/pages/EditProfile.dart';
-import 'package:striaa/pages/Privacy.dart';
-import 'package:striaa/pages/Reward1.dart';
-import 'package:striaa/pages/Terms.dart';
-import 'package:striaa/pages/faq1.dart';
 import 'package:striaa/pages/language_selection.dart';
 import 'package:striaa/pages/login_Page.dart';
 import 'package:striaa/pages/newLanguage.dart';
@@ -104,16 +99,16 @@ class _ProfilePageState extends State<ProfilePage> {
                   icon: Icons.card_giftcard,
                   label: "Reward Points",
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Reward1()));
+                    // Navigator.push(context,
+                    //     MaterialPageRoute(builder: (context) => ));
                   },
                 ),
                 profileOption(
                   icon: Icons.lock_outline,
                   label: "Change Password",
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ChangePassword()));
+                    // Navigator.push(context,
+                    //     MaterialPageRoute(builder: (context) => ));
                   },
                 ),
                 profileOption(
@@ -134,24 +129,24 @@ class _ProfilePageState extends State<ProfilePage> {
                   icon: Icons.help_outline,
                   label: "FAQ",
                   onTap: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (context) => Faq1()));
+                    // Navigator.push(
+                    //     context, MaterialPageRoute(builder: (context) => ));
                   },
                 ),
                 profileOption(
                   icon: Icons.description_outlined,
                   label: "Terms and Conditions",
                   onTap: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (context) => Terms()));
+                    // Navigator.push(
+                    //     context, MaterialPageRoute(builder: (context) => ));
                   },
                 ),
                 profileOption(
                   icon: Icons.privacy_tip_outlined,
                   label: "Privacy Policy",
                   onTap: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (context) => Privacy()));
+                    // Navigator.push(
+                    //     context, MaterialPageRoute(builder: (context) => ));
                   },
                 ),
                 profileOption(

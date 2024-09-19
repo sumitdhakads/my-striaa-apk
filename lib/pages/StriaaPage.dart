@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:striaa/pages/HomePage.dart';
 import 'package:striaa/pages/ProfilePage.dart';
-import 'package:striaa/pages/SoS_Setup_Page.dart';
-import 'package:striaa/pages/StriBlog.dart';
 import 'package:striaa/pages/StriSquad.dart';
-import 'package:striaa/pages/current_cycle.dart';
-import 'package:striaa/pages/current_cycle2.dart';
-import 'package:striaa/pages/doctor1.dart';
-import 'package:striaa/pages/login_Page.dart';
-import 'package:striaa/pages/search1.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/image.dart';
@@ -25,8 +18,8 @@ class _StriaaPageState extends State<StriaaPage> {
 
   final List<Widget> _pages = [
     const Homepage(),
-    const Search1(),
-    const CurrentCycle2(),
+    const Homepage(),
+    const Homepage(),
     const MainStriSquad(),
     ProfilePage(),
   ];

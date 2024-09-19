@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:striaa/pages/Sos1.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
@@ -100,7 +99,6 @@ class SosSetupPage extends StatelessWidget {
           child: ButtonWidget(
             onPressed: () {
               // Handle continue button press
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Sos1()));
             },
             color: Theme.of(context).primaryColor,
             text: 'Continue',

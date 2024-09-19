@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:striaa/pages/exam1.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/widgets/button.dart';
@@ -85,7 +84,6 @@ class _SelfCheckupPageState extends State<SelfCheckupPage> {
                                         color: Colors.black,
                                         leadingIcon: 'assets/svg/audio.svg',
                                         onPressed: () {
-                                          Navigator.push(context, MaterialPageRoute(builder: (context) => Exam1()));
                                         }),
                                   ),
                                       const SizedBox(width: 12),
@@ -94,7 +92,7 @@ class _SelfCheckupPageState extends State<SelfCheckupPage> {
                                         text: 'Video',
                                         leadingIcon: 'assets/svg/video.svg',
                                         onPressed: () {
-                                          Navigator.push(context, MaterialPageRoute(builder: (context) => Exam1()));
+
                                         }),
                                   ),
                                 ],
