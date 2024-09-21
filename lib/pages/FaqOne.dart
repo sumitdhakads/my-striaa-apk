@@ -10,7 +10,6 @@ class Faqone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFBEAF9), // Light pink background
       appBar: AppBar(
         automaticallyImplyLeading: false,
        title: CustomAppbar(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:striaa/pages/Checkup.dart';
 import 'package:striaa/pages/SoS_Setup_Page.dart';
 import 'package:striaa/pages/self_checkup.dart';
 import 'package:striaa/utils/app_utils.dart';
@@ -10,6 +11,7 @@ import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/BlogContainer.dart';
 import 'package:striaa/widgets/PostContainer.dart';
 import 'package:striaa/widgets/SmallButtton.dart';
+import 'package:striaa/widgets/blur_popup.dart';
 import 'package:striaa/widgets/dash.dart';
 import 'package:striaa/widgets/image.dart';
 
@@ -176,6 +178,7 @@ class _HomepageState extends State<Homepage> {
                               text: "Test Now",
                               color: Colors.black,
                               onPressed: () {
+                                // Navigator.push(context, MaterialPageRoute(builder: (context) => Checkup()));
                               },
                             ),
                             const SizedBox(height: 25),
@@ -410,6 +413,7 @@ class _HomepageState extends State<Homepage> {
         ),
         onPressed: (){
      // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
+
         },
       ),
     );

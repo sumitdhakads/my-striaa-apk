@@ -78,10 +78,11 @@ class _LoginState extends State<Login> {
                     width: appwidth(context),
                     child: ButtonWidget(
                       onPressed: () {
-                        Navigator.push(
+                        Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => StriaaPage()));
+                                builder: (context) => StriaaPage()),
+                            (route) => false);
                       },
                       color: Theme.of(context).primaryColor,
                       text: 'Log In',
@@ -118,18 +119,18 @@ class _LoginState extends State<Login> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => SignupPage()));
                           },
                           child: Container(
-                            padding:
-                                EdgeInsets.symmetric(vertical: 14, horizontal: 35),
+                            padding: EdgeInsets.symmetric(
+                                vertical: 14, horizontal: 35),
                             decoration: BoxDecoration(
                               color: Colors.black,
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(58),
                             ),
                             child: Row(
                               children: [
@@ -144,18 +145,18 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                         InkWell(
-                          onTap: (){
+                          onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => SignupPage()));
                           },
                           child: Container(
-                            padding:
-                                EdgeInsets.symmetric(vertical: 14, horizontal: 35),
+                            padding: EdgeInsets.symmetric(
+                                vertical: 14, horizontal: 35),
                             decoration: BoxDecoration(
                               color: Colors.black,
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(58),
                             ),
                             child: Row(
                               children: [
@@ -174,7 +175,7 @@ class _LoginState extends State<Login> {
                   ),
                 ],
               ),
-        
+
               // Moved the text to the bottom inside the Column
               Padding(
                 padding: const EdgeInsets.only(bottom: 20.0),

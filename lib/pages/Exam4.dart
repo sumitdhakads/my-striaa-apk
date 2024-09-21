@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:striaa/pages/StriaaPage.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
@@ -103,7 +104,7 @@ class _Exam4State extends State<Exam4> {
                     Spacer(),
                     ButtonWidget(
                       onPressed: () {
-                     // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
+                        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => StriaaPage()),(route) => false);
                       },
                       color: Theme.of(context).primaryColor,
                       text: 'Next',

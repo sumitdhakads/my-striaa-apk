@@ -37,4 +37,24 @@ class ImageUtil {
   static String selfcheckup = "assets/images/selfcheckup.png";
   static String newbot = "assets/images/newbot.jpg";
   static String useraccount = "assets/images/useraccount.jpg";
+  static String examone = "assets/images/examone.jpg";
+
+  static String blackaudio = "assets/svg/blackaudio.svg";
+  static String redcloud = "assets/images/redcloud.png";
+  static String doctordidi = "assets/images/doctordidi.png";
+  static String searchicon = "assets/svg/searchicon.svg";
+
+  static String sharepng = "assets/images/sharepng.png";
+  static String blackbackpng = "assets/images/blackbackpng.png";
+  static String datepng = "assets/images/datepng.png";
+
+  static String adbanner = "assets/images/adbanner.jpg";
+  static String locationpng = "assets/images/locationpng.png";
+  static String newthree = "assets/images/newthree.jpg";
+  static String whitebackpng = "assets/images/whitebackpng.png";
+  static String pencilpng = "assets/images/pencilpng.png";
+
+
+
+
 }
