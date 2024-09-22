@@ -22,7 +22,7 @@ class MainStriSquad extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {
-                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => StriaaPage()),(route) => false);
+                  // Navigator.pop(context);
                 },
                 child: CircleAvatar(
                   child: SvgIcon(
@@ -52,22 +52,14 @@ class MainStriSquad extends StatelessWidget {
             children: [
               SizedBox(height: 15),
               // Post Card 1 with Image 1
-              InkWell(
-                  onTap: (){
+                  postCard(context, ImageUtil.one, "Major S. Depriest",(){
                     Navigator.push(context, MaterialPageRoute(builder: (context) => SquaPostDetail()));
-                  },
-                  child: postCard(context, ImageUtil.one, "Major S. Depriest",(){
-
-
-                  })),
+                  }),
               SizedBox(height: 15),
               // Post Card 2 with Image 2
-              InkWell(
-                  onTap: (){
-                  },
-                  child: postCard(context, ImageUtil.two, "Major S. Depriest",(){
+            postCard(context, ImageUtil.two, "Major S. Depriest",(){
                     Navigator.push(context, MaterialPageRoute(builder: (context) => SquaPostDetail()));
-                  })),
+                  }),
               SizedBox(height: 15),
             ],
           ),

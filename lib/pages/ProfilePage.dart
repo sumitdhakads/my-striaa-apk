@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:striaa/pages/ChangePassword.dart';
 import 'package:striaa/pages/EditProfile.dart';
 import 'package:striaa/pages/FaqOne.dart';
 import 'package:striaa/pages/Privacy&Policy.dart';
@@ -110,8 +111,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   icon: Icons.lock_outline,
                   label: "Change Password",
                   onTap: () {
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (context) => ));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ChangePassword()));
                   },
                 ),
                 profileOption(

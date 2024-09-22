@@ -54,7 +54,19 @@ class ImageUtil {
   static String whitebackpng = "assets/images/whitebackpng.png";
   static String pencilpng = "assets/images/pencilpng.png";
 
+  static String commentpng = "assets/images/commentpng.png";
+  static String likepng = "assets/images/likepng.png";
+  static String smilepng = "assets/images/smilepng.png";
+  static String attachementpng = "assets/images/attachmentpng.png";
 
+  static String sendicon = "assets/images/sendicon.png";
 
+ static String accountcomment = "assets/images/accountcomment.png";
+ static String sosonepng = "assets/images/sosone.png";
+  static String sosactivatedpng = "assets/images/sosactivated.png";
+  static String sostwo = "assets/images/sostwo.png";
+
+  static String blackpencil = "assets/images/blackpencil.png";
+  static String deletepng = "assets/images/deletepng.png";
 
 }
