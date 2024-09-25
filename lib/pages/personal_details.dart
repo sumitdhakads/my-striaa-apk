@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:striaa/pages/question1.dart';
 import 'package:striaa/utils/app_utils.dart';
+import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/CustomAppbar.dart';
@@ -77,7 +78,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
         ],
       ),
       bottomNavigationBar: BottomAppBar(
-        elevation: 2,
+        color: ColorUtil.secondaryColor,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
           child: ButtonWidget(

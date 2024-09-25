@@ -3,6 +3,7 @@ import 'package:striaa/pages/ChangePassword.dart';
 import 'package:striaa/pages/EditProfile.dart';
 import 'package:striaa/pages/FaqOne.dart';
 import 'package:striaa/pages/Privacy&Policy.dart';
+import 'package:striaa/pages/Reward.dart';
 import 'package:striaa/pages/Terms&Condition.dart';
 import 'package:striaa/pages/language_selection.dart';
 import 'package:striaa/pages/login_Page.dart';
@@ -103,8 +104,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   icon: Icons.card_giftcard,
                   label: "Reward Points",
                   onTap: () {
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (context) => ));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Reward()));
                   },
                 ),
                 profileOption(

@@ -17,6 +17,7 @@ class SearchTwo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: CustomAppbar(
           title: "What, When, Where?",
           leading: Row(

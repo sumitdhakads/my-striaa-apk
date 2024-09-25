@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:striaa/pages/Checkup.dart';
+import 'package:striaa/pages/DoctorConsult.dart';
 import 'package:striaa/pages/SoS_Setup_Page.dart';
 import 'package:striaa/pages/self_checkup.dart';
 import 'package:striaa/utils/app_utils.dart';
@@ -178,7 +179,7 @@ class _HomepageState extends State<Homepage> {
                               text: "Test Now",
                               color: Colors.black,
                               onPressed: () {
-                                // Navigator.push(context, MaterialPageRoute(builder: (context) => Checkup()));
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorConsult()));
                               },
                             ),
                             const SizedBox(height: 25),

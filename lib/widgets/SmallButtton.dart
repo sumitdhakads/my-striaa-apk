@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:striaa/utils/font_util.dart';
 
 class Smallbuttton extends StatelessWidget {
-  const Smallbuttton({super.key,required this.text,required this.color,required this.onPressed,this.textColor,this.fontstyle});
+  const Smallbuttton({super.key,required this.text,required this.color,required this.onPressed,this.textColor,this.fontstyle
+  ,this.verpadding,this.horpadding});
 
   final String text;
   final Color color;
   final VoidCallback onPressed;
   final Color? textColor;
   final TextStyle? fontstyle;
+  final  double? verpadding;
+  final  double? horpadding;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -17,7 +20,7 @@ class Smallbuttton extends StatelessWidget {
         backgroundColor: color,
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10),
+        padding:  EdgeInsets.symmetric(vertical: (verpadding ?? 10),horizontal: horpadding ?? 0 ),
         child: Text(text ?? "",
           style: fontstyle ??   FontUtil.font12SB(color: Colors.white),
         ),

@@ -69,4 +69,36 @@ class ImageUtil {
   static String blackpencil = "assets/images/blackpencil.png";
   static String deletepng = "assets/images/deletepng.png";
 
+  static String congratspng = "assets/images/congratspng.png";
+
+  static String tenpoints = "assets/images/tenpoints.png";
+
+  //Dr images
+  static String dr1 = "assets/images/dr1.png";
+  static String dr2 = "assets/images/dr2.png";
+  static String dr3 = "assets/images/dr3.png";
+  static String dr4 = "assets/images/dr4.png";
+  static String dr = "assets/images/dr.jpg";
+  static String callpng = "assets/images/callpng.png";
+  static String newdr2 = "assets/images/newdr2.jpg";
+  static String newdr3 = "assets/images/newdr3.jpg";
+
+  //reward
+  static String rewardpng = "assets/images/rewardpng.png";
+  static String place = "assets/images/place.jpg";
+  static String drjullie = "assets/images/drjullie.jpg";
+
+  //comment and phone svg white
+  static String whitephone = "assets/svg/whitephone.svg";
+  static String whitecomment = "assets/svg/whitecomment.svg";
+
+  static String locationimage = "assets/images/locationimage.jpg";
+
+  static String redeemimage = "assets/images/redeemimage.png";
+  static String rewardpageimage = "assets/images/rewardpageimage.jpg";
+
+  static String successfullreward = "assets/images/successfullreward.png";
+
+  static String crossicon = "assets/svg/crossicon.svg";
+
 }

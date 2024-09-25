@@ -18,6 +18,7 @@ class ButtonWidget extends StatelessWidget {
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: color,
+          elevation: 0,
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 15),
