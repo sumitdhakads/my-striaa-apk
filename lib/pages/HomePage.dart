@@ -118,14 +118,14 @@ class _HomepageState extends State<Homepage> {
                                     backgroundColor: Colors.white,
                                     child: Column(
                                       children: [
-                                        const SizedBox(height: 7),
+                                        const SizedBox(height: 8),
                                         Text('25',
                                             textAlign: TextAlign.center,
-                                            style: FontUtil.font18B(
+                                            style: FontUtil.font18SB(
                                                 color: ColorUtil.primaryColor)),
                                         Text('Dec',
                                             textAlign: TextAlign.center,
-                                            style: FontUtil.font14N()),
+                                            style: FontUtil.font12N()),
                                       ],
                                     ),
                                   ),
@@ -136,7 +136,7 @@ class _HomepageState extends State<Homepage> {
                                     Text(
                                       'Upcoming Date of Check up',
                                       style:
-                                          FontUtil.font14B(color: Colors.white),
+                                          FontUtil.font14SB(color: Colors.white),
                                     ),
                                     Text('Previous Date  Check up: 20 Dec',
                                         style: FontUtil.font14N(
@@ -170,7 +170,7 @@ class _HomepageState extends State<Homepage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const SizedBox(height: 20),
-                            Text("Self Checkup", style: FontUtil.font20B()),
+                            Text("Self Checkup", style: FontUtil.font20SB()),
                             Text("Lore ipsum dolor",
                                 style: FontUtil.font14N(
                                     color: ColorUtil.textLightGrey)),
@@ -179,7 +179,7 @@ class _HomepageState extends State<Homepage> {
                               text: "Test Now",
                               color: Colors.black,
                               onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorConsult()));
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => SelfCheckupPage()));
                               },
                             ),
                             const SizedBox(height: 25),
@@ -210,11 +210,11 @@ class _HomepageState extends State<Homepage> {
                           children: [
                             Text(
                               "Please set up SOS",
-                              style: FontUtil.font20B(color: Colors.white),
+                              style: FontUtil.font20SB(color: Colors.white),
                             ),
                             Text(
                               "Lorem ipsum dolor sit amet.",
-                              style: FontUtil.font14N(color: Colors.white),
+                              style: FontUtil.font14N(color: Color(0xFFFFFFFF).withOpacity(0.6)),
                             ),
                           ],
                         ),

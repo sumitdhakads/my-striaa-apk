@@ -17,16 +17,6 @@ class SquaPostDetail extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: CustomAppbar(
-          leading: Row(
-            children: [
-              CircleAvatar(
-                backgroundColor: Colors.transparent,
-                child: SvgIcon(
-                  icon: ImageUtil.left,
-                ),
-              ),
-            ],
-          ),
         ),
       ),
       body: SingleChildScrollView(

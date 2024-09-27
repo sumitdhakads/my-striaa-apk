@@ -23,23 +23,18 @@ class _Exam4State extends State<Exam4> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: ColorUtil.primaryColor,
-        leading: Row(
-          children: [
-            SizedBox(width: 5),
-            InkWell(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: CircleAvatar(
-                backgroundColor: ColorUtil.primaryColor,
-                child: SvgIcon(
-                  icon: ImageUtil.leftwhiteicon,
-                ),
-              ),
-            ),
-          ],
+        leadingWidth: 44,
+        leading: Container(
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(width: 0.5,color: Color(0xFFC9CBD1)),
+          ),
+          child: SvgIcon(
+            icon: ImageUtil.leftblacksvg,
+          ),
         ),
+        backgroundColor: ColorUtil.primaryColor,
         actions: [
           TextButton(
             onPressed: () {

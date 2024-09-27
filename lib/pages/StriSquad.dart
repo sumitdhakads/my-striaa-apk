@@ -18,20 +18,6 @@ class MainStriSquad extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: CustomAppbar(
           title: "StriSquad",
-          leading: Row(
-            children: [
-              InkWell(
-                onTap: () {
-                  // Navigator.pop(context);
-                },
-                child: CircleAvatar(
-                  child: SvgIcon(
-                    icon: ImageUtil.left,
-                  ),
-                ),
-              ),
-            ],
-          ),
           action: InkWell(
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => CreatePost()));
@@ -144,7 +130,7 @@ class MainStriSquad extends StatelessWidget {
             // Comments and Likes buttons
             Row(
               children: [
-                Icon(Icons.comment_outlined, size: 18, color: Colors.grey),
+                ImageWidget(image: ImageUtil.commentpng,),
                 SizedBox(width: 5),
                 Text(
                   "Comments",
@@ -154,7 +140,7 @@ class MainStriSquad extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 20),
-                Icon(Icons.thumb_up_alt_outlined, size: 18, color: Colors.grey),
+                ImageWidget(image: ImageUtil.likepng,),
                 SizedBox(width: 5),
                 Text(
                   "Likes",

@@ -77,17 +77,24 @@ class DoctorCard extends StatelessWidget {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(
-                        color: Colors.grey, // Border color
-                        width: 0.7,         // Border width
+                        color: Color(0xFFC9CBD1), // Border color
+                        width: 0.5,         // Border width
                       ),
                     ),
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      child: ImageWidget(
-                        image: ImageUtil.callpng,
+                    child: Container(
+                      padding: EdgeInsets.all(7.5),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Color(0xFFC9CBD1), // Border color
+                          width: 0.5 ,         // Border width
+                        ),
+                      ),
+                        child: SvgIcon(
+                          icon: ImageUtil.callsvg,
+                        ),
                       )
-                    ),
-                  ),
+                  )
                 ],
               )
             ],

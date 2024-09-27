@@ -19,20 +19,6 @@ class Searchpage extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: CustomAppbar(
           title: "Striaa",
-          leading: Row(
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: CircleAvatar(
-                  child: SvgIcon(
-                    icon: ImageUtil.left,
-                  ),
-                ),
-              ),
-            ],
-          ),
         ),
       ),
       body: Container(

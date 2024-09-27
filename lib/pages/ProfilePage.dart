@@ -8,6 +8,7 @@ import 'package:striaa/pages/Terms&Condition.dart';
 import 'package:striaa/pages/language_selection.dart';
 import 'package:striaa/pages/login_Page.dart';
 import 'package:striaa/pages/newLanguage.dart';
+import 'package:striaa/widgets/togglebutton.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/CustomAppbar.dart';
@@ -29,20 +30,6 @@ class _ProfilePageState extends State<ProfilePage> {
         automaticallyImplyLeading: false,
         title: CustomAppbar(
           title: "My Profile",
-          leading: Row(
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: CircleAvatar(
-                  child: SvgIcon(
-                    icon: ImageUtil.left,
-                  ),
-                ),
-              ),
-            ],
-          ),
         ),
       ),
       body: SingleChildScrollView(
@@ -119,15 +106,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 profileOption(
                   icon: Icons.notifications_outlined,
                   label: "Enable/ Disable Notification",
-                  trailing: Switch(
-                    value: isNotificationEnabled,
-                    onChanged: (val) {
-                      setState(() {
-                        isNotificationEnabled = val; // Update the switch state
-                      });
-                    },
-                    activeColor: Colors.pink,
-                  ),
+                  trailing: CustomToggleButton(),
                   onTap: () {},
                 ),
                 profileOption(

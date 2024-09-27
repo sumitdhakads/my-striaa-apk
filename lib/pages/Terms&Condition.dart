@@ -16,20 +16,6 @@ class TermsCondition extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: CustomAppbar(
-          leading: Row(
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: CircleAvatar(
-                  child: SvgIcon(
-                    icon: ImageUtil.left,
-                  ),
-                ),
-              ),
-            ],
-          ),
         ),
       ),
       body: Padding(

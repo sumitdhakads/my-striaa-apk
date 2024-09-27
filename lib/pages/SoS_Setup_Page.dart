@@ -10,8 +10,35 @@ import 'package:striaa/widgets/dash.dart';
 import 'package:striaa/widgets/image.dart';
 import 'package:striaa/widgets/name&phoneContainer.dart';
 
-class SosSetupPage extends StatelessWidget {
+class SosSetupPage extends StatefulWidget {
   const SosSetupPage({super.key});
+
+  @override
+  State<SosSetupPage> createState() => _SosSetupPageState();
+}
+
+class _SosSetupPageState extends State<SosSetupPage> {
+  late FocusNode _focusNode;
+  bool _isFocused = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _focusNode = FocusNode();
+    _focusNode.addListener(_onFocusChange);
+  }
+
+  void _onFocusChange() {
+    setState(() {
+      _isFocused = _focusNode.hasFocus;
+    });
+  }
+
+  @override
+  void dispose() {
+    _focusNode.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,20 +47,6 @@ class SosSetupPage extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: CustomAppbar(
           title: "Set up SOS",
-          leading: Row(
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: CircleAvatar(
-                  child: SvgIcon(
-                    icon: ImageUtil.left,
-                  ),
-                ),
-              ),
-            ],
-          ),
         ),
       ),
       body: ListView(
@@ -78,10 +91,21 @@ class SosSetupPage extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(15),
+              // Only show border when focused
+              border: _isFocused
+                  ? Border.all(
+                color: ColorUtil.primaryColor, // Focused border color
+                width: 1, // Border thickness when focused
+              )
+                  : Border.all(
+                color: Colors.transparent, // No border when not focused
+                width: 0, // No thickness when not focused
+              ),
             ),
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextField(
+                focusNode: _focusNode,
                 decoration: InputDecoration(
                   hintText: "Enter your message",
                   border: InputBorder.none,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:striaa/pages/DoctorConsult.dart';
 import 'package:striaa/pages/StriaaPage.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
@@ -44,27 +45,32 @@ class Congratulation extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            Container(
-              padding: EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: ColorUtil.primaryColor,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Next Date of Check up",
-                    style: FontUtil.font14N(color: Color(0xFFFFFFFF)),
-                  ),
-                  SizedBox(
-                    height: 4,
-                  ),
-                  Text(
-                    "20 Dec,2023",
-                    style: FontUtil.font14SB(color: Color(0xFFFFFFFF)),
-                  ),
-                ],
+            InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorConsult()));
+              },
+              child: Container(
+                padding: EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: ColorUtil.primaryColor,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Next Date of Check up",
+                      style: FontUtil.font14N(color: Color(0xFFFFFFFF)),
+                    ),
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                      "20 Dec,2023",
+                      style: FontUtil.font14SB(color: Color(0xFFFFFFFF)),
+                    ),
+                  ],
+                ),
               ),
             ),
             SizedBox(

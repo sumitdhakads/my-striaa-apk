@@ -9,8 +9,8 @@ import 'package:striaa/widgets/PrefixTextFieldContainer.dart';
 import 'package:striaa/widgets/SuffixTextFieldContainer.dart';
 import 'package:striaa/widgets/TextFieldContainer.dart';
 import 'package:striaa/widgets/button.dart';
-import 'package:striaa/widgets/checkbox.dart';
 import 'package:striaa/widgets/image.dart';
+import 'package:striaa/widgets/newcheckbox.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -20,6 +20,9 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+  // State to track if the checkbox is checked
+  bool _isTermsAccepted = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,8 +32,7 @@ class _SignupPageState extends State<SignupPage> {
           width: appwidth(context),
           height: appHeight(context),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment
-                .spaceBetween, // Ensures the last element is at the bottom
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
                 children: [
@@ -41,52 +43,53 @@ class _SignupPageState extends State<SignupPage> {
                       style: FontUtil.font26SB(),
                     ),
                   ),
-                  Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Textfieldcontainer(
-                          title: "Name",
-                          hintText: "Enter your name",
-                        ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        Textfieldcontainer(
-                          title: "Email",
-                          hintText: "Enter your email",
-                        ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        PrefixTextFieldContainer(
-                            title: "Phone Number",
-                            hintText: "+91  |  Phone number",
-                            prefixicon: SvgIcon(
-                              icon: ImageUtil.indianFlag,
-                            )),
-                        SizedBox(height: 15),
-                        SuffixTextFieldContainer(
-                          suffixicon: SvgIcon(
-                            icon: ImageUtil.eyeicon,
-                          ),
-                          title: "Password",
-                          hintText: "Enter your password",
-                        ),
-                      ],
-                    ),
-                  ),
-                  Row(
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomCheckBox(),
-                      Text(
-                        "I agree to ",
-                        style: FontUtil.font12N(color: ColorUtil.textLightGrey),
+                      Textfieldcontainer(
+                        title: "Name",
+                        hintText: "Enter your name",
                       ),
-                      Text(
-                        "Terms and Conditions",
-                        style: FontUtil.font12N(),
+                      SizedBox(height: 15),
+                      Textfieldcontainer(
+                        title: "Email",
+                        hintText: "Enter your email",
+                      ),
+                      SizedBox(height: 15),
+                      PrefixTextFieldContainer(
+                        title: "Phone Number",
+                        hintText: "+91  |  Phone number",
+                        prefixicon: SvgIcon(icon: ImageUtil.indianFlag),
+                      ),
+                      SizedBox(height: 15),
+                      SuffixTextFieldContainer(
+                        suffixicon: SvgIcon(icon: ImageUtil.eyeicon),
+                        title: "Password",
+                        hintText: "Enter your password",
+                      ),
+                      SizedBox(height: 16),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          // Integrate the checkbox here
+                          NewCustomCheckbox(
+                            value: _isTermsAccepted,
+                            onChanged: (bool? newValue) {
+                              setState(() {
+                                _isTermsAccepted = newValue ?? false;
+                              });
+                            },
+                          ),
+                          SizedBox(width: 10),
+                          Text(
+                            "I agree to ",
+                            style: FontUtil.font12N(color: ColorUtil.textLightGrey),
+                          ),
+                          Text(
+                            "Terms and Conditions",
+                            style: FontUtil.font12N(),
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -95,10 +98,18 @@ class _SignupPageState extends State<SignupPage> {
                     width: appwidth(context),
                     child: ButtonWidget(
                       onPressed: () {
-                        Navigator.push(
+                        if (_isTermsAccepted) {
+                          Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => Otpverification()));
+                            MaterialPageRoute(builder: (context) => OtpVerification()),
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Please accept Terms and Conditions to continue'),
+                            ),
+                          );
+                        }
                       },
                       color: Theme.of(context).primaryColor,
                       text: 'Sign up',
@@ -107,8 +118,6 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                 ],
               ),
-        
-              // Moved the text to the bottom inside the Column
               Padding(
                 padding: const EdgeInsets.only(bottom: 20.0),
                 child: Row(
@@ -116,24 +125,23 @@ class _SignupPageState extends State<SignupPage> {
                   children: [
                     Text(
                       "Already have an account? ",
-                      style: FontUtil.font14SB(color: ColorUtil.textLightGrey),
+                      style: FontUtil.font16N(color: ColorUtil.textLightGrey),
                     ),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Login()));
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Login()),
+                        );
                       },
                       style: TextButton.styleFrom(
-                        padding:
-                            EdgeInsets.zero, // Remove padding from the TextButton
-                        minimumSize: Size(
-                            0, 0), // Ensure the button doesn't add extra space
-                        tapTargetSize: MaterialTapTargetSize
-                            .shrinkWrap, // Shrink the button's touch area
+                        padding: EdgeInsets.zero,
+                        minimumSize: Size(0, 0),
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                       ),
                       child: Text(
                         "Log in",
-                        style: FontUtil.font14SB(color: ColorUtil.primaryColor),
+                        style: FontUtil.font16SB(color: ColorUtil.primaryColor),
                       ),
                     ),
                   ],

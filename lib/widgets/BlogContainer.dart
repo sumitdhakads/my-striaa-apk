@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
@@ -43,18 +45,20 @@ class Blogcontainer extends StatelessWidget {
             Positioned(
               top: 5,
               right: 5,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                decoration: BoxDecoration(
-                  color: Colors.black54,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Text(
-                  date,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
+              child: ClipRRect( // ClipRRect is used to give the blur a proper border radius
+                borderRadius: BorderRadius.circular(10), // Same as the container's border radius
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0), // Control the amount of blur
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    decoration: BoxDecoration(
+                      color: Colors.black26.withOpacity(0.3), // Slight transparency
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      date,
+                      style: FontUtil.font12N(color: Colors.white),
+                    ),
                   ),
                 ),
               ),
@@ -78,7 +82,7 @@ class Blogcontainer extends StatelessWidget {
                       children: [
                         Text(
                           title,
-                          style: FontUtil.font14B(),
+                          style: FontUtil.font14SB(),
                         ),
                         SizedBox(height: 5),
                         Row(

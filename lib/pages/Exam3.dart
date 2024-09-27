@@ -23,21 +23,16 @@ class _Exam3State extends State<Exam3> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: ColorUtil.primaryColor,
-        leading: Row(
-          children: [
-            SizedBox(width: 5),
-            InkWell(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: CircleAvatar(
-                backgroundColor: ColorUtil.primaryColor,
-                child: SvgIcon(
-                  icon: ImageUtil.leftwhiteicon,
-                ),
-              ),
-            ),
-          ],
+        leadingWidth: 44,
+        leading: Container(
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(width: 0.5,color: Color(0xFFC9CBD1)),
+          ),
+          child: SvgIcon(
+            icon: ImageUtil.leftblacksvg,
+          ),
         ),
         actions: [
           TextButton(

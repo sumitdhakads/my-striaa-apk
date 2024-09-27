@@ -74,10 +74,10 @@ class ImageUtil {
   static String tenpoints = "assets/images/tenpoints.png";
 
   //Dr images
+
   static String dr1 = "assets/images/dr1.png";
   static String dr2 = "assets/images/dr2.png";
   static String dr3 = "assets/images/dr3.png";
-  static String dr4 = "assets/images/dr4.png";
   static String dr = "assets/images/dr.jpg";
   static String callpng = "assets/images/callpng.png";
   static String newdr2 = "assets/images/newdr2.jpg";
@@ -100,5 +100,36 @@ class ImageUtil {
   static String successfullreward = "assets/images/successfullreward.png";
 
   static String crossicon = "assets/svg/crossicon.svg";
+  static String audio = "assets/svg/audio.svg";
+  static String callsvg = "assets/svg/callsvg.svg";
+  static String leftblacksvg = "assets/svg/leftblacksvg.svg";
+  static String newbacksvg = "assets/svg/newbacksvg.svg";
+  static String bubble = "assets/images/bubble.png";
+
+  static String ticksvg = "assets/svg/tick.svg";
+  static String ligththreearrow = "assets/svg/ligththreearrow.svg";
+
+  //sos
+  static String pencilsvg = "assets/svg/pencilsvg.svg";
+  static String deletesvg = "assets/svg/deletesvg.svg";
+  static String greypencil = "assets/svg/greypencil.svg";
+  static String newsos1 = "assets/images/newsos.png";
+  static String newsos2 = "assets/images/newsos2.png";
+  static String newsos3 = "assets/images/newsos3.png";
 
 }
+//
+// Checkbox(
+// value: widget.value,
+// activeColor: ColorUtil.primaryColor,
+// onChanged: widget.onChanged,
+// shape: RoundedRectangleBorder(
+// borderRadius: BorderRadius.circular(5), // Custom shape
+// ),
+// side: MaterialStateBorderSide.resolveWith(
+// (states) => BorderSide(
+// width: 0.5, // Reduced border width
+// color: Colors.black, // Border color
+// ),
+// ),
+// ),

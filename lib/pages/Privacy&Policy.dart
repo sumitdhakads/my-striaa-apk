@@ -15,22 +15,7 @@ class PrivacyPolicy extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: CustomAppbar(
-          leading: Row(
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: CircleAvatar(
-                  child: SvgIcon(
-                    icon: ImageUtil.left,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
+        title: CustomAppbar(),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: leftRightAppPadding),

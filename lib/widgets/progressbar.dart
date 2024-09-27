@@ -11,13 +11,20 @@ class ProgressBar extends StatelessWidget {
     return Container(
       height: 4.0,
       width: double.infinity,
-      color: ColorUtil.primaryColor
-          .withOpacity(0.5), // Light pink progress background
+      decoration: BoxDecoration(
+        color: ColorUtil.primaryColor
+            .withOpacity(0.5),
+        borderRadius: BorderRadius.circular(5),
+      ),
       child: FractionallySizedBox(
         alignment: Alignment.topLeft,
         widthFactor: progress, // Adjust this for actual progress percentage
         child: Container(
-          color: ColorUtil.primaryColor, // Actual progress
+          decoration: BoxDecoration(
+            color: ColorUtil.primaryColor,//Actual Progress  
+            borderRadius: BorderRadius.circular(5)
+          ),
+          
         ),
       ),
     );

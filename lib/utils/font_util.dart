@@ -38,11 +38,12 @@ class FontUtil {
 
   // Font Size 26 ------- FontWeight Semi Bold
 
-  static TextStyle font26SB({Color? color}){
+  static TextStyle font26SB({Color? color,double? height}){
     return TextStyle(
         fontFamily: 'Inter',
         fontSize: 26,
         letterSpacing: 0,
+        height:height ?? 1,
         fontWeight: FontWeight.w600,
         color: color ?? (isDark(navkey!.currentState!.context) ? Colors.white : Colors.black)
     );
@@ -205,7 +206,7 @@ class FontUtil {
 
   // Font Size 14 ------- FontWeight Normal
 
-  static TextStyle font14N({Color? color}){
+  static TextStyle font14M({Color? color,}){
     return TextStyle(
         fontFamily: 'Inter',
         fontSize: 14,
@@ -215,16 +216,43 @@ class FontUtil {
   }
 
 
+  static TextStyle font14N({Color? color,double? height}){
+    return TextStyle(
+        fontFamily: 'Inter',
+        fontSize: 14,
+        height: height,
+        fontWeight: FontWeight.w400,
+        color: color ?? (isDark(navkey!.currentState!.context) ? Colors.white : Colors.black)
+    );
+  }
+
+
+
 // Font Size 12 ------- FontWeight Normal
 
-  static TextStyle font12N({Color? color}){
+  static TextStyle font12N({Color? color,double? height}){
     return TextStyle(
       fontFamily: 'Inter',
       fontSize: 12,
+      height: height,
       fontWeight: FontWeight.w500,
       color: color ?? (isDark(navkey!.currentState!.context) ? Colors.white : Colors.black)
     );
   }
+
+
+// Font Size 12 ------- FontWeight Normal
+
+  static TextStyle font12M({Color? color}){
+    return TextStyle(
+        fontFamily: 'Inter',
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        color: color ?? (isDark(navkey!.currentState!.context) ? Colors.white : Colors.black)
+    );
+  }
+
+
 
   // Font Size 12 ------- FontWeight Semi Bold
 

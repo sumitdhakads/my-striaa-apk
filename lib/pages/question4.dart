@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:striaa/pages/StriaaPage.dart';
 import 'package:striaa/pages/question5.dart';
+import 'package:striaa/pages/registrationCompleted.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
 import 'package:striaa/utils/image_util.dart';
+import 'package:striaa/widgets/CustomAppbar.dart';
 import 'package:striaa/widgets/Radiobutton.dart';
 import 'package:striaa/widgets/button.dart';
 import 'package:striaa/widgets/dash.dart';
@@ -45,36 +47,17 @@ class _Question4State extends State<Question4> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: ColorUtil.primaryColor,
-        leading: Row(
-          children: [
-            SizedBox(width: 5),
-            InkWell(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: CircleAvatar(
-                backgroundColor: ColorUtil.primaryColor,
-                child: SvgIcon(
-                  icon: ImageUtil.leftwhiteicon,
-                ),
-              ),
-            ),
-          ],
+      appBar: CustomAppbar(
+        icon: ImageUtil.leftwhiteicon,
+        heigth: 72,
+        bgcolor: ColorUtil.primaryColor,
+        action: Padding(
+          padding: const EdgeInsets.only(right: 15),
+          child: Text("Skip",style: FontUtil.font16N(color: Colors.white),),
         ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => StriaaPage()));
-            },
-            child: Text(
-              'Skip',
-              style: FontUtil.font16N(color: Colors.white),
-            ),
-          ),
-        ],
+        actiononTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationCompleted()));
+        },
       ),
       body: Container(
         color: ColorUtil.primaryColor,
@@ -166,7 +149,7 @@ class _Question4State extends State<Question4> {
                     SizedBox(height: 30),
                     Text(
                       'When was the last time you had a Breast Examination?',
-                      style: FontUtil.font26SB(),
+                      style: FontUtil.font26SB(height: 1.2),
                     ),
                     SizedBox(height: 20),
 

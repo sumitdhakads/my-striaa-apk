@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:striaa/pages/StriaaPage.dart';
 import 'package:striaa/pages/question3.dart';
+import 'package:striaa/pages/registrationCompleted.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
@@ -25,37 +26,17 @@ class _Question2State extends State<Question2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: ColorUtil.primaryColor,
-        leading: Row(
-          children: [
-            SizedBox(width: 5),
-            InkWell(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: CircleAvatar(
-                backgroundColor: ColorUtil.primaryColor,
-                child: SvgIcon(
-                  icon: ImageUtil.leftwhiteicon,
-                ),
-              ),
-            ),
-          ],
+      appBar:CustomAppbar(
+        icon: ImageUtil.leftwhiteicon,
+        heigth: 72,
+        bgcolor: ColorUtil.primaryColor,
+        action: Padding(
+          padding: const EdgeInsets.only(right: 15),
+          child: Text("Skip",style: FontUtil.font16N(color: Colors.white),),
         ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => StriaaPage()));
-            },
-            child: Text(
-              'Skip',
-              style: FontUtil.font16N(color: Colors.white),
-            ),
-          ),
-        ],
+        actiononTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationCompleted()));
+        },
       ),
       body: Container(
         color: ColorUtil.primaryColor,
@@ -82,7 +63,7 @@ class _Question2State extends State<Question2> {
                     SizedBox(height: 30),
                     Text(
                       'Has any one from your family ever been diagnosed with cancer?',
-                      style: FontUtil.font26SB(),
+                      style: FontUtil.font26SB(height: 1.2),
                     ),
                     SizedBox(height: 30),
 
@@ -98,8 +79,8 @@ class _Question2State extends State<Question2> {
                     SizedBox(height: 30),
                     DashedLine(width: MediaQuery.of(context).size.width),
                     // Conditionally show text fields if 'Yes' is selected
+                      SizedBox(height: 30,),
                     if (_showTextFields) ...[
-                      SizedBox(height: 60),
                       _buildTextField('If yes, who?', _familyMemberController),
                       SizedBox(height: 15),
                       _buildTextField('Which cancer?', _cancerTypeController),
@@ -163,34 +144,39 @@ class _Question2State extends State<Question2> {
     );
   }
 
-  // Helper function to build text fields
+// Helper function to build text fields
   Widget _buildTextField(String label, TextEditingController controller) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            label,
-            style: FontUtil.font14SB(),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          TextField(
-            controller: controller,
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: Colors.white,
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide.none,
-              ),
-              contentPadding:
-              EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
+          style: FontUtil.font14M(),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        TextField(
+          controller: controller,
+          decoration: InputDecoration(
+            filled: true,
+            fillColor: Colors.white,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(30),
+              borderSide: BorderSide.none,
+            ),
+            contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+
+            // When the text field is focused
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(30),
+              borderSide: BorderSide(color: ColorUtil.primaryColor, width: 1), // Custom color and width for focused state
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
+
+

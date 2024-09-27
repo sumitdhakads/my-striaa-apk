@@ -27,7 +27,7 @@ class Postcontainer extends StatelessWidget {
               bottom: 12,
               child: Text(
                 text,
-                style: FontUtil.font14B(color: Colors.white),
+                style: FontUtil.font14SB(color: Colors.white),
               ),
             ),
           ],

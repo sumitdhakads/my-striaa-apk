@@ -33,14 +33,39 @@ class Sos2 extends StatelessWidget {
             ),
             Center(
               child: ImageWidget(
-                image: ImageUtil.sostwo,
+                image: ImageUtil.newsos2,
               ),
             ),
             Spacer(),
-            ButtonWidget(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const SosActivated()));
-            },color: ColorUtil.primaryColor,
-              text: "Side to cancel  >>",textColor: Colors.white,),
+            SizedBox(
+              width: appwidth(context),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SosActivated()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: ColorUtil.primaryColor,
+                  elevation: 0,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Skip in to home in 5 second",
+                        style: FontUtil.font16M(color: Colors.white),
+                      ),
+                      SizedBox(width: 10),
+                      SvgIcon(icon: ImageUtil.ligththreearrow), // Missing comma and closing parenthesis here
+                    ],
+                  ),
+                ),
+              ),
+            ),
             SizedBox(height: 25,),
           ],
         ),

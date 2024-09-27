@@ -3,6 +3,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:striaa/pages/StriaaPage.dart';
 import 'package:striaa/pages/question6.dart';
+import 'package:striaa/pages/registrationCompleted.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
@@ -28,37 +29,17 @@ class _Question5State extends State<Question5> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: ColorUtil.primaryColor,
-        leading: Row(
-          children: [
-            SizedBox(width: 5),
-            InkWell(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: CircleAvatar(
-                backgroundColor: ColorUtil.primaryColor,
-                child: SvgIcon(
-                  icon: ImageUtil.leftwhiteicon,
-                ),
-              ),
-            ),
-          ],
+      appBar: CustomAppbar(
+        icon: ImageUtil.leftwhiteicon,
+        heigth: 72,
+        bgcolor: ColorUtil.primaryColor,
+        action: Padding(
+          padding: const EdgeInsets.only(right: 15),
+          child: Text("Skip",style: FontUtil.font16N(color: Colors.white),),
         ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => StriaaPage()));
-            },
-            child: Text(
-              'Skip',
-              style: FontUtil.font16N(color: Colors.white),
-            ),
-          ),
-        ],
+        actiononTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationCompleted()));
+        },
       ),
       body: Container(
         color: ColorUtil.primaryColor,
@@ -82,7 +63,7 @@ class _Question5State extends State<Question5> {
                     SizedBox(height: 30),
                     Text(
                       'Please share Result of any Mammogram or USG Breasts done earlier',
-                      style: FontUtil.font26SB(),
+                      style: FontUtil.font26SB(height: 1.2),
                     ),
                     SizedBox(height: 20),
                     _buildRadioButtonRow('Upload File', 'Upload File'),
@@ -94,7 +75,7 @@ class _Question5State extends State<Question5> {
                       OurDropdown(),
                       SizedBox(height: 15),
                       Container(
-                          width: appwidth(context)/2,
+                          width: appwidth(context)/2.6,
                           child: OurFilepicker()
                       ),
                     ],

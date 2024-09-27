@@ -23,31 +23,14 @@ class _PersonalDetailsState extends State<PersonalDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: CustomAppbar(
+      appBar:CustomAppbar(
           title: "Personal details",
-          leading: Row(
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: CircleAvatar(
-                  child: SvgIcon(
-                    icon: ImageUtil.left,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: leftRightAppPadding),
         children: [
           Container(
-            margin: EdgeInsets.only(top: 30),
+            margin: EdgeInsets.only(top: 18),
             child: Textfieldcontainer(
               title: "Age*",
               hintText: "Enter your age",
@@ -73,7 +56,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
           Textfieldcontainer(title: "State*", hintText: "Enter your State"),
           SizedBox(height: 15),
           Textfieldcontainer(
-              title: "Blood Group*", hintText: "Enter your blood group"),
+              title: "Blood Group", hintText: "Enter your blood group"),
           SizedBox(height: 60), // Spacing to ensure no content is cut off
         ],
       ),
@@ -104,24 +87,28 @@ class _PersonalDetailsState extends State<PersonalDetails> {
         Text("Gender*",style: FontUtil.font14SB(),),
         SizedBox(height: 10,),
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.only(left: 20,right: 10),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(40),
           ),
           child: DropdownButtonFormField<String>(
+            style: FontUtil.font14N(),
             value: _selectedGender,
             decoration: InputDecoration(
-
+         suffixIcon: Padding(
+           padding: EdgeInsets.symmetric(vertical: 12),
+           child: SvgIcon(icon: ImageUtil.downicon),
+         ),
               border: InputBorder.none,
-              contentPadding: EdgeInsets.only(bottom: 10),
+              contentPadding: EdgeInsets.only(bottom: 10,top: 10),
               hintText: 'Select your gender',
-              hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
+              hintStyle: FontUtil.font12N(color: ColorUtil.textLightGrey,),
             ),
             items: ['Male', 'Female', 'Other'].map((String value) {
               return DropdownMenuItem<String>(
                 value: value,
-                child: Text(value),
+                child: Text(value,style:FontUtil.font14N(),),
               );
             }).toList(),
             onChanged: (newValue) {
@@ -129,10 +116,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                 _selectedGender = newValue;
               });
             },
-            icon: Padding(
-              padding: const EdgeInsets.only(top: 8),
-              child: SvgIcon(icon: ImageUtil.downicon),
-            ), // Custom icon for the dropdown
+            icon: SizedBox(),
           ),
         ),
       ],

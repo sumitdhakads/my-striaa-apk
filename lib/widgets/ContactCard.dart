@@ -39,18 +39,14 @@ class ContactCard extends StatelessWidget {
                   children: [
                     Text(
                       "CONTACT $contactNumber",
-                      style: FontUtil.font12N(color: ColorUtil.primaryColor),
+                      style: FontUtil.font12M(color: ColorUtil.primaryColor),
                     ),
                     // Pencil and delete icon on the same line as "CONTACT"
                     Row(
                       children: [
-                        ImageWidget(
-                          image: ImageUtil.blackpencil,
-                        ),
+                       SvgIcon(icon: ImageUtil.pencilsvg),
                         SizedBox(width: 12),
-                        ImageWidget(
-                          image: ImageUtil.deletepng,
-                        ),
+                        SvgIcon(icon: ImageUtil.deletesvg)
                       ],
                     ),
                   ],

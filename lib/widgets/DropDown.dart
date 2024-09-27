@@ -23,18 +23,19 @@ class _OurDropdownState extends State<OurDropdown> {
         borderRadius: BorderRadius.circular(40),
       ),
       child: DropdownButtonFormField<String>(
+        style: FontUtil.font14N(),
         value: _selectedDropdownValue,
         decoration: InputDecoration(
           border: InputBorder.none,
-          contentPadding: EdgeInsets.only(bottom: 10), // Vertically centers the hint
+          contentPadding: EdgeInsets.symmetric(vertical: 10), // Vertically centers the hint
           alignLabelWithHint: true, // Ensures hint is aligned with input text
           hintText: 'Select BIRADS Level',
-          hintStyle: FontUtil.font12SB(color: ColorUtil.textLightGrey),
+          hintStyle: FontUtil.font12N(color: ColorUtil.textLightGrey),
         ),
         items: dropdownItems.map((String value) {
           return DropdownMenuItem<String>(
             value: value,
-            child: Text(value),
+            child: Text(value,style: FontUtil.font12N(),),
           );
         }).toList(),
         onChanged: (newValue) {

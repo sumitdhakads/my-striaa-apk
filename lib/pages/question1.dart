@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:striaa/pages/StriaaPage.dart';
 import 'package:striaa/pages/question2.dart';
+import 'package:striaa/pages/registrationCompleted.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/CheckboxContainer.dart';
+import 'package:striaa/widgets/CustomAppbar.dart';
 import 'package:striaa/widgets/button.dart';
 import 'package:striaa/widgets/image.dart';
 import 'package:striaa/widgets/progressbar.dart';
@@ -21,42 +23,21 @@ class _Question1State extends State<Question1> {
   bool _isThyroidChecked = false;
   bool _isHighBPChecked = false;
   bool _isLowBPChecked = false;
-  bool _ishalwa = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: ColorUtil.primaryColor,
-        leading: Row(
-          children: [
-            SizedBox(width: 5),
-            InkWell(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: CircleAvatar(
-                backgroundColor: ColorUtil.primaryColor,
-                child: SvgIcon(
-                  icon: ImageUtil.leftwhiteicon,
-                ),
-              ),
-            ),
-          ],
+      appBar: CustomAppbar(
+        bgcolor: ColorUtil.primaryColor,
+        icon: ImageUtil.leftwhiteicon,
+        heigth: 72,
+        action: Padding(
+          padding: const EdgeInsets.only(right: 15),
+          child: Text("Skip",style: FontUtil.font16N(color: Colors.white),),
         ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => StriaaPage()));
-            },
-            child: Text(
-              'Skip',
-              style: FontUtil.font16N(color: Colors.white),
-            ),
-          ),
-        ],
+        actiononTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationCompleted()));
+        },
       ),
       body: Container(
         color: ColorUtil.primaryColor,
@@ -86,7 +67,7 @@ class _Question1State extends State<Question1> {
                     SizedBox(height: 30),
                     Text(
                       'Are you suffering from any of the below?',
-                      style: FontUtil.font26SB(),
+                      style: FontUtil.font26SB(height: 1.2),
                     ),
 
                     SizedBox(height: 30),
@@ -123,6 +104,7 @@ class _Question1State extends State<Question1> {
                     SizedBox(
                       height: 15,
                     ),
+
                     Checkboxcontainer(
                         title: 'Low blood pressure',
                         value: _isLowBPChecked,

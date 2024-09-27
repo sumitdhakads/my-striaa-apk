@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:striaa/pages/SoS_Setup_Page.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
@@ -18,21 +19,6 @@ class SosContactPage extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: CustomAppbar(
           title: "Contact",
-          leading: Row(
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: CircleAvatar(
-                  backgroundColor: Colors.grey.shade200,
-                  child: SvgIcon(
-                    icon: ImageUtil.left,
-                  ),
-                ),
-              ),
-            ],
-          ),
         ),
       ),
       body: Container(
@@ -61,13 +47,18 @@ class SosContactPage extends StatelessWidget {
             TextButton.icon(
               onPressed: () {
                 // Add contact functionality
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SosSetupPage()));
               },
-              icon: Icon(Icons.add, color: ColorUtil.primaryColor),
+              icon: Icon(Icons.add, color: ColorUtil.primaryColor,size: 20,),
               label: Text(
                 "Add new contact",
-                style: FontUtil.font16SB(color: ColorUtil.primaryColor),
+                style: FontUtil.font14M(color: ColorUtil.primaryColor),
+              ),
+              style: ButtonStyle(
+                padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.zero),
               ),
             ),
+
 
             SizedBox(height: 20),
             DashedLine(width: double.infinity),
@@ -79,16 +70,14 @@ class SosContactPage extends StatelessWidget {
               children: [
                 Text(
                   "Emergency message",
-                  style: FontUtil.font16B(),
+                  style: FontUtil.font16SB(),
                 ),
-                ImageWidget(
-                  image: ImageUtil.blackpencil,
-                )
+                SvgIcon(icon: ImageUtil.greypencil)
               ],
             ),
             SizedBox(height: 10),
             Container(
-              padding: EdgeInsets.all(12),
+              padding: EdgeInsets.symmetric(vertical: 17,horizontal: 20),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 color: Colors.white,
@@ -98,7 +87,7 @@ class SosContactPage extends StatelessWidget {
                     " sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     " Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi"
                     " ut aliquip ex ea commodo consequat.",
-                style: FontUtil.font14N(color: ColorUtil.textLightGrey),
+                style: FontUtil.font12M(),
                 textAlign: TextAlign.justify,
               ),
             ),

@@ -8,6 +8,7 @@ import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/SuffixTextFieldContainer.dart';
 import 'package:striaa/widgets/TextFieldContainer.dart';
 import 'package:striaa/widgets/button.dart';
+import 'package:striaa/widgets/dash.dart';
 import 'package:striaa/widgets/image.dart';
 
 class Login extends StatefulWidget {
@@ -32,13 +33,13 @@ class _LoginState extends State<Login> {
             children: [
               Column(
                 children: [
-                  Container(
-                    margin: EdgeInsets.only(top: 80, bottom: 60),
-                    child: Text(
-                      "Log in",
-                      style: FontUtil.font26SB(),
-                    ),
-                  ),
+                 Padding(
+                   padding: const EdgeInsets.only(top: 80,bottom: 60),
+                   child: Text(
+                        "Log in",
+                        style: FontUtil.font26SB(),
+                      ),
+                 ),
                   Container(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -90,9 +91,17 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   SizedBox(height: 30),
-                  Text(
-                    "OR",
-                    style: FontUtil.font14N(),
+                  Row(
+                    children: [
+                      DashedLine(width: appwidth(context)/2.388),
+                      Center(
+                        child: Text(
+                          " OR ",
+                          style: FontUtil.font14N(),
+                        ),
+                      ),
+                      DashedLine(width: appwidth(context)/2.388),
+                    ],
                   ),
                   SizedBox(height: 30),
                   Container(
@@ -153,7 +162,7 @@ class _LoginState extends State<Login> {
                           },
                           child: Container(
                             padding: EdgeInsets.symmetric(
-                                vertical: 14, horizontal: 35),
+                                vertical: 14, horizontal: 40),
                             decoration: BoxDecoration(
                               color: Colors.black,
                               borderRadius: BorderRadius.circular(58),
@@ -184,11 +193,11 @@ class _LoginState extends State<Login> {
                   children: [
                     Text(
                       "Sign up ",
-                      style: FontUtil.font14SB(color: ColorUtil.primaryColor),
+                      style: FontUtil.font16SB(color: ColorUtil.primaryColor),
                     ),
                     Text(
                       "of Doctors and Professionals",
-                      style: FontUtil.font14SB(color: ColorUtil.textLightGrey),
+                      style: FontUtil.font16N(color: ColorUtil.textLightGrey),
                     ),
                   ],
                 ),
@@ -200,11 +209,3 @@ class _LoginState extends State<Login> {
     );
   }
 }
-
-// Row(
-// children: [
-// // SvgIcon(icon: ImageUtil.locator),
-// Icon(Icons.pin_drop,color: ColorUtil.primaryColor,),
-// Text("Carter Street Fairview Heights..",style: FontUtil.font12N(color: ColorUtil.textLightGrey,)),
-// ],
-// )

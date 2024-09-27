@@ -19,20 +19,6 @@ class CreatePost extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: CustomAppbar(
           title: "Create Post",
-          leading: Row(
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: CircleAvatar(
-                  child: SvgIcon(
-                    icon: ImageUtil.left,
-                  ),
-                ),
-              ),
-            ],
-          ),
         ),
       ),
       body: Container(

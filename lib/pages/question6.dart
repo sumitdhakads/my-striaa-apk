@@ -43,7 +43,7 @@ class _Question6State extends State<Question6> {
                     SizedBox(height: 74),
                     Text(
                       'Please share Result of any Mammogram or USG Breasts done earlier',
-                      style: FontUtil.font26SB(),
+                      style: FontUtil.font26SB(height: 1.2),
                     ),
                     SizedBox(height: 30),
                     // Dropdown Button
@@ -51,7 +51,7 @@ class _Question6State extends State<Question6> {
                     SizedBox(height: 15),
                     // File Picker Button
                     Container(
-                        width: appwidth(context)/2,
+                        width: appwidth(context)/2.6,
                         child: OurFilepicker()
                     ),
                     SizedBox(height: 15),

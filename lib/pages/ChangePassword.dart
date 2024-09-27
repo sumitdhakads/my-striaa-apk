@@ -17,21 +17,6 @@ class ChangePassword extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: CustomAppbar(
           title: "Change Password",
-          leading:  Row(
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: CircleAvatar(
-                  backgroundColor: Colors.grey.shade200,
-                  child: SvgIcon(
-                    icon: ImageUtil.left,
-                  ),
-                ),
-              ),
-            ],
-          ),
         ),
       ),
       body: Container(

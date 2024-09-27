@@ -19,20 +19,6 @@ class Reward extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: CustomAppbar(
           title: "Reward",
-          leading: Row(
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: CircleAvatar(
-                  child: SvgIcon(
-                    icon: ImageUtil.left,
-                  ),
-                ),
-              ),
-            ],
-          ),
         ),
       ),
       body: Container(

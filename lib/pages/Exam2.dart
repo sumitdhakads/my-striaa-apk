@@ -19,20 +19,6 @@ class Exam2 extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: CustomAppbar(
           title: "Exam",
-          leading: Row(
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: CircleAvatar(
-                  child: SvgIcon(
-                    icon: ImageUtil.left,
-                  ),
-                ),
-              ),
-            ],
-          ),
         ),
       ),
       body: SingleChildScrollView(

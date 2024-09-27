@@ -28,7 +28,7 @@ class _OurFilepickerState extends State<OurFilepicker> {
         }
       },
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 14, horizontal: 40),
+        padding: EdgeInsets.symmetric(vertical: 12.5, horizontal: 20),
         decoration: BoxDecoration(
           color: Colors.black,
           borderRadius: BorderRadius.circular(40),
@@ -39,7 +39,7 @@ class _OurFilepickerState extends State<OurFilepicker> {
             SizedBox(width: 10),
             Text(
               _selectedFile == null ? "Upload File" : _selectedFile!,
-              style: FontUtil.font12SB(color: Colors.white),
+              style: FontUtil.font12N(color: Colors.white),
             ),
           ],
         ),

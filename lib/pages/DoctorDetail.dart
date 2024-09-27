@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:striaa/pages/StriaaPage.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
@@ -21,16 +22,21 @@ class Doctordetail extends StatelessWidget {
           ListView(
             children: [
               // Image container
-              Container(
-                height: 300,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(35),
-                    bottomRight: Radius.circular(35),
-                  ),
-                  image: DecorationImage(
-                    image: AssetImage(ImageUtil.drjullie),
-                    fit: BoxFit.cover,
+              InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => StriaaPage()));
+                },
+                child: Container(
+                  height: 300,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(35),
+                      bottomRight: Radius.circular(35),
+                    ),
+                    image: DecorationImage(
+                      image: AssetImage(ImageUtil.drjullie),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),

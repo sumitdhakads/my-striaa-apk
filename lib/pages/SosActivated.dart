@@ -35,7 +35,7 @@ class SosActivated extends StatelessWidget {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => const SosContactPage()));
                 },
                 child: ImageWidget(
-                  image: ImageUtil.sosactivatedpng,
+                  image: ImageUtil.newsos3,
                 ),
               ),
             ),
