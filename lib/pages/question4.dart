@@ -149,7 +149,7 @@ class _Question4State extends State<Question4> {
                     SizedBox(height: 30),
                     Text(
                       'When was the last time you had a Breast Examination?',
-                      style: FontUtil.font26SB(height: 1.2),
+                      style: FontUtil.font26SB(height: 1.38),
                     ),
                     SizedBox(height: 20),
 

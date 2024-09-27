@@ -1,7 +1,5 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:striaa/pages/DoctorConsult.dart';
 import 'package:striaa/pages/Exam1.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
@@ -22,11 +20,8 @@ class _SelfCheckupPageState extends State<SelfCheckupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: CustomAppbar(
-          title: "Self Checkup",
-        ),
+      appBar: CustomAppbar(
+        title: "Self Checkup",
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: leftRightAppPadding),

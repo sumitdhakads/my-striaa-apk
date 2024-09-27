@@ -67,7 +67,7 @@ class _Question1State extends State<Question1> {
                     SizedBox(height: 30),
                     Text(
                       'Are you suffering from any of the below?',
-                      style: FontUtil.font26SB(height: 1.2),
+                      style: FontUtil.font26SB(height: 1.38),
                     ),
 
                     SizedBox(height: 30),

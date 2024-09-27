@@ -34,6 +34,7 @@ class _OurFilepickerState extends State<OurFilepicker> {
           borderRadius: BorderRadius.circular(40),
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgIcon(icon: ImageUtil.uploadicon),
             SizedBox(width: 10),

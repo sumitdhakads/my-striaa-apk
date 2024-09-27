@@ -117,19 +117,17 @@ class ImageUtil {
   static String newsos2 = "assets/images/newsos2.png";
   static String newsos3 = "assets/images/newsos3.png";
 
+  static String calendarsvg = "assets/svg/calendarsvg.svg";
+  static String locationsvg = "assets/svg/locationsvg.svg";
+  static String sharesvg = "assets/svg/sharesvg.svg";
+  static String editsvg = "assets/svg/editsvg.svg";
+  static String commentsvg = "assets/svg/commentsvg.svg";
+  static String likesvg = "assets/svg/likesvg.svg";
+  static String attachmentsvg = "assets/svg/attachmentsvg.svg";
+  static String smilysvg = "assets/svg/smilysvg.svg";
+  static String sendsvg = "assets/svg/sendsvg.svg";
+  static String forwardsvg = "assets/svg/forwardsvg.svg";
+  static String personpng = "assets/images/personpng.png";
+
+
 }
-//
-// Checkbox(
-// value: widget.value,
-// activeColor: ColorUtil.primaryColor,
-// onChanged: widget.onChanged,
-// shape: RoundedRectangleBorder(
-// borderRadius: BorderRadius.circular(5), // Custom shape
-// ),
-// side: MaterialStateBorderSide.resolveWith(
-// (states) => BorderSide(
-// width: 0.5, // Reduced border width
-// color: Colors.black, // Border color
-// ),
-// ),
-// ),

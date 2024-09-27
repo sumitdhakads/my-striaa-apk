@@ -9,17 +9,36 @@ import 'package:striaa/widgets/TextFieldContainer.dart';
 import 'package:striaa/widgets/button.dart';
 import 'package:striaa/widgets/image.dart';
 
-class CreatePost extends StatelessWidget {
+class CreatePost extends StatefulWidget {
   const CreatePost({super.key});
+
+  @override
+  State<CreatePost> createState() => _CreatePostState();
+}
+
+class _CreatePostState extends State<CreatePost> {
+  late FocusNode _focusNode;
+  bool _isFocused = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _focusNode = FocusNode();
+    _focusNode.addListener(_onFocusChange);
+  }
+
+  void _onFocusChange() {
+    setState(() {
+      _isFocused = _focusNode.hasFocus;
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: CustomAppbar(
-          title: "Create Post",
-        ),
+      appBar: CustomAppbar(
+        title: "Create Post",
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: leftRightAppPadding),
@@ -36,9 +55,20 @@ class CreatePost extends StatelessWidget {
               height: 233,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(12)
+                borderRadius: BorderRadius.circular(12),
+                // Only show border when focused
+                border: _isFocused
+                    ? Border.all(
+                  color: ColorUtil.primaryColor, // Focused border color
+                  width: 1, // Border thickness when focused
+                )
+                    : Border.all(
+                  color: Colors.transparent, // No border when not focused
+                  width: 0, // No thickness when not focused
+                ),
               ),
               child: TextField(
+                focusNode: _focusNode,
                 decoration: InputDecoration(
                   hintText: "Enter description text",
                   hintStyle: FontUtil.font12N(color: ColorUtil.textLightGrey),
@@ -50,7 +80,7 @@ class CreatePost extends StatelessWidget {
             Text("Add image",style: FontUtil.font14SB(),),
             SizedBox(height: 10,),
             Container(
-                width: appwidth(context)/2,
+                width: appwidth(context)/2.4,
                 child: OurFilepicker()
             ),
             Spacer(),

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:striaa/pages/Congratulation.dart';
 import 'package:striaa/pages/Exam4.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
 import 'package:striaa/utils/image_util.dart';
+import 'package:striaa/widgets/CustomAppbar.dart';
 import 'package:striaa/widgets/Radiobutton.dart';
 import 'package:striaa/widgets/button.dart';
 import 'package:striaa/widgets/image.dart';
@@ -20,32 +22,17 @@ class _Exam3State extends State<Exam3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: ColorUtil.primaryColor,
-        leadingWidth: 44,
-        leading: Container(
-          padding: EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            border: Border.all(width: 0.5,color: Color(0xFFC9CBD1)),
-          ),
-          child: SvgIcon(
-            icon: ImageUtil.leftblacksvg,
-          ),
+      appBar: CustomAppbar(
+        icon: ImageUtil.leftwhiteicon,
+        heigth: 72,
+        bgcolor: ColorUtil.primaryColor,
+        action: Padding(
+          padding: const EdgeInsets.only(right: 15),
+          child: Text("Skip",style: FontUtil.font16N(color: Colors.white),),
         ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Exam4()));
-            },
-            child: Text(
-              'Skip',
-              style: FontUtil.font16N(color: Colors.white),
-            ),
-          ),
-        ],
+        actiononTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => Congratulation()));
+        },
       ),
       body: Container(
         color: ColorUtil.primaryColor,
@@ -70,7 +57,7 @@ class _Exam3State extends State<Exam3> {
                     SizedBox(height: 30),
                     Text(
                       'Did you find any nipple discharge?',
-                      style: FontUtil.font26SB(),
+                      style: FontUtil.font26SB(height: 1.38),
                     ),
                     SizedBox(height: 20),
 

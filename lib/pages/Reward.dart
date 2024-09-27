@@ -15,11 +15,8 @@ class Reward extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: CustomAppbar(
-          title: "Reward",
-        ),
+      appBar: CustomAppbar(
+        title: "Reward",
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: leftRightAppPadding),

@@ -8,6 +8,8 @@ import 'package:striaa/pages/Terms&Condition.dart';
 import 'package:striaa/pages/language_selection.dart';
 import 'package:striaa/pages/login_Page.dart';
 import 'package:striaa/pages/newLanguage.dart';
+import 'package:striaa/utils/app_utils.dart';
+import 'package:striaa/widgets/dash.dart';
 import 'package:striaa/widgets/togglebutton.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/image_util.dart';
@@ -25,12 +27,8 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink[50], // Light pink background color
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: CustomAppbar(
-          title: "My Profile",
-        ),
+      appBar: CustomAppbar(
+        title: "My Profile",
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -38,14 +36,17 @@ class _ProfilePageState extends State<ProfilePage> {
             const SizedBox(height: 20), // Spacing
 
             // Profile picture and name
-            CircleAvatar(
-              radius: 50,
-              backgroundColor: Colors.grey[300],
-              child: Icon(
-                Icons.person,
-                size: 60,
-                color: Colors.grey[700],
-              ),
+            Container(
+              height: 120,
+              width: 120,
+             decoration: BoxDecoration(
+               color: Colors.grey[300],
+               shape: BoxShape.circle,
+               image: DecorationImage(
+                 image: AssetImage(ImageUtil.personpng),
+                 fit:BoxFit.cover,
+               )
+             ),
             ),
             const SizedBox(height: 10), // Spacing
             const Text(
@@ -56,12 +57,12 @@ class _ProfilePageState extends State<ProfilePage> {
                 color: Colors.black,
               ),
             ),
-            const SizedBox(height: 20), // Spacing
-
-            Divider(
-              color: Colors.grey[300],
-              thickness: 1,
+            const SizedBox(height: 30), // Spacing
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: DashedLine(width: appwidth(context)),
             ),
+            SizedBox(height: 20,),
 
             // The rest of the scrollable content
             ListView(
@@ -170,11 +171,7 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
       ),
       trailing: trailing ??
-          const Icon(
-            Icons.arrow_forward_ios,
-            size: 16,
-            color: Colors.grey,
-          ),
+          SvgIcon(icon: ImageUtil.forwardsvg),
       onTap: onTap,
     );
   }

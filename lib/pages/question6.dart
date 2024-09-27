@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:file_picker/file_picker.dart'; // Import file_picker for file selection
 import 'package:striaa/pages/registrationCompleted.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
-import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/DropDown.dart';
 import 'package:striaa/widgets/FilePicker.dart';
 import 'package:striaa/widgets/button.dart';
-import 'package:striaa/widgets/image.dart';
 import 'package:striaa/widgets/progressbar.dart';
 
 class Question6 extends StatefulWidget {
@@ -43,7 +40,7 @@ class _Question6State extends State<Question6> {
                     SizedBox(height: 74),
                     Text(
                       'Please share Result of any Mammogram or USG Breasts done earlier',
-                      style: FontUtil.font26SB(height: 1.2),
+                      style: FontUtil.font26SB(height: 1.38),
                     ),
                     SizedBox(height: 30),
                     // Dropdown Button

@@ -63,7 +63,7 @@ class _Question5State extends State<Question5> {
                     SizedBox(height: 30),
                     Text(
                       'Please share Result of any Mammogram or USG Breasts done earlier',
-                      style: FontUtil.font26SB(height: 1.2),
+                      style: FontUtil.font26SB(height: 1.38),
                     ),
                     SizedBox(height: 20),
                     _buildRadioButtonRow('Upload File', 'Upload File'),

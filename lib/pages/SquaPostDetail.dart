@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
@@ -14,11 +15,7 @@ class SquaPostDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(// Light pink background
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: CustomAppbar(
-        ),
-      ),
+      appBar: CustomAppbar(),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: leftRightAppPadding),
@@ -83,9 +80,7 @@ class SquaPostDetail extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  ImageWidget(
-                    image: ImageUtil.commentpng,
-                  ),
+                  SvgIcon(icon: ImageUtil.commentsvg),
                   SizedBox(width: 5),
                   Text(
                     "100 comments",
@@ -94,9 +89,7 @@ class SquaPostDetail extends StatelessWidget {
                   SizedBox(width: 5),
                   Line(),
                   SizedBox(width: 5),
-                  ImageWidget(
-                    image: ImageUtil.likepng,
-                  ),
+                  SvgIcon(icon: ImageUtil.likesvg),
                   SizedBox(width: 5),
                   Text(
                     "250 likes",
@@ -129,13 +122,9 @@ class SquaPostDetail extends StatelessWidget {
                       ),
                       child: Row(
                         children: [
-                          ImageWidget(
-                            image: ImageUtil.smilepng,
-                          ),
+                          SvgIcon(icon: ImageUtil.smilysvg),
                           SizedBox(width: 11),
-                          ImageWidget(
-                            image: ImageUtil.attachementpng,
-                          ),
+                         SvgIcon(icon: ImageUtil.attachmentsvg),
                           SizedBox(width: 13),
                           Line(),
                           SizedBox(width: 13),
@@ -150,9 +139,7 @@ class SquaPostDetail extends StatelessWidget {
                             ),
                           ),
                           SizedBox(width: 10),
-                          ImageWidget(
-                            image: ImageUtil.sendicon,
-                          ),
+                          SvgIcon(icon: ImageUtil.sendsvg),
                         ],
                       ),
                     ),
@@ -163,7 +150,7 @@ class SquaPostDetail extends StatelessWidget {
               // All comments header
               Text(
                 "All Comments",
-                style: FontUtil.font16B(),
+                style: FontUtil.font16SB(),
               ),
               SizedBox(height: 22),
               // Comment
@@ -194,11 +181,11 @@ class SquaPostDetail extends StatelessWidget {
                                 children: [
                                   Text(
                                     "Major S. Depriest",
-                                    style: FontUtil.font14SB(),
+                                    style: FontUtil.font14M(),
                                   ),
                                   Text(
                                     "15 min",
-                                    style: FontUtil.font12N(
+                                    style: FontUtil.font12M(
                                         color: ColorUtil.textLightGrey),
                                   ),
                                 ],
@@ -207,16 +194,14 @@ class SquaPostDetail extends StatelessWidget {
                               Text(
                                 "Sed ut perspiciatis unde omnis iste rem natus error sit "
                                     "voluptatem accusantium doloremque laudantium, totam rem aperiam.",
-                                style: FontUtil.font12N(
+                                style: FontUtil.font12M(
                                     color: ColorUtil.textLightGrey),
                                 textAlign: TextAlign.justify,
                               ),
                               SizedBox(height: 10),
                               Row(
                                 children: [
-                                  ImageWidget(
-                                    image: ImageUtil.likepng,
-                                  ),
+                                  SvgIcon(icon: ImageUtil.likesvg),
                                   SizedBox(width: 5),
                                   Text(
                                     "250 likes",

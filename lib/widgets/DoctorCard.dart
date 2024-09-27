@@ -14,21 +14,21 @@ class DoctorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(15),
+      padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(15),
       ),
       child: Row(
         children: [
-          Container(
+          SizedBox(
             height: 90,
             width: 90,
             child: ImageWidget(
               image: image,
             ),
           ),
-          SizedBox(width: 10),
+          SizedBox(width: 12),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -43,7 +43,7 @@ class DoctorCard extends StatelessWidget {
                     ' 4.5 (20 reviews)  |  ',
                     style: FontUtil.font12N(color: ColorUtil.textLightGrey),
                   ),
-                  Icon(Icons.location_on,color: Colors.black,size: 14,),
+                  Icon(Icons.location_on,color: Colors.black,size: 16,),
                   Text(
                     '2 KM',
                     style: FontUtil.font12N(color: ColorUtil.textLightGrey),
@@ -58,7 +58,7 @@ class DoctorCard extends StatelessWidget {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => Doctordetail()));
                     },
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 20,vertical: 8),
+                      padding: EdgeInsets.symmetric(horizontal: 20,vertical: 6),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(23),
@@ -72,8 +72,8 @@ class DoctorCard extends StatelessWidget {
                   ),
                   SizedBox(width: 8,),
                   Container(
-                    width: 40,  // Adjust the size as needed
-                    height: 40, // Adjust the size as needed
+                    width: 30,  // Adjust the size as needed
+                    height: 30, // Adjust the size as needed
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(
@@ -82,7 +82,7 @@ class DoctorCard extends StatelessWidget {
                       ),
                     ),
                     child: Container(
-                      padding: EdgeInsets.all(7.5),
+                      padding: EdgeInsets.all(7),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.all(
@@ -93,8 +93,8 @@ class DoctorCard extends StatelessWidget {
                         child: SvgIcon(
                           icon: ImageUtil.callsvg,
                         ),
-                      )
-                  )
+                      ),
+                  ),
                 ],
               )
             ],

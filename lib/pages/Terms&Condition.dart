@@ -13,11 +13,7 @@ class TermsCondition extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: CustomAppbar(
-        ),
-      ),
+      appBar: CustomAppbar(),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: leftRightAppPadding),
         child: ListView(

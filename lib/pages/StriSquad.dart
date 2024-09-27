@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:striaa/pages/CreatePost.dart';
 import 'package:striaa/pages/SquaPostDetail.dart';
 import 'package:striaa/pages/StriaaPage.dart';
@@ -14,22 +15,22 @@ class MainStriSquad extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: CustomAppbar(
-          title: "StriSquad",
-          action: InkWell(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => CreatePost()));
-            },
-            child: CircleAvatar(
-              backgroundColor: ColorUtil.primaryColor,
-              child: ImageWidget(
-                image: ImageUtil.pencilpng,
-              )
+      appBar: CustomAppbar(
+        title: "StriSquad",
+        action: Padding(
+          padding: const EdgeInsets.only(right: 15),
+          child: Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: ColorUtil.primaryColor,
+              shape: BoxShape.circle
             ),
+            child: SvgIcon(icon: ImageUtil.editsvg,),
           ),
         ),
+        actiononTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => CreatePost()));
+        },
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -130,7 +131,7 @@ class MainStriSquad extends StatelessWidget {
             // Comments and Likes buttons
             Row(
               children: [
-                ImageWidget(image: ImageUtil.commentpng,),
+                SvgIcon(icon: ImageUtil.commentsvg),
                 SizedBox(width: 5),
                 Text(
                   "Comments",
@@ -140,7 +141,7 @@ class MainStriSquad extends StatelessWidget {
                   ),
                 ),
                 SizedBox(width: 20),
-                ImageWidget(image: ImageUtil.likepng,),
+                SvgIcon(icon: ImageUtil.likesvg),
                 SizedBox(width: 5),
                 Text(
                   "Likes",

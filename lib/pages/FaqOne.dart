@@ -10,12 +10,7 @@ class Faqone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-       title: CustomAppbar(
-         title: "FAQ",
-       ),
-      ),
+      appBar: CustomAppbar(title: "FAQ"),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: ListView(

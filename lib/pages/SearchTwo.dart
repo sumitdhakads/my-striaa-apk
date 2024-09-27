@@ -16,11 +16,8 @@ class SearchTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: CustomAppbar(
-          title: "What, When, Where?",
-        ),
+      appBar: CustomAppbar(
+        title: "What, When, Where?",
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: leftRightAppPadding),
@@ -53,6 +50,7 @@ class SearchTwo extends StatelessWidget {
               title: "Sed ut perspiciatis unde",
               subtitle: "Carter Street Fairview Heights...",
               btntext: "Interested",
+              onTap: () => Navigator.push((context),MaterialPageRoute(builder: (context) => Ontap())),
             ),
             SizedBox(height: 15,),
             Blogcontainer(
@@ -61,6 +59,7 @@ class SearchTwo extends StatelessWidget {
               title: "Sed ut perspiciatis unde",
               subtitle: "Carter Street Fairview Heights...",
               btntext: "Interested",
+              onTap: () => Navigator.push((context),MaterialPageRoute(builder: (context) => SearchTapTwo())),
             ),
             SizedBox(height: 30,),
           ],

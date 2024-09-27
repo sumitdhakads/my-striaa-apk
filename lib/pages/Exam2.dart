@@ -15,21 +15,18 @@ class Exam2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: CustomAppbar(
-          title: "Exam",
-        ),
+      appBar: CustomAppbar(
+        title: "Exam",
       ),
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.only(top: 30,bottom: 25),
+          margin: EdgeInsets.only(top: 0,bottom: 15),
           padding: EdgeInsets.symmetric(horizontal: leftRightAppPadding),
           child: Column(
             children: [
-              Container(
-                height: 466,
-                width: appHeight(context),
+              SizedBox(
+                // height: 466,
+                // width: appHeight(context),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image.asset(
@@ -39,11 +36,11 @@ class Exam2 extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 30,
+                height: 20,
               ),
               Text(
                 "Did you find any skin changes?",
-                style: FontUtil.font26SB(),
+                style: FontUtil.font26SB(height: 1.38),
                 textAlign: TextAlign.center,
               ),
               Text(
@@ -52,7 +49,7 @@ class Exam2 extends StatelessWidget {
                 style: FontUtil.font14N(color: ColorUtil.textLightGrey),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 35,),
+              SizedBox(height: 12,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,

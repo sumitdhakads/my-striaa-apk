@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:striaa/pages/Checkup.dart';
 import 'package:striaa/pages/DoctorConsult.dart';
+import 'package:striaa/pages/SearchTapTwo.dart';
 import 'package:striaa/pages/SoS_Setup_Page.dart';
+import 'package:striaa/pages/onTap.dart';
 import 'package:striaa/pages/self_checkup.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
@@ -78,13 +79,13 @@ class _HomepageState extends State<Homepage> {
                               Container(
                                 // height: 44,
                                 // width: 44,
-                                padding: const EdgeInsets.all(7),
+                                padding: const EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   border: Border.all(
                                     color: Colors.white, // White border color
                                     width:
-                                        0.6, // Border width (adjust as needed)
+                                        0.5, // Border width (adjust as needed)
                                   ),
                                 ),
                                 child: SvgIcon(
@@ -108,7 +109,7 @@ class _HomepageState extends State<Homepage> {
                           Container(
                             decoration: BoxDecoration(
                               color: Colors.white.withOpacity(0.2),
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(12),
                             ),
                             padding: const EdgeInsets.all(12),
                             child: Row(
@@ -118,7 +119,7 @@ class _HomepageState extends State<Homepage> {
                                     backgroundColor: Colors.white,
                                     child: Column(
                                       children: [
-                                        const SizedBox(height: 8),
+                                        const SizedBox(height: 6),
                                         Text('25',
                                             textAlign: TextAlign.center,
                                             style: FontUtil.font18SB(
@@ -231,7 +232,7 @@ class _HomepageState extends State<Homepage> {
                   const SizedBox(height: 30),
                   InkWell(
                     onTap: (){
-                      // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Ontap()));
                     },
                     child: Postcontainer(
                       image: ImageUtil.one,
@@ -241,7 +242,7 @@ class _HomepageState extends State<Homepage> {
                   const SizedBox(height: 15),
                   InkWell(
                     onTap: (){
-                      // Navigator.push(context, MaterialPageRoute(builder: (context) => const ));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const Ontap()));
                     },
                     child: Postcontainer(
                       image: ImageUtil.two,
@@ -251,8 +252,8 @@ class _HomepageState extends State<Homepage> {
                   const SizedBox(height: 15),
                   InkWell(
                     onTap: (){
-                      // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
-                    },
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => SearchTapTwo()));
+                      },
                     child: Blogcontainer(
                       image: ImageUtil.three,
                       date: "18 Dec, 2023",
@@ -264,7 +265,7 @@ class _HomepageState extends State<Homepage> {
                   const SizedBox(height: 15),
                   InkWell(
                     onTap: (){
-                      // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => SearchTapTwo()));
                     },
                     child: Blogcontainer(
                       image: ImageUtil.four,
@@ -289,10 +290,10 @@ class _HomepageState extends State<Homepage> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("Rewards Points", style: FontUtil.font20B()),
+                              Text("Rewards Points", style: FontUtil.font20SB()),
                               Text(
                                 "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
-                                style: FontUtil.font12N(
+                                style: FontUtil.font14N(
                                     color: ColorUtil.textLightGrey),
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,

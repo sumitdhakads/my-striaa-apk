@@ -3,6 +3,7 @@ import 'package:striaa/pages/get_started.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
+import 'package:striaa/widgets/CustomAppbar.dart';
 import 'package:striaa/widgets/button.dart';
 import 'package:striaa/widgets/dash.dart';
 
@@ -34,12 +35,8 @@ class _NewLanguageState extends State<NewLanguage> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-        appBar: AppBar(
-          leading: const SizedBox(),
-          titleSpacing: leftRightAppPadding,
-          leadingWidth: 0,
-          toolbarHeight: 66,
-          title: const Text('Select Language'),
+        appBar: CustomAppbar(
+          title: "Select Language",
         ),
         bottomNavigationBar: Container(
           height: 60,

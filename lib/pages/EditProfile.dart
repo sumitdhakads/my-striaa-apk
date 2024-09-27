@@ -15,11 +15,8 @@ class EditProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: CustomAppbar(
-          title: "Edit Profile",
-        ),
+      appBar: CustomAppbar(
+        title: "Edit Profile",
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: leftRightAppPadding),

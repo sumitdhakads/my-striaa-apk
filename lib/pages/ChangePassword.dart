@@ -13,11 +13,8 @@ class ChangePassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: CustomAppbar(
-          title: "Change Password",
-        ),
+      appBar: CustomAppbar(
+        title: "Change Password",
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: leftRightAppPadding),

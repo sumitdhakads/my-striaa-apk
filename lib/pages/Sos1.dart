@@ -28,7 +28,7 @@ class Sos1 extends StatelessWidget {
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15), // Blur intensity
               child: Container(
-                color: Colors.white.withOpacity(0.7)
+                color: Colors.white.withOpacity(0.73)
               ),
             ),
           ),

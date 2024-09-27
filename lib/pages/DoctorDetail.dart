@@ -60,7 +60,7 @@ class Doctordetail extends StatelessWidget {
                                 "Dr. Julie Colvin",
                                 style: FontUtil.font24SB()
                             ),
-                            SizedBox(height: 5),
+                            SizedBox(height: 8),
                             Row(
                               children: [
                                 Icon(Icons.star, color: Colors.orange, size: 18),
@@ -76,15 +76,24 @@ class Doctordetail extends StatelessWidget {
                         // Call and Message Icons
                         Row(
                           children: [
-                            CircleAvatar(
-                              backgroundColor: ColorUtil.primaryColor,
-                              child: SvgIcon(
-                                icon: ImageUtil.whitephone,
+                            Container(
+                              padding: EdgeInsets.symmetric(vertical: 11,horizontal: 11),
+                              decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                                color: ColorUtil.primaryColor
                               ),
+                              child: SvgIcon(
+                                  icon: ImageUtil.whitephone,
+                                ),
                             ),
+
                             SizedBox(width: 10),
-                            CircleAvatar(
-                              backgroundColor: ColorUtil.primaryColor,
+                            Container(
+                              padding: EdgeInsets.symmetric(vertical: 11,horizontal: 11),
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: ColorUtil.primaryColor
+                              ),
                               child: SvgIcon(
                                 icon: ImageUtil.whitecomment,
                               ),
@@ -101,7 +110,7 @@ class Doctordetail extends StatelessWidget {
                       "About",
                       style:  FontUtil.font16SB(),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 12),
                     Text(
                       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
                           "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -153,12 +162,16 @@ class Doctordetail extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
               },
-              child: CircleAvatar(
-                backgroundColor: Colors.white.withOpacity(0.1),
-                child: ImageWidget(
-                  image: ImageUtil.blackbackpng,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(width: 0.5,color: Color(0xFF6A6C72))
                 ),
-              ),
+                child: SvgIcon(
+                  icon: ImageUtil.leftblacksvg,
+                ),
+              )
             ),
           ),
         ],

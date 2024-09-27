@@ -25,10 +25,7 @@ class _DoctorConsultState extends State<DoctorConsult> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: CustomAppbar(),
-      ),
+      appBar: CustomAppbar(),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: leftRightAppPadding),
@@ -147,9 +144,22 @@ class _DoctorConsultState extends State<DoctorConsult> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Expanded(
-                      child: Text(
-                        "Please enable location so we can show nearby doctors",
-                        style: FontUtil.font14N(color: ColorUtil.textLightGrey),
+                      child: RichText(
+                        textAlign: TextAlign.start,
+                        text: TextSpan(
+                          text: 'Please enable',
+                          style: FontUtil.font14N(color: ColorUtil.textLightGrey),
+                          children: <TextSpan>[
+                            TextSpan(
+                              text: " location ",
+                              style: FontUtil.font14M(),
+                            ),
+                            TextSpan(
+                              text: 'so we can show nearby doctors',
+                              style: FontUtil.font14N(color: ColorUtil.textLightGrey),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -165,7 +175,7 @@ class _DoctorConsultState extends State<DoctorConsult> {
                 children: [
                   Text(
                     'Top Suggestion of Doctors',
-                    style: FontUtil.font16B(),
+                    style: FontUtil.font16SB(),
                   ),
                   InkWell(
                       onTap: () {

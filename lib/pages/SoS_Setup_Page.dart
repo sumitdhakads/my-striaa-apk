@@ -43,11 +43,8 @@ class _SosSetupPageState extends State<SosSetupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: CustomAppbar(
-          title: "Set up SOS",
-        ),
+      appBar:CustomAppbar(
+        title: "Set up SOS",
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: leftRightAppPadding),

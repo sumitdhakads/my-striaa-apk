@@ -63,7 +63,7 @@ class _Question2State extends State<Question2> {
                     SizedBox(height: 30),
                     Text(
                       'Has any one from your family ever been diagnosed with cancer?',
-                      style: FontUtil.font26SB(height: 1.2),
+                      style: FontUtil.font26SB(height: 1.38),
                     ),
                     SizedBox(height: 30),
 

@@ -34,7 +34,7 @@ class Congratulation extends StatelessWidget {
             Center(
                 child: Text(
               "Congratulations!",
-              style: FontUtil.font26SB(),
+              style: FontUtil.font26SB(height: 1.38),
             )),
             SizedBox(
               height: 5,
@@ -132,7 +132,7 @@ class Congratulation extends StatelessWidget {
             Container(
               height: 160,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(18),
               ),
               child: Stack(
                 children: [
@@ -148,7 +148,7 @@ class Congratulation extends StatelessWidget {
                     left: 20,
                     child: Text(
                       "Ads Banner",
-                      style: FontUtil.font26SB(color: Colors.white),
+                      style: FontUtil.font26SB(color: Colors.white,height: 1.38),
                     ),
                   ),
                 ],
