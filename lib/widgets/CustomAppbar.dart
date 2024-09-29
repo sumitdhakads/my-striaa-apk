@@ -5,13 +5,15 @@ import 'package:striaa/widgets/image.dart';
 
 
 class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppbar({super.key, this.title, this.leading, this.action,this.bgcolor,this.heigth,this.icon,this.actiononTap});
+  const CustomAppbar({super.key, this.title, this.leading, this.action,this.bgcolor,this.heigth,this.icon,this.actiononTap,
+  this.width});
 
   final String? title;
   final Widget? leading;
   final Widget? action;
   final Color? bgcolor;
   final double? heigth;
+  final double? width;
   final String? icon;
   final VoidCallback? actiononTap;
 
@@ -19,7 +21,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      leadingWidth: 59,
+      leadingWidth: width ?? 59,
       backgroundColor: bgcolor,
       title: Text(
         title ?? '',

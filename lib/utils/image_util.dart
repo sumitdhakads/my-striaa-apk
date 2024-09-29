@@ -128,6 +128,19 @@ class ImageUtil {
   static String sendsvg = "assets/svg/sendsvg.svg";
   static String forwardsvg = "assets/svg/forwardsvg.svg";
   static String personpng = "assets/images/personpng.png";
+  static String downsvg = "assets/svg/downsvg.svg";
 
-
+ //profile svg icons------------------------------------
+  static String profilesvg = "assets/svg/profilesvg.svg";
+  static String rewardsvg = "assets/svg/rewardsvg.svg";
+  static String bellsvg = "assets/svg/bellsvg.svg";
+  static String faqsvg = "assets/svg/faqsvg.svg";
+  static String termsvg = "assets/svg/termsvg.svg";
+  static String privacysvg = "assets/svg/privacysvg.svg";
+  static String languagesvg = "assets/svg/languagesvg.svg";
+  static String locksvg = "assets/svg/locksvg.svg";
+  static String logoutsvg = "assets/svg/logoutsvg.svg";
+  static String uploadsvg = "assets/svg/uploadsvg.svg";
+  static String whitesendsvg = "assets/svg/whitesendsvg.svg";
+  static String calendar = "assets/images/calendar.jpg";
 }

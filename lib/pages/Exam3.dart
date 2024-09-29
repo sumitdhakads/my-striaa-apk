@@ -6,7 +6,7 @@ import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/CustomAppbar.dart';
-import 'package:striaa/widgets/Radiobutton.dart';
+import 'package:striaa/widgets/CustomRadio.dart';
 import 'package:striaa/widgets/button.dart';
 import 'package:striaa/widgets/image.dart';
 import 'package:striaa/widgets/progressbar.dart';
@@ -62,17 +62,18 @@ class _Exam3State extends State<Exam3> {
                     SizedBox(height: 20),
 
                     // Use the RadioButtonWidget
-                    RadioButtonWidget(
-                      title: 'yes',
-                      value: 'yes',
+                    CustomRadioButton(
+                      title: 'Yes',
+                      value: 'Yes',
                       groupValue: _selectedOption,
                       onChanged: (val) {
                         setState(() {
-                          _selectedOption = val ?? 'yes';
+                          _selectedOption = val ?? 'Yes';
                         });
                       },
                     ),
-                    RadioButtonWidget(
+                    SizedBox(height: 20,),
+                    CustomRadioButton(
                       title: 'No',
                       value: 'No',
                       groupValue: _selectedOption,

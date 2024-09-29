@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/CustomAppbar.dart';
 import 'package:striaa/widgets/TileExpansion.dart';
+import 'package:striaa/widgets/dash.dart';
 import 'package:striaa/widgets/image.dart';
 
 class Faqone extends StatelessWidget {
@@ -20,22 +22,30 @@ class Faqone extends StatelessWidget {
               question: "Lorem ipsum dolor sit amet consectetur?",
             ),
             SizedBox(height: 15,),
-            TileExpansion(
-              question: "Lorem ipsum dolor sit amet consectetur?",
-            ),
+            DashedLine(width: appwidth(context)),
             SizedBox(height: 15,),
             TileExpansion(
               question: "Lorem ipsum dolor sit amet consectetur?",
             ),
             SizedBox(height: 15,),
-            TileExpansion(
-              question: "Lorem ipsum dolor sit amet consectetur?",
-            ),
+            DashedLine(width: appwidth(context)),
             SizedBox(height: 15,),
             TileExpansion(
               question: "Lorem ipsum dolor sit amet consectetur?",
             ),
-            SizedBox(height: 160,),
+            SizedBox(height: 15,),
+            DashedLine(width: appwidth(context)),
+            SizedBox(height: 15,),
+            TileExpansion(
+              question: "Lorem ipsum dolor sit amet consectetur?",
+            ),
+            SizedBox(height: 15,),
+            DashedLine(width: appwidth(context)),
+            SizedBox(height: 15,),
+            TileExpansion(
+              question: "Lorem ipsum dolor sit amet consectetur?",
+            ),
+            SizedBox(height: 200,)
           ],
         ),
       ),

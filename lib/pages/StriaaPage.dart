@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:striaa/pages/Calendar.dart';
 import 'package:striaa/pages/Exam1.dart';
 import 'package:striaa/pages/HomePage.dart';
 import 'package:striaa/pages/ProfilePage.dart';
@@ -22,7 +23,7 @@ class _StriaaPageState extends State<StriaaPage> {
   final List<Widget> _pages = [
     const Homepage(),
     const SearchTwo(),
-    const Exam1(),
+    const Calendar(),
     const MainStriSquad(),
     ProfilePage(),
   ];

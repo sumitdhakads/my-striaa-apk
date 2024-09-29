@@ -7,7 +7,7 @@ import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/CustomAppbar.dart';
-import 'package:striaa/widgets/Radiobutton.dart';
+import 'package:striaa/widgets/CustomRadio.dart';
 import 'package:striaa/widgets/button.dart';
 import 'package:striaa/widgets/dash.dart';
 import 'package:striaa/widgets/image.dart';
@@ -151,10 +151,10 @@ class _Question4State extends State<Question4> {
                       'When was the last time you had a Breast Examination?',
                       style: FontUtil.font26SB(height: 1.38),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 30),
 
                     // Use the RadioButtonWidget for options
-                    RadioButtonWidget(
+                    CustomRadioButton(
                       title: 'Within three months',
                       value: 'Within three months',
                       groupValue: _selectedOption,
@@ -164,7 +164,8 @@ class _Question4State extends State<Question4> {
                         });
                       },
                     ),
-                    RadioButtonWidget(
+                    SizedBox(height: 20),
+                    CustomRadioButton(
                       title: '3 to 6 months ago',
                       value: '3 to 6 months ago',
                       groupValue: _selectedOption,
@@ -174,7 +175,8 @@ class _Question4State extends State<Question4> {
                         });
                       },
                     ),
-                    RadioButtonWidget(
+                    SizedBox(height: 20),
+                    CustomRadioButton(
                       title: '6 months to 1 year ago',
                       value: '6 months to 1 year ago',
                       groupValue: _selectedOption,
@@ -184,7 +186,8 @@ class _Question4State extends State<Question4> {
                         });
                       },
                     ),
-                    RadioButtonWidget(
+                    SizedBox(height: 20),
+                    CustomRadioButton(
                       title: 'None of the above',
                       value: 'None of the above',
                       groupValue: _selectedOption,
@@ -194,7 +197,6 @@ class _Question4State extends State<Question4> {
                         });
                       },
                     ),
-
                     Spacer(),
                     ButtonWidget(
                       onPressed: () {

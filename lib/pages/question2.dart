@@ -7,6 +7,7 @@ import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/CustomAppbar.dart';
+import 'package:striaa/widgets/CustomRadio.dart'; // Import for CustomRadioButton
 import 'package:striaa/widgets/button.dart';
 import 'package:striaa/widgets/dash.dart';
 import 'package:striaa/widgets/image.dart';
@@ -26,16 +27,20 @@ class _Question2State extends State<Question2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:CustomAppbar(
+      appBar: CustomAppbar(
         icon: ImageUtil.leftwhiteicon,
         heigth: 72,
         bgcolor: ColorUtil.primaryColor,
         action: Padding(
           padding: const EdgeInsets.only(right: 15),
-          child: Text("Skip",style: FontUtil.font16N(color: Colors.white),),
+          child: Text(
+            "Skip",
+            style: FontUtil.font16N(color: Colors.white),
+          ),
         ),
-        actiononTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationCompleted()));
+        actiononTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => RegistrationCompleted()));
         },
       ),
       body: Container(
@@ -66,21 +71,46 @@ class _Question2State extends State<Question2> {
                       style: FontUtil.font26SB(height: 1.38),
                     ),
                     SizedBox(height: 30),
-
                     // Horizontal Radio buttons for Yes and No
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        _buildRadioButtonRow('Yes', 'Yes'),
-                        SizedBox(width: 30), // Space between radio buttons
-                        _buildRadioButtonRow('No', 'No'),
+                        Expanded(
+                          child: CustomRadioButton(
+                            title: 'Yes',
+                            value: 'Yes',
+                            groupValue: _selectedOption,
+                            onChanged: (val) {
+                              setState(() {
+                                _selectedOption = val ?? 'No';
+                                _showTextFields = val == 'Yes';
+                              });
+                            },
+                          ),
+                        ),
+                        SizedBox(width: 30),
+                        Expanded(
+                          child: CustomRadioButton(
+                            title: 'No',
+                            value: 'No',
+                            groupValue: _selectedOption,
+                            onChanged: (val) {
+                              setState(() {
+                                _selectedOption = val ?? 'No';
+                                _showTextFields = val == 'Yes';
+                              });
+                            },
+                          ),
+                        ),
+                        Spacer()
                       ],
                     ),
-                    SizedBox(height: 30),
-                    DashedLine(width: MediaQuery.of(context).size.width),
+
                     // Conditionally show text fields if 'Yes' is selected
-                      SizedBox(height: 30,),
+                    SizedBox(height: 30),
                     if (_showTextFields) ...[
+                      DashedLine(width: MediaQuery.of(context).size.width),
+                      SizedBox(height: 30,),
                       _buildTextField('If yes, who?', _familyMemberController),
                       SizedBox(height: 15),
                       _buildTextField('Which cancer?', _cancerTypeController),
@@ -90,10 +120,8 @@ class _Question2State extends State<Question2> {
                     ButtonWidget(
                       onPressed: () {
                         // Handle next button press
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Question3()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Question3()));
                       },
                       color: Theme.of(context).primaryColor,
                       text: 'Next',
@@ -110,41 +138,7 @@ class _Question2State extends State<Question2> {
     );
   }
 
-  // Helper function to build the radio button row
-  Widget _buildRadioButtonRow(String title, String value) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          _selectedOption = value;
-          _showTextFields = value == 'Yes'; // Show text fields if 'Yes' is selected
-        });
-      },
-      child: Row(
-        children: [
-          Radio<String>(
-            value: value,
-            groupValue: _selectedOption,
-            activeColor: ColorUtil.primaryColor,
-            onChanged: (val) {
-              setState(() {
-                _selectedOption = val;
-                _showTextFields = val == 'Yes';
-              });
-            },
-          ),
-          Text(
-            title,
-            style: _selectedOption == value
-                ? FontUtil.font16SB() // Apply bold font when active
-                : FontUtil.font16N(
-                color: ColorUtil.textLightGrey), // Normal font otherwise
-          ),
-        ],
-      ),
-    );
-  }
-
-// Helper function to build text fields
+  // Helper function to build text fields
   Widget _buildTextField(String label, TextEditingController controller) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -170,7 +164,9 @@ class _Question2State extends State<Question2> {
             // When the text field is focused
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(30),
-              borderSide: BorderSide(color: ColorUtil.primaryColor, width: 1), // Custom color and width for focused state
+              borderSide: BorderSide(
+                  color: ColorUtil.primaryColor,
+                  width: 1), // Custom color and width for focused state
             ),
           ),
         ),
@@ -178,5 +174,3 @@ class _Question2State extends State<Question2> {
     );
   }
 }
-
-

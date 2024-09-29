@@ -18,64 +18,62 @@ class _Question6State extends State<Question6> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Column(
-          children: [
-            // Body content with rounded corners
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: leftRightAppPadding),
-                decoration: BoxDecoration(
-                  color: ColorUtil.secondaryColor,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30),
-                  ),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    //Progressbar
-                    ProgressBar(progress: 0.9),
-                    SizedBox(height: 74),
-                    Text(
-                      'Please share Result of any Mammogram or USG Breasts done earlier',
-                      style: FontUtil.font26SB(height: 1.38),
-                    ),
-                    SizedBox(height: 30),
-                    // Dropdown Button
-                    OurDropdown(),
-                    SizedBox(height: 15),
-                    // File Picker Button
-                    Container(
-                        width: appwidth(context)/2.6,
-                        child: OurFilepicker()
-                    ),
-                    SizedBox(height: 15),
-                    Text(
-                      "*Not applicable",
-                      style: FontUtil.font12N(color: ColorUtil.textLightGrey),
-                    ),
-                    Spacer(),
-                    ButtonWidget(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => RegistrationCompleted()),
-                        );
-                      },
-                      color: Theme.of(context).primaryColor,
-                      text: 'Continue',
-                      textColor: Colors.white,
-                    ),
-                    SizedBox(height: 25),
-                  ],
+      body: Column(
+        children: [
+          // Body content with rounded corners
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: leftRightAppPadding),
+              decoration: BoxDecoration(
+                color: ColorUtil.secondaryColor,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
                 ),
               ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  //Progressbar
+                  ProgressBar(progress: 0.9),
+                  SizedBox(height: 74),
+                  Text(
+                    'Please share Result of any Mammogram or USG Breasts done earlier',
+                    style: FontUtil.font26SB(height: 1.38),
+                  ),
+                  SizedBox(height: 30),
+                  // Dropdown Button
+                       
+                  SizedBox(height: 15),
+                  // File Picker Button
+                  SizedBox(
+                      width: appwidth(context)/2.6,
+                      child: OurFilepicker()
+                  ),
+                  SizedBox(height: 15),
+                  Text(
+                    "*Not applicable",
+                    style: FontUtil.font12N(color: ColorUtil.textLightGrey),
+                  ),
+                  Spacer(),
+                  ButtonWidget(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RegistrationCompleted()),
+                      );
+                    },
+                    color: Theme.of(context).primaryColor,
+                    text: 'Continue',
+                    textColor: Colors.white,
+                  ),
+                  SizedBox(height: 25),
+                ],
+              ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

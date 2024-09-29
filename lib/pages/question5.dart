@@ -9,6 +9,7 @@ import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/CustomAppbar.dart';
+import 'package:striaa/widgets/CustomRadio.dart';
 import 'package:striaa/widgets/DropDown.dart';
 import 'package:striaa/widgets/FilePicker.dart';
 import 'package:striaa/widgets/button.dart';
@@ -37,7 +38,7 @@ class _Question5State extends State<Question5> {
           padding: const EdgeInsets.only(right: 15),
           child: Text("Skip",style: FontUtil.font16N(color: Colors.white),),
         ),
-        actiononTap: (){
+        actiononTap: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationCompleted()));
         },
       ),
@@ -65,27 +66,51 @@ class _Question5State extends State<Question5> {
                       'Please share Result of any Mammogram or USG Breasts done earlier',
                       style: FontUtil.font26SB(height: 1.38),
                     ),
-                    SizedBox(height: 20),
-                    _buildRadioButtonRow('Upload File', 'Upload File'),
-                    _buildRadioButtonRow('Not applicable', 'Not applicable'),
                     SizedBox(height: 30),
-                    DashedLine(width: MediaQuery.of(context).size.width),
+
+                    // Use CustomRadioButton instead of _buildRadioButtonRow
+                    CustomRadioButton(
+                      title: 'Upload File',
+                      value: 'Upload File',
+                      groupValue: _selectedOption,
+                      onChanged: (val) {
+                        setState(() {
+                          _selectedOption = val;
+                          _showTextFields = val == 'Upload File';
+                        });
+                      },
+                    ),
+                     SizedBox(height: 20,),
+                    CustomRadioButton(
+                      title: 'Not applicable',
+                      value: 'Not applicable',
+                      groupValue: _selectedOption,
+                      onChanged: (val) {
+                        setState(() {
+                          _selectedOption = val;
+                          _showTextFields = false;
+                        });
+                      },
+                    ),
+
+                    // Conditionally show dropdown and file picker
                     if (_showTextFields) ...[
+
+                      SizedBox(height: 30),
+                      DashedLine(width: MediaQuery.of(context).size.width),
                       SizedBox(height: 30),
                       OurDropdown(),
                       SizedBox(height: 15),
                       Container(
-                          width: appwidth(context)/2.6,
-                          child: OurFilepicker()
+                        width: appwidth(context) / 2.6,
+                        child: OurFilepicker(),
                       ),
                     ],
+
                     Spacer(),
                     ButtonWidget(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Question6()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Question6()));
                       },
                       color: Theme.of(context).primaryColor,
                       text: 'Next',
@@ -98,40 +123,6 @@ class _Question5State extends State<Question5> {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildRadioButtonRow(String title, String value) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          _selectedOption = value;
-          _showTextFields = value == 'Upload File';
-        });
-      },
-      child: Row(
-        children: [
-          Radio<String>(
-            value: value,
-            groupValue: _selectedOption,
-            activeColor: ColorUtil.primaryColor,
-            onChanged: (val) {
-              setState(() {
-                _selectedOption = val;
-                _showTextFields = val == 'Upload File';
-              });
-            },
-          ),
-          Expanded(
-            child: Text(
-              title,
-              style: _selectedOption == value
-                  ? FontUtil.font16SB()
-                  : FontUtil.font16N(color: ColorUtil.textLightGrey),
-            ),
-          ),
-        ],
       ),
     );
   }

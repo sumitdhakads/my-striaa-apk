@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:striaa/pages/AiChat.dart';
 import 'package:striaa/pages/DoctorConsult.dart';
 import 'package:striaa/pages/SearchTapTwo.dart';
 import 'package:striaa/pages/SoS_Setup_Page.dart';
@@ -414,7 +415,7 @@ class _HomepageState extends State<Homepage> {
           borderRadius: BorderRadius.circular(100)
         ),
         onPressed: (){
-     // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
+       Navigator.push(context, MaterialPageRoute(builder: (context) => AiChat()));
 
         },
       ),

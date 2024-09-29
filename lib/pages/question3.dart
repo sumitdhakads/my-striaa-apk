@@ -7,7 +7,7 @@ import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/CustomAppbar.dart';
-import 'package:striaa/widgets/Radiobutton.dart';
+import 'package:striaa/widgets/CustomRadio.dart';
 import 'package:striaa/widgets/button.dart';
 import 'package:striaa/widgets/image.dart';
 import 'package:striaa/widgets/progressbar.dart';
@@ -29,10 +29,14 @@ class _Question3State extends State<Question3> {
         bgcolor: ColorUtil.primaryColor,
         action: Padding(
           padding: const EdgeInsets.only(right: 15),
-          child: Text("Skip",style: FontUtil.font16N(color: Colors.white),),
+          child: Text(
+            "Skip",
+            style: FontUtil.font16N(color: Colors.white),
+          ),
         ),
-        actiononTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationCompleted()));
+        actiononTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => RegistrationCompleted()));
         },
       ),
       body: Container(
@@ -60,10 +64,9 @@ class _Question3State extends State<Question3> {
                       'Smoking habit',
                       style: FontUtil.font26SB(height: 1.38),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 30),
 
-                    // Use the RadioButtonWidget
-                    RadioButtonWidget(
+                    CustomRadioButton(
                       title: 'Frequently',
                       value: 'Frequently',
                       groupValue: _selectedOption,
@@ -73,7 +76,8 @@ class _Question3State extends State<Question3> {
                         });
                       },
                     ),
-                    RadioButtonWidget(
+                    SizedBox(height: 20),
+                    CustomRadioButton(
                       title: 'Socially',
                       value: 'Socially',
                       groupValue: _selectedOption,
@@ -83,7 +87,8 @@ class _Question3State extends State<Question3> {
                         });
                       },
                     ),
-                    RadioButtonWidget(
+                    SizedBox(height: 20),
+                    CustomRadioButton(
                       title: 'Never',
                       value: 'Never',
                       groupValue: _selectedOption,
@@ -93,19 +98,18 @@ class _Question3State extends State<Question3> {
                         });
                       },
                     ),
-
                     Spacer(),
                     ButtonWidget(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Question4()));
-                        },
-                        color: Theme.of(context).primaryColor,
-                        text: 'Next',
-                        textColor: Colors.white,
-                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Question4()));
+                      },
+                      color: Theme.of(context).primaryColor,
+                      text: 'Next',
+                      textColor: Colors.white,
+                    ),
                     SizedBox(height: 25),
                   ],
                 ),

@@ -71,7 +71,7 @@ class _ProfilePageState extends State<ProfilePage> {
               children: [
                 // List of options
                 profileOption(
-                  icon: Icons.person_outline,
+                  icon: ImageUtil.profilesvg,
                   label: "Edit Profile",
                   onTap: () {
                     Navigator.push(context,
@@ -79,7 +79,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   },
                 ),
                 profileOption(
-                  icon: Icons.language,
+                  icon: ImageUtil.languagesvg,
                   label: "Select Language",
                   onTap: () {
                     Navigator.push(
@@ -89,7 +89,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   },
                 ),
                 profileOption(
-                  icon: Icons.card_giftcard,
+                  icon: ImageUtil.rewardsvg,
                   label: "Reward Points",
                   onTap: () {
                     Navigator.push(context,
@@ -97,7 +97,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   },
                 ),
                 profileOption(
-                  icon: Icons.lock_outline,
+                  icon: ImageUtil.locksvg,
                   label: "Change Password",
                   onTap: () {
                     Navigator.push(context,
@@ -105,13 +105,13 @@ class _ProfilePageState extends State<ProfilePage> {
                   },
                 ),
                 profileOption(
-                  icon: Icons.notifications_outlined,
+                  icon: ImageUtil.bellsvg,
                   label: "Enable/ Disable Notification",
                   trailing: CustomToggleButton(),
                   onTap: () {},
                 ),
                 profileOption(
-                  icon: Icons.help_outline,
+                  icon: ImageUtil.faqsvg,
                   label: "FAQ",
                   onTap: () {
                     Navigator.push(
@@ -119,7 +119,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   },
                 ),
                 profileOption(
-                  icon: Icons.description_outlined,
+                  icon: ImageUtil.termsvg,
                   label: "Terms and Conditions",
                   onTap: () {
                     Navigator.push(
@@ -127,7 +127,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   },
                 ),
                 profileOption(
-                  icon: Icons.privacy_tip_outlined,
+                  icon: ImageUtil.privacysvg,
                   label: "Privacy Policy",
                   onTap: () {
                     Navigator.push(
@@ -135,7 +135,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   },
                 ),
                 profileOption(
-                  icon: Icons.logout,
+                  icon: ImageUtil.logoutsvg,
                   label: "Log Out",
                   labelColor: Colors.red,
                   onTap: () {
@@ -153,16 +153,23 @@ class _ProfilePageState extends State<ProfilePage> {
 
   // Helper function to create a profile option row
   Widget profileOption({
-    required IconData icon,
+    required String icon,
     required String label,
     required VoidCallback onTap,
     Widget? trailing,
     Color labelColor = Colors.black,
   }) {
     return ListTile(
-      leading: CircleAvatar(
-          backgroundColor: ColorUtil.primaryColor,
-          child: Icon(icon, color: Colors.white)),
+      leading: Container(
+        padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: ColorUtil.primaryColor,
+        ),
+        child: SvgIcon(
+          icon: icon,
+        ),
+      ),
       title: Text(
         label,
         style: TextStyle(

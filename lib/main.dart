@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:striaa/pages/DoctorConsult.dart';
-import 'package:striaa/pages/self_checkup.dart';
+import 'package:striaa/pages/AiChat.dart';
+import 'package:striaa/pages/question6.dart';
 import 'package:striaa/pages/splash_screen.dart';
 import 'package:striaa/utils/app_utils.dart';
 
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: navkey,
       theme: AppUtils.lightThemeData(),
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
+      home: Question6(),
       darkTheme: AppUtils.darkThemeData(),
       themeMode: ThemeMode.light,
 

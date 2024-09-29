@@ -150,10 +150,11 @@ class FontUtil {
 
 // Font Size 16 ------- FontWeight Normal
 
-   static TextStyle font16N({Color? color}){
+   static TextStyle font16N({Color? color,double? heigth}){
     return TextStyle(
       fontFamily: 'Inter',
       fontSize: 16,
+      height: heigth,
       fontWeight: FontWeight.w400,
       color: color ?? (isDark(navkey!.currentState!.context) ? Colors.white : Colors.black)
     );
