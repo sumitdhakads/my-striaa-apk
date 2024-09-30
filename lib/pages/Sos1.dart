@@ -49,8 +49,10 @@ class Sos1 extends StatelessWidget {
                   style: FontUtil.font16N(color: ColorUtil.textLightGrey),
                   textAlign: TextAlign.center,
                 ),
+                SizedBox(height: 50,),
                 Center(
                   child: ImageWidget(
+                    height: 322,
                     image: ImageUtil.newsos1,
                   ),
                 ),

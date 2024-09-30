@@ -9,8 +9,8 @@ import 'package:striaa/widgets/image.dart';
 class Message extends StatelessWidget {
   final String? text;
   final bool isSentByUser; // New flag to differentiate between left (received) and right (sent) messages
-
-  Message({super.key, this.text, required this.isSentByUser});
+  final String? consult;
+  Message({super.key, this.text, required this.isSentByUser,this.consult});
 
   // Get the current time in 'hh:mm a' format
   String _formatCurrentTime() {
@@ -34,7 +34,7 @@ class Message extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(35),
                   child: ImageWidget(
-                    image: ImageUtil.newbot,
+                    image: consult ?? ImageUtil.newbot,
                   ),
                 ),
               ),

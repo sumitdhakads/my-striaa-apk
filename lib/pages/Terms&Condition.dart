@@ -68,7 +68,7 @@ class TermsCondition extends StatelessWidget {
             ),
             Text(
               "Lorem ipsum dolor sit amet",
-              style: FontUtil.font20SB(),
+              style: FontUtil.font16SB(),
             ),
             SizedBox(
               height: 10,

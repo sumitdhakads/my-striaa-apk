@@ -29,12 +29,14 @@ class SosActivated extends StatelessWidget {
               "Press the button below help will\nreach you soon.",
               style: FontUtil.font16N(color: ColorUtil.textLightGrey),textAlign: TextAlign.center,
             ),
+            SizedBox(height: 50,),
             Center(
               child: InkWell(
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => const SosContactPage()));
                 },
                 child: ImageWidget(
+                  height: 322,
                   image: ImageUtil.newsos3,
                 ),
               ),

@@ -18,7 +18,7 @@ class AllDoctor extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: leftRightAppPadding),
         child: ListView(
           children: [
-            SizedBox(height: 30,),
+            SizedBox(height: 15,),
             DoctorCard(image: ImageUtil.dr,name: "Julie Colvin",),
             SizedBox(height: 15,),
             DoctorCard(name: "Julie Colvin",image: ImageUtil.newdr2,),

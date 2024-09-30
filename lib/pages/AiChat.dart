@@ -6,6 +6,7 @@ import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/CustomAppbar.dart';
 import 'package:striaa/widgets/dash.dart';
 import 'package:striaa/widgets/image.dart';
+import 'package:striaa/widgets/line.dart';
 import 'package:striaa/widgets/message.dart';
 
 class AiChat extends StatefulWidget {
@@ -51,16 +52,16 @@ class _AiChatState extends State<AiChat> {
         child: Row(
           children: <Widget>[
             SvgIcon(icon: ImageUtil.uploadsvg,height: 20,),
-            SizedBox(width: 4,),
+            SizedBox(width: 8,),
             SvgIcon(icon: ImageUtil.attachmentsvg,height: 20,),
             SizedBox(width: 10,),
-            Container(height: 12,width: 3,
-            color: ColorUtil.textLightGrey,),
+            Line(),
             SizedBox(width: 10,),
             Flexible(
               child: TextField(
                 focusNode: _focusNode, // Attach the focus node
-                decoration: InputDecoration.collapsed(
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.only(bottom: 5),
                   hintText: "Type your message",
                   hintStyle: FontUtil.font14N(color: ColorUtil.textLightGrey),
                   border: InputBorder.none,

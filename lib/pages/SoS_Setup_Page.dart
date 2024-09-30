@@ -115,10 +115,8 @@ class _SosSetupPageState extends State<SosSetupPage> {
         ],
       ),
       bottomNavigationBar: BottomAppBar(
-        elevation: 2,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-          child: ButtonWidget(
+        color: ColorUtil.secondaryColor,
+        child: ButtonWidget(
             onPressed: () {
               // Handle continue button press
               Navigator.push(context, MaterialPageRoute(builder: (context) => const Sos1()));
@@ -127,7 +125,6 @@ class _SosSetupPageState extends State<SosSetupPage> {
             text: 'Continue',
             textColor: Colors.white,
           ),
-        ),
       ),
     );
   }

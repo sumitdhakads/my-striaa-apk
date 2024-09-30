@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:striaa/pages/AiChat.dart';
 import 'package:striaa/pages/DoctorConsult.dart';
+import 'package:striaa/pages/Reward.dart';
 import 'package:striaa/pages/SearchTapTwo.dart';
 import 'package:striaa/pages/SoS_Setup_Page.dart';
 import 'package:striaa/pages/onTap.dart';
@@ -33,7 +34,7 @@ class _HomepageState extends State<Homepage> {
         slivers: [
           SliverAppBar(
             automaticallyImplyLeading: false,
-            expandedHeight: 260,
+            expandedHeight: 255,
             backgroundColor: ColorUtil.secondaryColor,
             floating: false,
             pinned: true, // Keeps the AppBar pinned at the top after scrolling
@@ -120,10 +121,11 @@ class _HomepageState extends State<Homepage> {
                                     backgroundColor: Colors.white,
                                     child: Column(
                                       children: [
-                                        const SizedBox(height: 6),
+                                        const SizedBox(height: 13),
                                         Text('25',
                                             textAlign: TextAlign.center,
                                             style: FontUtil.font18SB(
+                                              height: 1.1,
                                                 color: ColorUtil.primaryColor)),
                                         Text('Dec',
                                             textAlign: TextAlign.center,
@@ -278,10 +280,10 @@ class _HomepageState extends State<Homepage> {
                   ),
                   InkWell(
                     onTap: (){
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => ));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Reward()));
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -292,6 +294,7 @@ class _HomepageState extends State<Homepage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text("Rewards Points", style: FontUtil.font20SB()),
+                              SizedBox(height: 6,),
                               Text(
                                 "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
                                 style: FontUtil.font14N(
@@ -303,11 +306,10 @@ class _HomepageState extends State<Homepage> {
                           ),
                         ),
                         // Image points container
-                        Container(
-                          width:
-                              175, // Set a fixed width or use AspectRatio if needed
+                        Expanded(
                           child: Image.asset(
-                            ImageUtil.points,
+                            height: 190,
+                            ImageUtil.newpoints,
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -405,12 +407,9 @@ class _HomepageState extends State<Homepage> {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.transparent,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(100),
-          child: ImageWidget(
-            image: ImageUtil.newbot,
+        child: SvgIcon(
+            icon: ImageUtil.floatsvg,
           ),
-        ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(100)
         ),

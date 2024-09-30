@@ -23,13 +23,13 @@ class _CustomToggleButtonState extends State<CustomToggleButton> {
             height: 22,
             decoration: BoxDecoration(
               color: isToggled ? Theme.of(context).primaryColor : Colors.grey,
-              borderRadius: BorderRadius.circular(100),
+              borderRadius: BorderRadius.circular(30),
             ),
             child: AnimatedAlign(
               duration: Duration(milliseconds: 200),
               alignment: isToggled ? Alignment.centerRight : Alignment.centerLeft,
               child: Padding(
-                padding: const EdgeInsets.all(2.0),
+                padding: const EdgeInsets.only(top: 2,bottom: 2,left: 0,right: 0),
                 child: CircleAvatar(
                   radius: 12, // Half of container height
                   backgroundColor: Colors.white,

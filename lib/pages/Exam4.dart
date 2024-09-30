@@ -26,13 +26,6 @@ class _Exam4State extends State<Exam4> {
         icon: ImageUtil.leftwhiteicon,
         heigth: 72,
         bgcolor: ColorUtil.primaryColor,
-        action: Padding(
-          padding: const EdgeInsets.only(right: 15),
-          child: Text("Skip",style: FontUtil.font16N(color: Colors.white),),
-        ),
-        actiononTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => Congratulation()));
-        },
       ),
       body: Container(
         color: ColorUtil.primaryColor,

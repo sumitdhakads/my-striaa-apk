@@ -7,6 +7,7 @@ import 'package:striaa/utils/font_util.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/CustomAppbar.dart';
 import 'package:striaa/widgets/button.dart';
+import 'package:striaa/widgets/dash.dart';
 import 'package:striaa/widgets/image.dart';
 
 class SelfCheckupPage extends StatefulWidget {
@@ -34,7 +35,7 @@ class _SelfCheckupPageState extends State<SelfCheckupPage> {
               ),
             ),
             Positioned(
-              top: 1,
+              top: 3,
               right: 2,
               child: SizedBox(
                 height: 150,
@@ -60,26 +61,20 @@ class _SelfCheckupPageState extends State<SelfCheckupPage> {
                 ),
               ),
             ),
-
             Positioned(
-              bottom: 90,
-              right: 0,
-              child: InkWell(
-                onTap: (){
-
-                },
-                child: Container(
-                  padding: EdgeInsets.all(15),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.black
+                bottom: 90,
+                right: 0,
+                child: InkWell(
+                  onTap: () {},
+                  child: Container(
+                    padding: EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle, color: Colors.black),
+                    child: SvgIcon(
+                      icon: ImageUtil.audio,
+                    ),
                   ),
-                  child: SvgIcon(
-                    icon: ImageUtil.audio,
-                  ),
-                ),
-              )
-            ),
+                )),
             Positioned(
               left: 0,
               right: 0,
@@ -115,7 +110,7 @@ class _SelfCheckupPageState extends State<SelfCheckupPage> {
                                 ),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
-                                  borderRadius: BorderRadius.circular(15),
+                                  borderRadius: BorderRadius.circular(20),
                                 ),
                                 padding: EdgeInsets.symmetric(
                                   vertical: 25,
@@ -146,36 +141,93 @@ class _SelfCheckupPageState extends State<SelfCheckupPage> {
                                               .textTheme
                                               .bodySmall!
                                               .copyWith(
-                                            color: ColorUtil.textLightGrey,
-                                          ),
+                                                color: ColorUtil.textLightGrey,
+                                              ),
                                         ),
                                       ),
-                                      const SizedBox(height: 30),
+                                      const SizedBox(height: 20),
+                                      DashedLine(width: appwidth(context)),
+                                      const SizedBox(height: 20),
                                       Center(
                                         child: Row(
                                           children: [
                                             Expanded(
-                                              child: IconButtonWidget(
-                                                text: 'Audio',
-                                                color: Colors.black,
-                                                leadingIcon:
-                                                'assets/svg/audio.svg',
-                                                onPressed: () {
-                                                  Navigator.push(context, MaterialPageRoute(builder: (context) => Exam1()));
-                                                },
+                                                child: InkWell(
+                                              onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Exam1()));
+                                              },
+                                              child: Container(
+                                                padding: EdgeInsets.symmetric(
+                                                    vertical: 10,
+                                                    horizontal: 30),
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(40),
+                                                  color: Colors.black,
+                                                ),
+                                                child: Center(
+                                                  child: Row(
+                                                    children: [
+                                                      SvgIcon(
+                                                          icon:
+                                                              ImageUtil.audio),
+                                                      SizedBox(
+                                                        width: 10,
+                                                      ),
+                                                      Text(
+                                                        "Audio",
+                                                        style: FontUtil.font16M(
+                                                            color:
+                                                                Colors.white),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
                                               ),
-                                            ),
+                                            )),
                                             const SizedBox(width: 12),
                                             Expanded(
-                                              child: IconButtonWidget(
-                                                text: 'Video',
-                                                leadingIcon:
-                                                'assets/svg/video.svg',
-                                                onPressed: () {
-                                                  Navigator.push(context, MaterialPageRoute(builder: (context) => Exam1()));
-                                                },
+                                                child: InkWell(
+                                              onTap: () {
+                                                Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            Exam1()));
+                                              },
+                                              child: Container(
+                                                padding: EdgeInsets.symmetric(
+                                                    vertical: 10,
+                                                    horizontal: 30),
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(40),
+                                                  color: ColorUtil.primaryColor,
+                                                ),
+                                                child: Center(
+                                                  child: Row(
+                                                    children: [
+                                                      SvgIcon(
+                                                          icon: ImageUtil
+                                                              .videosvg),
+                                                      SizedBox(
+                                                        width: 10,
+                                                      ),
+                                                      Text(
+                                                        "Video",
+                                                        style: FontUtil.font16M(
+                                                            color:
+                                                                Colors.white),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
                                               ),
-                                            ),
+                                            )),
                                           ],
                                         ),
                                       ),
@@ -198,5 +250,3 @@ class _SelfCheckupPageState extends State<SelfCheckupPage> {
     );
   }
 }
-
-

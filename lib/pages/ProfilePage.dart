@@ -9,6 +9,7 @@ import 'package:striaa/pages/language_selection.dart';
 import 'package:striaa/pages/login_Page.dart';
 import 'package:striaa/pages/newLanguage.dart';
 import 'package:striaa/utils/app_utils.dart';
+import 'package:striaa/utils/font_util.dart';
 import 'package:striaa/widgets/dash.dart';
 import 'package:striaa/widgets/togglebutton.dart';
 import 'package:striaa/utils/color_util.dart';
@@ -49,13 +50,9 @@ class _ProfilePageState extends State<ProfilePage> {
              ),
             ),
             const SizedBox(height: 10), // Spacing
-            const Text(
+             Text(
               'Maria J. Allison',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-                color: Colors.black,
-              ),
+              style: FontUtil.font20SB()
             ),
             const SizedBox(height: 30), // Spacing
             Padding(
@@ -172,10 +169,7 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
       title: Text(
         label,
-        style: TextStyle(
-          color: labelColor,
-          fontWeight: FontWeight.w500,
-        ),
+        style: FontUtil.font16M(color: labelColor)
       ),
       trailing: trailing ??
           SvgIcon(icon: ImageUtil.forwardsvg),

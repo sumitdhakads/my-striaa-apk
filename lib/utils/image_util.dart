@@ -129,6 +129,11 @@ class ImageUtil {
   static String forwardsvg = "assets/svg/forwardsvg.svg";
   static String personpng = "assets/images/personpng.png";
   static String downsvg = "assets/svg/downsvg.svg";
+  static String floatsvg = "assets/svg/floatsvg.svg";
+  static String videosvg = "assets/svg/video.svg";
+  static String newpoints = "assets/images/newpoints.png";
+  static String newtenpoints = "assets/images/newtenpoints.png";
+  static String star = "assets/svg/star.svg";
 
  //profile svg icons------------------------------------
   static String profilesvg = "assets/svg/profilesvg.svg";
@@ -143,4 +148,5 @@ class ImageUtil {
   static String uploadsvg = "assets/svg/uploadsvg.svg";
   static String whitesendsvg = "assets/svg/whitesendsvg.svg";
   static String calendar = "assets/images/calendar.jpg";
+
 }

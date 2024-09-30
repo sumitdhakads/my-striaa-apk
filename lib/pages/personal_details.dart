@@ -81,9 +81,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
       ),
       bottomNavigationBar: BottomAppBar(
         color: ColorUtil.secondaryColor,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-          child: ButtonWidget(
+        child: ButtonWidget(
             onPressed: () {
               // Handle continue button press
               Navigator.push(context,
@@ -93,7 +91,6 @@ class _PersonalDetailsState extends State<PersonalDetails> {
             text: 'Continue',
             textColor: Colors.white,
           ),
-        ),
       ),
     );
   }

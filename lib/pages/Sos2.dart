@@ -31,8 +31,10 @@ class Sos2 extends StatelessWidget {
               "Press the button below help will\nreach you soon.",
               style: FontUtil.font16N(color: ColorUtil.textLightGrey),textAlign: TextAlign.center,
             ),
+            SizedBox(height: 50,),
             Center(
               child: ImageWidget(
+                height: 322,
                 image: ImageUtil.newsos2,
               ),
             ),

@@ -38,7 +38,7 @@ class SosContactPage extends StatelessWidget {
               name: "Carrie E. McLellan",
               phoneNumber: "+1 9876543210",
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 5),
 
             // Add new contact button
             TextButton.icon(
@@ -57,9 +57,9 @@ class SosContactPage extends StatelessWidget {
             ),
 
 
-            SizedBox(height: 20),
+            SizedBox(height: 18),
             DashedLine(width: double.infinity),
-            SizedBox(height: 20),
+            SizedBox(height: 30),
 
             // Emergency message section
             Row(
@@ -76,7 +76,7 @@ class SosContactPage extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(vertical: 17,horizontal: 20),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(15),
                 color: Colors.white,
               ),
               child: Text(

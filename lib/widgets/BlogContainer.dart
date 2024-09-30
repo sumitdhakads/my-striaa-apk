@@ -45,15 +45,15 @@ class Blogcontainer extends StatelessWidget {
             Positioned(
               top: 5,
               right: 5,
-              child: ClipRRect( // ClipRRect is used to give the blur a proper border radius
-                borderRadius: BorderRadius.circular(10), // Same as the container's border radius
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(100), // Same as the container's border radius
                 child: BackdropFilter(
                   filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0), // Control the amount of blur
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
                       color: Colors.black26.withOpacity(0.3), // Slight transparency
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(100),
                     ),
                     child: Text(
                       date,
@@ -90,25 +90,24 @@ class Blogcontainer extends StatelessWidget {
                           children: [
                             Icon(Icons.location_on, size: 16, color: Colors.pink),
                             SizedBox(width: 4),
-                            Text(subtitle,
-                                style: FontUtil.font12N(
-                                    color: ColorUtil.textLightGrey)),
+                           SizedBox(
+                             width: 193,
+                             child: Text(subtitle,
+                                    style: FontUtil.font12N(
+                                        color: ColorUtil.textLightGrey),maxLines: 2,),
+                           ),
                           ],
                         ),
                       ],
                     ),
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: ColorUtil.primaryColor,
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 12, vertical: 8), // Reduced padding
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 12,vertical: 8),
+                      decoration: BoxDecoration(
+                        color: ColorUtil.primaryColor,
+                        borderRadius: BorderRadius.circular(20),
                       ),
-                      child: Text(
-                        btntext,
-                        style: FontUtil.font12SB(color: Colors.white),
-                      ),
-                    ),
+                      child: Text(btntext,style: FontUtil.font12N(color: Colors.white),),
+                    )
                   ],
                 ),
               ),

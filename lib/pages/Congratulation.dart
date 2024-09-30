@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:striaa/pages/DoctorConsult.dart';
+import 'package:striaa/pages/SearchTapTwo.dart';
 import 'package:striaa/pages/StriaaPage.dart';
+import 'package:striaa/pages/onTap.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
@@ -73,9 +75,6 @@ class Congratulation extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              height: 15,
-            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -85,18 +84,18 @@ class Congratulation extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Rewards Points", style: FontUtil.font20B()),
+                      Text("Rewards Points", style: FontUtil.font20SB()),
                       SizedBox(
                         height: 6,
                       ),
                       Text(
                         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
-                        style: FontUtil.font12N(color: ColorUtil.textLightGrey),
+                        style: FontUtil.font12M(color: ColorUtil.textLightGrey),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
                       SizedBox(
-                        height: 15,
+                        height: 12,
                       ),
                       Container(
                         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 8),
@@ -105,7 +104,7 @@ class Congratulation extends StatelessWidget {
                           color: Colors.black,
                         ),
                         child: Text(
-                          "claim",
+                          "Claim",
                           style: GoogleFonts.poppins(
                               fontWeight: FontWeight.w500,
                               fontSize: 12,
@@ -118,17 +117,14 @@ class Congratulation extends StatelessWidget {
                 // Image points container
                 Expanded(
                   flex: 2, // Give this flex to allocate 1 part of the row to the image
-                  child: Container(
-                    height: 135,
-                    child: Image.asset(
-                      ImageUtil.tenpoints,
-                      fit: BoxFit.cover, // Make the image cover its entire space
-                    ),
+                  child: Image.asset(
+                    height: 200,
+                    ImageUtil.newtenpoints,
+                    fit: BoxFit.cover, // Make the image cover its entire space
                   ),
                 ),
               ],
             ),
-               SizedBox(height: 30,),
             Container(
               height: 160,
               decoration: BoxDecoration(
@@ -154,10 +150,10 @@ class Congratulation extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 30,),
+            SizedBox(height: 20,),
             InkWell(
               onTap: (){
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SearchTapTwo()));
               },
               child: Blogcontainer(
                 image: ImageUtil.three,
@@ -170,7 +166,7 @@ class Congratulation extends StatelessWidget {
             SizedBox(height: 15,),
             InkWell(
               onTap: (){
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => const ));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Ontap()));
               },
               child: Postcontainer(
                 image: ImageUtil.one,
@@ -180,7 +176,7 @@ class Congratulation extends StatelessWidget {
             SizedBox(height: 15,),
             InkWell(
               onTap: (){
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SearchTapTwo()));
               },
               child: Blogcontainer(
                 image: ImageUtil.four,
@@ -196,9 +192,7 @@ class Congratulation extends StatelessWidget {
       ),
       bottomNavigationBar: BottomAppBar(
         color: ColorUtil.secondaryColor,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-          child: ButtonWidget(
+        child:ButtonWidget(
             onPressed: () {
               // Handle continue button press
               Navigator.push(context,
@@ -207,7 +201,6 @@ class Congratulation extends StatelessWidget {
             color: Colors.white,
             text: 'Back to home',
             textColor: ColorUtil.textLightGrey,
-          ),
         ),
       ),
     );

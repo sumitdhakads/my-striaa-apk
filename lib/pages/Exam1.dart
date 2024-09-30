@@ -6,8 +6,6 @@ import 'package:striaa/utils/font_util.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/CustomAppbar.dart';
 import 'package:striaa/widgets/SmallButtton.dart';
-import 'package:striaa/widgets/button.dart';
-import 'package:striaa/widgets/image.dart';
 
 class Exam1 extends StatelessWidget {
   const Exam1({super.key});
@@ -24,6 +22,7 @@ class Exam1 extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: leftRightAppPadding),
             child: Column(
               children: [
+                SizedBox(height: 30,),
                 SizedBox(
                   // height: 466,
                   // width: appHeight(context),
@@ -36,30 +35,32 @@ class Exam1 extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
                 Text(
                   "Did you find anything abnormal in your breasts?",
                   style: FontUtil.font26SB(height: 1.38),
                   textAlign: TextAlign.center,
                 ),
+                SizedBox(height: 6,),
                 Text(
                   "Lorem ipsum dolor sit amet, consectetur adipiscing "
                   "elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                   style: FontUtil.font14N(color: ColorUtil.textLightGrey),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 12,),
+                SizedBox(height: 35,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
                       child: Smallbuttton(
+                        verpadding: 15,
                         text: "No",
                         color: Colors.black,
                         textColor: Colors.white,
-                        fontstyle: FontUtil.font16SB(color: Colors.white),
+                        fontstyle: FontUtil.font16M(color: Colors.white),
                         onPressed: () {
                           // Define the "No" button action
                           Navigator.push(context, MaterialPageRoute(builder: (context) => Exam2()));
@@ -69,10 +70,11 @@ class Exam1 extends StatelessWidget {
                     SizedBox(width: 20), // Space between the buttons
                     Expanded(
                       child: Smallbuttton(
+                        verpadding: 15,
                         text: "Yes",
                         color: ColorUtil.primaryColor, // Assuming you have defined pink in ColorUtil
                         textColor: Colors.white,
-                        fontstyle: FontUtil.font16SB(color: Colors.white),
+                        fontstyle: FontUtil.font16M(color: Colors.white),
                         onPressed: () {
                           // Define the "Yes" button action
                           Navigator.push(context, MaterialPageRoute(builder: (context) => Exam2()));
@@ -81,6 +83,7 @@ class Exam1 extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(height: 20,),
               ],
             ),
           ),

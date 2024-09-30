@@ -39,7 +39,7 @@ class SquaPostDetail extends StatelessWidget {
                     children: [
                       Text(
                         "Major S. Depriest",
-                        style: FontUtil.font14SB(),
+                        style: FontUtil.font14M(),
                       ),
                       SizedBox(height: 5),
                       Text(
@@ -84,16 +84,16 @@ class SquaPostDetail extends StatelessWidget {
                   SizedBox(width: 5),
                   Text(
                     "100 comments",
-                    style: FontUtil.font12N(color: ColorUtil.textLightGrey),
+                    style: FontUtil.font12M(color: ColorUtil.textLightGrey),
                   ),
-                  SizedBox(width: 5),
+                  SizedBox(width: 10),
                   Line(),
-                  SizedBox(width: 5),
+                  SizedBox(width: 10),
                   SvgIcon(icon: ImageUtil.likesvg),
                   SizedBox(width: 5),
                   Text(
                     "250 likes",
-                    style: FontUtil.font12N(color: ColorUtil.textLightGrey),
+                    style: FontUtil.font12M(color: ColorUtil.textLightGrey),
                   ),
                 ],
               ),
@@ -134,7 +134,7 @@ class SquaPostDetail extends StatelessWidget {
                                   decoration: InputDecoration(
                                     hintText: "Add a comment",
                                     contentPadding: EdgeInsets.only(bottom: 5),
-                                    hintStyle: FontUtil.font12N(
+                                    hintStyle: FontUtil.font12M(
                                         color: ColorUtil.textLightGrey),
                                     border: InputBorder.none,
                                   ),
@@ -207,7 +207,7 @@ class SquaPostDetail extends StatelessWidget {
                                   SizedBox(width: 5),
                                   Text(
                                     "250 likes",
-                                    style: FontUtil.font12N(
+                                    style: FontUtil.font12M(
                                         color: ColorUtil.textLightGrey),
                                   ),
                                 ],

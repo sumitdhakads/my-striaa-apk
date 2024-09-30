@@ -33,8 +33,8 @@ class CustomRadioButton extends StatelessWidget {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
-                color: isSelected ? ColorUtil.primaryColor : Colors.grey,
-                width: 2.0,
+                color: isSelected ? ColorUtil.primaryColor : ColorUtil.textLightGrey,
+                width: isSelected ? 2.0 : 0.5,
               ),
             ),
             child: isSelected

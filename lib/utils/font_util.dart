@@ -116,10 +116,11 @@ class FontUtil {
   }
 
 // Font Size 18 ------- FontWeight Bold
-   static TextStyle font18SB({Color? color}){
+   static TextStyle font18SB({Color? color,double? height}){
     return TextStyle(
       fontFamily: 'Inter',
       fontSize: 18,
+      height: height,
       fontWeight: FontWeight.w600,
       color: color ?? (isDark(navkey!.currentState!.context) ? Colors.white : Colors.black)
     );

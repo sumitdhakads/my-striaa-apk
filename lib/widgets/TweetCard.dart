@@ -3,6 +3,7 @@ import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/image.dart';
+import 'package:striaa/widgets/line.dart';
 
 class TweetCard extends StatelessWidget {
   const TweetCard({super.key,required this.context,required this.username,this.onTap});
@@ -73,7 +74,9 @@ class TweetCard extends StatelessWidget {
                   "Comments",
                   style:FontUtil.font12M(color: ColorUtil.textLightGrey),
                 ),
-                SizedBox(width: 20),
+                SizedBox(width: 10,),
+                Line(),
+                SizedBox(width: 10),
                 SvgIcon(icon: ImageUtil.likesvg),
                 SizedBox(width: 5),
                 Text(
