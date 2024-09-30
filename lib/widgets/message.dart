@@ -8,8 +8,9 @@ import 'package:striaa/widgets/image.dart';
 
 class Message extends StatelessWidget {
   final String? text;
+  final bool isSentByUser; // New flag to differentiate between left (received) and right (sent) messages
 
-  Message({super.key, this.text});
+  Message({super.key, this.text, required this.isSentByUser});
 
   // Get the current time in 'hh:mm a' format
   String _formatCurrentTime() {
@@ -22,26 +23,30 @@ class Message extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 10),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment:
+        isSentByUser ? MainAxisAlignment.end : MainAxisAlignment.start, // Align to right if sent by user
         children: <Widget>[
-          Container(
-            margin: EdgeInsets.only(right: 10),
-            child: SizedBox(
-              width: 44,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(35),
-                child: ImageWidget(
-                  image: ImageUtil.newbot,
+          if (!isSentByUser)
+            Container(
+              margin: EdgeInsets.only(right: 10),
+              child: SizedBox(
+                width: 44,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(35),
+                  child: ImageWidget(
+                    image: ImageUtil.newbot,
+                  ),
                 ),
               ),
             ),
-          ),
           Flexible(
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 12, horizontal: 15),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: isSentByUser ? ColorUtil.primaryColor : Colors.white,
                 borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(15),
+                  topLeft: Radius.circular(isSentByUser ? 15 : 0),
+                  topRight: Radius.circular( isSentByUser ? 0 :15),
                   bottomLeft: Radius.circular(15),
                   bottomRight: Radius.circular(15),
                 ),
@@ -53,18 +58,32 @@ class Message extends StatelessWidget {
                     margin: EdgeInsets.only(top: 5),
                     child: Text(
                       text ?? '',
-                      style: FontUtil.font14N(),
+                      style: FontUtil.font14N(
+                          color: isSentByUser ? Colors.white : Colors.black),
                     ),
                   ),
-                  SizedBox(height: 10), // Add some space between message and time
+                  SizedBox(height: 10), // Add space between message and time
                   Text(
                     _formatCurrentTime(), // Display the formatted time
-                    style: FontUtil.font12M(color: ColorUtil.textLightGrey),
+                    style: FontUtil.font12M(color: isSentByUser ? Colors.white : ColorUtil.textLightGrey),
                   ),
                 ],
               ),
             ),
           ),
+          if (isSentByUser)
+            Container(
+              margin: EdgeInsets.only(left: 10),
+              child: SizedBox(
+                width: 44,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(35),
+                  child: ImageWidget(
+                    image: ImageUtil.useraccount, // Assuming you have a user image here
+                  ),
+                ),
+              ),
+            ),
         ],
       ),
     );

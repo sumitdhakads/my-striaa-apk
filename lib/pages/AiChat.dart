@@ -24,12 +24,25 @@ class _AiChatState extends State<AiChat> {
     _textController.clear();
     Message message = Message(
       text: text,
+      isSentByUser: true, // Mark the message as sent by the user
     );
     setState(() {
-      _messages.insert(0, message);
+      _messages.insert(0, message); // Add to the top of the list
     });
     _focusNode.requestFocus(); // Refocus the text field
   }
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Preloading some messages on the left side (from the bot)
+    _messages.addAll([
+      Message(text: "Hello, how can I assist you?", isSentByUser: false),
+      Message(text: "Feel free to ask anything.", isSentByUser: false),
+    ]);
+  }
+
 
   Widget _textComposerWidget() {
     return Container(

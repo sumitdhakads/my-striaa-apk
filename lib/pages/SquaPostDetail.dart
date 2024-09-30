@@ -115,12 +115,13 @@ class SquaPostDetail extends StatelessWidget {
                   Expanded(
                     child: Container(
                       height: 44,
-                      padding: EdgeInsets.symmetric(horizontal: 15),
+                      padding: EdgeInsets.symmetric(horizontal: 15,),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40),
                         color: Colors.white,
                       ),
                       child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           SvgIcon(icon: ImageUtil.smilysvg),
                           SizedBox(width: 11),
@@ -130,14 +131,15 @@ class SquaPostDetail extends StatelessWidget {
                           SizedBox(width: 13),
                           Expanded(
                             child: TextField(
-                              decoration: InputDecoration(
-                                hintText: "Add a comment",
-                                hintStyle: FontUtil.font12N(
-                                    color: ColorUtil.textLightGrey),
-                                border: InputBorder.none,
-                              ),
+                                  decoration: InputDecoration(
+                                    hintText: "Add a comment",
+                                    contentPadding: EdgeInsets.only(bottom: 5),
+                                    hintStyle: FontUtil.font12N(
+                                        color: ColorUtil.textLightGrey),
+                                    border: InputBorder.none,
+                                  ),
+                                ),
                             ),
-                          ),
                           SizedBox(width: 10),
                           SvgIcon(icon: ImageUtil.sendsvg),
                         ],

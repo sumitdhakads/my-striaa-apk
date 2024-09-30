@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: navkey,
       theme: AppUtils.lightThemeData(),
       debugShowCheckedModeBanner: false,
-      home: Question6(),
+      home: const SplashScreen(),
       darkTheme: AppUtils.darkThemeData(),
       themeMode: ThemeMode.light,
 

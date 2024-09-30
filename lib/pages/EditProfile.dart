@@ -5,13 +5,29 @@ import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/CustomAppbar.dart';
+import 'package:striaa/widgets/CustomDropDown.dart';
 import 'package:striaa/widgets/SuffixTextFieldContainer.dart';
 import 'package:striaa/widgets/TextFieldContainer.dart';
 import 'package:striaa/widgets/button.dart';
 import 'package:striaa/widgets/image.dart';
 
-class EditProfile extends StatelessWidget {
+class EditProfile extends StatefulWidget {
   const EditProfile({super.key});
+
+  @override
+  State<EditProfile> createState() => _EditProfileState();
+}
+
+class _EditProfileState extends State<EditProfile> {
+
+  String? selectedValue = 'Male'; // Initial value for dropdown
+
+  // List of dropdown options
+  final List<String> dropdownItems = [
+    "Male",
+    "Female",
+    "Other"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +46,17 @@ class EditProfile extends StatelessWidget {
             ),
           ),
           SizedBox(height: 15),
-          Textfieldcontainer(
-            title: "Gender",
-            hintText: "Select your gender",
+          Text("Gender",style: FontUtil.font14M(),),
+          SizedBox(height: 10,),
+          // Dropdown for Gender selection
+          CustomDropdown(
+            items: dropdownItems,
+            selectedValue: selectedValue,
+            onChanged: (String? newValue) {
+              setState(() {
+                selectedValue = newValue;
+              });
+            },
           ),
           SizedBox(height: 15),
           Textfieldcontainer(title: "Address", hintText: "Enter your address"),

@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:file_picker/file_picker.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:striaa/pages/StriaaPage.dart';
 import 'package:striaa/pages/question6.dart';
 import 'package:striaa/pages/registrationCompleted.dart';
 import 'package:striaa/utils/app_utils.dart';
@@ -9,12 +6,11 @@ import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/CustomAppbar.dart';
+import 'package:striaa/widgets/CustomDropDown.dart';
 import 'package:striaa/widgets/CustomRadio.dart';
-import 'package:striaa/widgets/DropDown.dart';
 import 'package:striaa/widgets/FilePicker.dart';
 import 'package:striaa/widgets/button.dart';
 import 'package:striaa/widgets/dash.dart';
-import 'package:striaa/widgets/image.dart';
 import 'package:striaa/widgets/progressbar.dart';
 
 class Question5 extends StatefulWidget {
@@ -26,6 +22,18 @@ class _Question5State extends State<Question5> {
   String? _selectedOption = 'No';
   bool _showTextFields = false;
   TextEditingController _usg = TextEditingController();
+
+  String? selectedValue = 'BIRADS1'; // Initial value for dropdown
+
+  // List of dropdown options
+  final List<String> dropdownItems = [
+    'BIRADS1',
+    'BIRADS2',
+    'BIRADS3',
+    'BIRADS4',
+    'BIRADS5'
+  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +107,15 @@ class _Question5State extends State<Question5> {
                       SizedBox(height: 30),
                       DashedLine(width: MediaQuery.of(context).size.width),
                       SizedBox(height: 30),
-                      OurDropdown(),
+                      CustomDropdown(
+                        items: dropdownItems,
+                        selectedValue: selectedValue,
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            selectedValue = newValue;
+                          });
+                        },
+                      ),
                       SizedBox(height: 15),
                       Container(
                         width: appwidth(context) / 2.6,

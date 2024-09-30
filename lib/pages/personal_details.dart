@@ -5,6 +5,7 @@ import 'package:striaa/utils/color_util.dart';
 import 'package:striaa/utils/font_util.dart';
 import 'package:striaa/utils/image_util.dart';
 import 'package:striaa/widgets/CustomAppbar.dart';
+import 'package:striaa/widgets/CustomDropDown.dart';
 import 'package:striaa/widgets/SuffixTextFieldContainer.dart';
 import 'package:striaa/widgets/TextFieldContainer.dart';
 import 'package:striaa/widgets/button.dart';
@@ -18,7 +19,16 @@ class PersonalDetails extends StatefulWidget {
 }
 
 class _PersonalDetailsState extends State<PersonalDetails> {
-  String? _selectedGender; // State for selected gender
+
+
+  String? selectedValue = 'Male'; // Initial value for dropdown
+
+  // List of dropdown options
+  final List<String> dropdownItems = [
+   "Male",
+    "Female",
+    "Other"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +47,18 @@ class _PersonalDetailsState extends State<PersonalDetails> {
             ),
           ),
           SizedBox(height: 15),
-
+          Text("Gender*",style: FontUtil.font14M(),),
+          SizedBox(height: 10,),
           // Dropdown for Gender selection
-          _buildGenderDropdown(),
+          CustomDropdown(
+            items: dropdownItems,
+            selectedValue: selectedValue,
+            onChanged: (String? newValue) {
+              setState(() {
+                selectedValue = newValue;
+              });
+            },
+          ),
 
           SizedBox(height: 15),
           Textfieldcontainer(title: "Address", hintText: "Enter your address"),
@@ -79,47 +98,4 @@ class _PersonalDetailsState extends State<PersonalDetails> {
     );
   }
 
-  // Helper function to build gender dropdown
-  Widget _buildGenderDropdown() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text("Gender*",style: FontUtil.font14SB(),),
-        SizedBox(height: 10,),
-        Container(
-          padding: EdgeInsets.only(left: 20,right: 10),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(40),
-          ),
-          child: DropdownButtonFormField<String>(
-            style: FontUtil.font14N(),
-            value: _selectedGender,
-            decoration: InputDecoration(
-         suffixIcon: Padding(
-           padding: EdgeInsets.symmetric(vertical: 12),
-           child: SvgIcon(icon: ImageUtil.downicon),
-         ),
-              border: InputBorder.none,
-              contentPadding: EdgeInsets.only(bottom: 10,top: 10),
-              hintText: 'Select your gender',
-              hintStyle: FontUtil.font12N(color: ColorUtil.textLightGrey,),
-            ),
-            items: ['Male', 'Female', 'Other'].map((String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Text(value,style:FontUtil.font14N(),),
-              );
-            }).toList(),
-            onChanged: (newValue) {
-              setState(() {
-                _selectedGender = newValue;
-              });
-            },
-            icon: SizedBox(),
-          ),
-        ),
-      ],
-    );
-  }
 }

@@ -31,7 +31,7 @@ class _CheckboxcontainerState extends State<Checkboxcontainer> {
     return GestureDetector(
       onTap: _toggleCheckbox, // Toggle the checkbox when container is tapped
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20,vertical: 18),
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
