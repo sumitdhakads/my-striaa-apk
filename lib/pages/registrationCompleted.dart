@@ -19,9 +19,7 @@ class _RegistrationCompletedState extends State<RegistrationCompleted> {
   @override
   void initState() {
     Future.delayed(const Duration(milliseconds:2000),(){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
-        return const StriaaPage();
-      }));
+      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => StriaaPage()),(route) => false);
     });
     super.initState();
   }

@@ -41,6 +41,10 @@ class Message extends StatelessWidget {
             ),
           Flexible(
             child: Container(
+              margin: EdgeInsets.only(
+                left: isSentByUser ? 40 : 0, // Margin from left if sent by user
+                right: isSentByUser ? 0 : 40, // Margin from right if not sent by user
+              ),
               padding: EdgeInsets.symmetric(vertical: 12, horizontal: 15),
               decoration: BoxDecoration(
                 color: isSentByUser ? ColorUtil.primaryColor : Colors.white,

@@ -27,7 +27,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
         title ?? '',
         style: FontUtil.font20SB(),
       ),
-      leading: leading == null ? InkWell(
+      leading: leading == null ? InkResponse(
         onTap: (){Navigator.pop(context);},
         child: Container(
           margin: EdgeInsets.only(left: 15),

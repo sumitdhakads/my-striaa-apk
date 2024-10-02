@@ -134,6 +134,7 @@ class ImageUtil {
   static String newpoints = "assets/images/newpoints.png";
   static String newtenpoints = "assets/images/newtenpoints.png";
   static String star = "assets/svg/star.svg";
+  static String greyimg = "assets/images/greyimg.jpg";
 
  //profile svg icons------------------------------------
   static String profilesvg = "assets/svg/profilesvg.svg";

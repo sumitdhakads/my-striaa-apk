@@ -84,7 +84,9 @@ class _CreatePostState extends State<CreatePost> {
                 child: OurFilepicker()
             ),
             Spacer(),
-            ButtonWidget(onPressed: (){},color: ColorUtil.primaryColor,text: "Submit",textColor: Colors.white,),
+            ButtonWidget(onPressed: (){
+              Navigator.pop(context);
+            },color: ColorUtil.primaryColor,text: "Submit",textColor: Colors.white,),
             SizedBox(height: 25,),
           ],
         ),

@@ -150,7 +150,7 @@ class Congratulation extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(height: 15,),
             InkWell(
               onTap: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) => SearchTapTwo()));

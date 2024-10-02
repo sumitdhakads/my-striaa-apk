@@ -11,8 +11,12 @@ import 'package:striaa/widgets/button.dart';
 import 'package:striaa/widgets/dash.dart';
 
 class Bookmyshow extends StatelessWidget {
-  const Bookmyshow({super.key});
+  final bool isGrayscale; // New parameter to apply grayscale filter
 
+  const Bookmyshow({
+    super.key,
+    required this.isGrayscale, // Constructor requires the new parameter
+  });
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,10 +30,11 @@ class Bookmyshow extends StatelessWidget {
           Container(
             height: 95,
             width: 95,
+            color: Colors.grey.shade400,
             child: Image.asset(
-              ImageUtil.place,
-              fit: BoxFit.cover,
-            ),
+               isGrayscale ? ImageUtil.greyimg : ImageUtil.place,
+                fit: BoxFit.cover,
+              ),
           ),
           SizedBox(width: 12),
           Column(
@@ -37,7 +42,7 @@ class Bookmyshow extends StatelessWidget {
             children: [
               Text(
                 'Book my Show',
-                style: FontUtil.font14B(),
+                style:  isGrayscale ? FontUtil.font14SB(color: ColorUtil.textLightGrey) : FontUtil.font14SB(),
               ),
               Text(
                 'Sed ut perspis unde omnis is.',
@@ -46,13 +51,14 @@ class Bookmyshow extends StatelessWidget {
               SizedBox(height: 14),
               Smallbuttton(
                 text: "Redeem",
-                color: Colors.black,
+                color:  isGrayscale ? ColorUtil.textLightGrey : Colors.black,
                 onPressed: () {
-                  showRedeemBottomSheet(context);
+                  isGrayscale ? null : showRedeemBottomSheet(context);
                 },
-                textColor: Colors.white,
+                textColor:isGrayscale ? ColorUtil.textLightGrey : Colors.white ,
                 verpadding: 6,
-                horpadding: 10,
+                horpadding: 20,
+                elevation: 0,
               ),
             ],
           ),
@@ -73,9 +79,9 @@ class Bookmyshow extends StatelessWidget {
             // Blur background
             Positioned.fill(
               child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
                 child: Container(
-                  color: Colors.black.withOpacity(0.2), // Semi-transparent overlay
+                  // color: Colors.black.withOpacity(0.2), // Semi-transparent overlay
                 ),
               ),
             ),
@@ -109,7 +115,7 @@ class Bookmyshow extends StatelessWidget {
                   Text(
                     "Are you sure you want to redeem your points towards a BookMyShow gift card?",
                     textAlign: TextAlign.center,
-                    style: FontUtil.font16N(color: ColorUtil.textLightGrey),
+                    style: FontUtil.font16N(letterSpacing: -0.2 ,color: ColorUtil.textLightGrey,),
                   ),
                   const SizedBox(height: 25),
                  DashedLine(width: appwidth(context)),
@@ -118,27 +124,44 @@ class Bookmyshow extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Expanded(
-                        child: BorderedButton(
-                          text: "No",
-                          onPressed: () {
-                            Navigator.pop(context); // Close bottom sheet
-                          },
-                          textColor: Colors.black,
-                          color: Colors.white,
-                          border: 0.3,
-                        ),
+                        child: InkWell(
+                          onTap: (){Navigator.pop(context);},
+                          child: Container(
+                            padding: EdgeInsets.symmetric(vertical: 15),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(40),
+                              border: Border.all(width: 0.5,color: Colors.black),
+                            ),
+                            child: Center(child: Text("No",style: FontUtil.font16M())),
+                          ),
+                        )
                       ),
                       const SizedBox(width: 12),
                       Expanded(
-                        child: ButtonWidget(
-                          text: "Yes",
-                          onPressed: () {
+                        child: InkWell(
+                          onTap: (){
                             Navigator.pop(context); // Close bottom sheet
                             showRedeemSuccessDialog(context);
                           },
-                          textColor: Colors.white,
-                          color: ColorUtil.primaryColor,
-                        ),
+                          child: Container(
+                            padding: EdgeInsets.symmetric(vertical: 15),
+                            decoration: BoxDecoration(
+                              color: ColorUtil.primaryColor,
+                              borderRadius: BorderRadius.circular(40),
+                            ),
+                            child: Center(child: Text("Yes",style: FontUtil.font16M(color: Colors.white))),
+                          ),
+                        )
+                        // ButtonWidget(
+                        //   text: "Yes",
+                        //   onPressed: () {
+                        //     Navigator.pop(context); // Close bottom sheet
+                        //     showRedeemSuccessDialog(context);
+                        //   },
+                        //   textColor: Colors.white,
+                        //   color: ColorUtil.primaryColor,
+                        // ),
                       ),
                     ],
                   ),
@@ -162,15 +185,15 @@ class Bookmyshow extends StatelessWidget {
             // Blurred background
             Positioned.fill(
               child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
                 child: Container(
-                  color: Colors.black.withOpacity(0.2),
+                  color: Colors.black.withOpacity(0.1),
                 ),
               ),
             ),
             Center(
               child: Container(
-                height: 410,
+                height: 390,
                 padding: EdgeInsets.all(20),
                 margin: EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
@@ -213,7 +236,7 @@ class Bookmyshow extends StatelessWidget {
                         Text(
                           "You have successfully redeemed your points. You will receive an email for the gift card within 24 hours.",
                           textAlign: TextAlign.center,
-                          style: FontUtil.font16N(color: ColorUtil.textLightGrey),
+                          style: FontUtil.font16N(letterSpacing:-0.2,color: ColorUtil.textLightGrey),
                         ),
                       ],
                     ),

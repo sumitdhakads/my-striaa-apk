@@ -18,15 +18,14 @@ class Doctordetail extends StatelessWidget {
         slivers: [
           // SliverAppBar for the doctor's image and back button
           SliverAppBar(
-            expandedHeight: 300.0, // Height of the doctor image
+            expandedHeight: 289.0, // Height of the doctor image
             pinned: true, // Pin the AppBar when it collapses
             backgroundColor:
                 ColorUtil.secondaryColor, // Background color when collapsed
             flexibleSpace: FlexibleSpaceBar(
               background: InkWell(
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => StriaaPage()));
+                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => StriaaPage()),(route) => false);
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -188,7 +187,7 @@ class Doctordetail extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 25),
+                      SizedBox(height: 250),
                     ],
                   ),
                 ),

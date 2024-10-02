@@ -26,6 +26,7 @@ class Reward extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: ImageWidget(
                 image: ImageUtil.rewardpng,
+                height: 160,
               ),
             ),
             Center(
@@ -33,6 +34,7 @@ class Reward extends StatelessWidget {
               "Current Rewards Points",
               style: FontUtil.font20SB(),
             )),
+            SizedBox(height: 4,),
             Center(
                 child: Text(
               "Sed ut perspiciatis unde omnis iste natus error",
@@ -43,16 +45,13 @@ class Reward extends StatelessWidget {
             SizedBox(height: 25,),
             Text("Redeem rewards",style: FontUtil.font16SB(),),
             SizedBox(height: 20,),
-            Bookmyshow(),
+            Bookmyshow(isGrayscale: false,),
             SizedBox(height: 15,),
-            Bookmyshow(),
-            Bookmyshow(),
+            Bookmyshow(isGrayscale: false,),
             SizedBox(height: 15,),
-            Bookmyshow(),
+            Bookmyshow(isGrayscale: true),
             SizedBox(height: 15,),
-            Bookmyshow(),
-            SizedBox(height: 15,),
-            Bookmyshow(),
+            Bookmyshow(isGrayscale: true),
             SizedBox(height: 30,),
           ],
         ),

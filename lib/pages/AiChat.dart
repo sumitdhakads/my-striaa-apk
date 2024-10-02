@@ -75,6 +75,7 @@ class _AiChatState extends State<AiChat> {
             InkWell(
               onTap: () => _handleSubmitted(_textController.text),
               child: Container(
+                margin: EdgeInsets.only(left: 2),
                 padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
                 decoration: BoxDecoration(
                   color: ColorUtil.primaryColor,

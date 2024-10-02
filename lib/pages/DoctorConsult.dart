@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:striaa/pages/AllDoctor.dart';
+import 'package:striaa/pages/onTap.dart';
 import 'package:striaa/widgets/togglebutton.dart';
 import 'package:striaa/utils/app_utils.dart';
 import 'package:striaa/utils/color_util.dart';
@@ -222,11 +223,17 @@ class _DoctorConsultState extends State<DoctorConsult> {
               ),
               SizedBox(height: 20,),
               Postcontainer(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Ontap()));
+                },
                 image: ImageUtil.one,
                 text: "Sed ut perspicitis iste natus unde error..",
               ),
             SizedBox(height: 15,),
               Postcontainer(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Ontap()));
+                },
                 image: ImageUtil.two,
                 text: "Sed ut perspicitis iste natus unde error..",
               ),

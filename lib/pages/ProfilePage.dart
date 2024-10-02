@@ -140,6 +140,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         context, MaterialPageRoute(builder: (context) => Login()));
                   },
                 ),
+                SizedBox(height: 30,),
               ],
             ),
           ],
@@ -158,7 +159,7 @@ class _ProfilePageState extends State<ProfilePage> {
   }) {
     return ListTile(
       leading: Container(
-        padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: 14,vertical: 14),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: ColorUtil.primaryColor,
